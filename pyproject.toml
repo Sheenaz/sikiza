@@ -1,0 +1,11 @@
+[project]
+name = "sikiza"
+version = "0.1.0"
+description = "Sikiza: Sheng-aware distress triage and coping support (DSA 8401 capstone)"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["triage"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

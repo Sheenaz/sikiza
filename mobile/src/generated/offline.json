@@ -1,0 +1,26 @@
+{
+ "library_version": "0.1.0-draft",
+ "approved": false,
+ "crisis": {
+  "id": "crisis_v1",
+  "en": "Thank you for telling me. What you're feeling matters, and you don't have to carry it alone. A counsellor is being notified now and will reach out to you. If you are in danger right now, please call Kenya Red Cross on 1199 (free, 24/7) or Befrienders Kenya on +254 722 178 177, or go to the nearest hospital. If you can, stay with someone you trust until you hear from us.",
+  "sw": "Asante kwa kuniambia. Unachohisi ni muhimu, na huna haja ya kubeba hili peke yako. Mshauri anaarifiwa sasa hivi na atawasiliana nawe. Kama uko hatarini sasa hivi, tafadhali piga simu Kenya Red Cross 1199 (bure, saa 24) au Befrienders Kenya +254 722 178 177, au nenda hospitali iliyo karibu. Ukiweza, kaa na mtu unayemwamini hadi tuwasiliane nawe.",
+  "hotlines": [
+   {
+    "name": "Kenya Red Cross",
+    "number": "1199",
+    "verify": true
+   },
+   {
+    "name": "Befrienders Kenya",
+    "number": "+254722178177",
+    "verify": true
+   }
+  ]
+ },
+ "fallback": {
+  "id": "soc_grounding",
+  "en": "When anxiety spikes, ground yourself with 5-4-3-2-1: name 5 things you see, 4 you can touch, 3 you hear, 2 you smell and 1 you taste. It brings your mind back to the present.",
+  "sw": "Wasiwasi ukipanda, jaribu 5-4-3-2-1: taja vitu 5 unavyoona, 4 unavyoweza kugusa, 3 unavyosikia, 2 unavyonusa na 1 unachoonja. Hurudisha akili yako hapa na sasa."
+ }
+}

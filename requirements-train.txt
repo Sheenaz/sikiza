@@ -1,0 +1,10 @@
+-r requirements.txt
+torch>=2.2
+transformers>=4.40
+peft>=0.10
+datasets>=2.18
+accelerate>=0.28
+sentencepiece>=0.2
+protobuf>=4.25
+onnx>=1.16
+onnxscript>=0.1

@@ -1,0 +1,69 @@
+# Central configuration. Every value that affects a prediction is versioned
+# and logged with it (see triage/audit.py).
+
+project:
+  name: sheng-triage
+  seed: 42
+
+labels:
+  categories: [academic_stress, financial_strain, social_anxiety, low_mood, other]
+
+data:
+  # Real, consented, de-identified Strathmore check-ins. NEVER commit this file.
+  seed_csv: data/raw/strathmore_checkins.csv
+  # Synthetic demo rows — for pipeline smoke tests ONLY, never for reported results.
+  demo_csv: data/demo/demo_seed.csv
+  augmented_csv: data/processed/augmented.csv
+  splits_dir: data/processed/splits
+  # Grouped split of REAL seed rows (fractions of seed_ids). Test = real messages only.
+  split: {train: 0.60, calib: 0.15, test: 0.25}
+
+safety:
+  lexicon: data/lexicon/sheng_lexicon.yaml
+  # Costs used to derive the crisis threshold (Bayes-optimal t = C_fp / (C_fp + C_fn)).
+  cost_false_negative: 100.0   # missed crisis
+  cost_false_positive: 1.0     # a few counsellor minutes
+  target_recall: 0.95          # threshold is lowered further if calib recall falls below this
+
+retrieval:
+  library: data/library/coping_library.yaml
+  allow_draft_entries: false   # serving refuses unapproved strategies unless this is true (dev only)
+
+baseline:
+  max_features: 20000
+  word_ngrams: [1, 2]
+  char_ngrams: [2, 5]   # char n-grams survive Sheng spelling variation
+  C: 4.0
+
+transformer:
+  candidates:
+    afroxlmr:   {name: Davlan/afro-xlmr-base, lora_targets: [query, value]}
+    xlmr:       {name: FacebookAI/xlm-roberta-base, lora_targets: [query, value]}
+    distilbert: {name: distilbert/distilbert-base-multilingual-cased, lora_targets: [q_lin, v_lin]}
+  default: afroxlmr
+  max_length: 128
+  lora: {r: 16, alpha: 32, dropout: 0.1}
+  intermediate:          # stage 1: unified 3-way sentiment (neg/neu/pos) on public data
+    epochs: 1
+    batch_size: 32
+    lr: 3.0e-4
+    max_rows_per_source: 20000
+  finetune:              # stage 2: crisis + category heads on Strathmore data
+    epochs: 6
+    batch_size: 16
+    lr: 2.0e-4
+    crisis_loss_weight: 2.0   # weights the TASK, not the class — keeps probabilities calibratable
+
+zero_shot:
+  model: MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7
+
+evaluation:
+  bootstrap_iterations: 2000
+  ci: 0.95
+
+serving:
+  model_dir: artifacts/model            # ONNX int8 + tokenizer + manifest
+  baseline_dir: artifacts/baseline      # fallback if no ONNX model is present
+  audit_log: artifacts/logs/predictions.jsonl
+  escalation_db: artifacts/escalations.sqlite
+  oov_min_requests: 5                   # k-anonymity floor before a new token is surfaced

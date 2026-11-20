@@ -1,0 +1,225 @@
+seed_id,text,category,crisis,language,annotator,source,category_2,crisis_2
+demo-0000,"Manze fees balance inanisumbua, sina chapaa kabisa",financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0001,I have no energy to do anything and I don't know why,low_mood,0,en,synthetic,synthetic_demo,,
+demo-0002,I don't have friends here and I'm too shy to join any group,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0003,Honestly I'm skipping meals so I can afford fare to campus,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0004,"Manze niko down sana hii wiki, sitaki kuongea na mtu",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0005,Naogopa sana kuongea mbele ya watu,social_anxiety,0,sw,synthetic,synthetic_demo,financial_strain,0
+demo-0006,Siku hizi nahisi kila mtu darasani ananihukumu nikiongea,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0007,"Siku hizi exams zimeniweza manze, sijai soma kitu",academic_stress,0,sheng,synthetic,synthetic_demo,low_mood,0
+demo-0008,Kusema kweli sina marafiki hapa na naogopa kujiunga na kikundi,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0009,My roommate and I had a fight about cleaning,other,0,en,synthetic,synthetic_demo,,
+demo-0010,Siku hizi nimefeli mtihani wa stats na naogopa nitafukuzwa,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0011,Manze wazazi wamepoteza kazi na sijui nitamaliza shule aje,financial_strain,0,sw,synthetic,synthetic_demo,financial_strain,0
+demo-0012,Lately I don't have friends here and I'm too shy to join any group,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0013,"Leo nimehang na hii assignment ya coding, deadline ni kesho",academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0014,"Manze nimeboeka na kila kitu, nakaa tu kwa keja",low_mood,0,sheng,synthetic,synthetic_demo,low_mood,0
+demo-0015,Leo nina CAT tatu wiki hii na sijasoma chochote,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0016,Leo nina presentation kesho na moyo unadunda sana,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0017,"Manze niko sawa, nataka tu kuandika hisia zangu",other,0,sw,synthetic,synthetic_demo,,
+demo-0018,Kesho niko na presentation na niko na wasiwasi mob,social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0019,Siku hizi HELB haijaingia na kodi ya nyumba inadaiwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0020,Kusema kweli nahisi kila mtu darasani ananihukumu nikiongea,social_anxiety,0,sw,synthetic,synthetic_demo,other,0
+demo-0021,"Kusema kweli niko down sana hii wiki, sitaki kuongea na mtu",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0022,"Siku hizi niko low manze, hata food sitaki",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0023,"Honestly just checking in, today was okay",other,0,en,synthetic,synthetic_demo,other,0
+demo-0024,Leo sina pesa ya karo na exam card imezuiliwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0025,I've been thinking about suicide every day,low_mood,1,en,synthetic,synthetic_demo,,
+demo-0026,Honestly I have a presentation tomorrow and my heart is racing just thinking about it,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0027,"Leo nimeboeka na kila kitu, nakaa tu kwa keja",low_mood,0,sheng,synthetic,synthetic_demo,other,0
+demo-0028,"sioni sababu ya kuamka kesho, nimewapa mbogi vitu zangu zote",low_mood,1,sheng,synthetic,synthetic_demo,,
+demo-0029,"Siku hizi nashtuka nikiwa kwa crowd, siwezi hata kukula cafeteria",social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0030,Manze nahisi kila mtu darasani ananihukumu nikiongea,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0031,"life iishe tu, siwezi tena",low_mood,1,sheng,synthetic,synthetic_demo,,
+demo-0032,"nimeacha kula siku tatu, sitaki kuendelea kuwa hapa",low_mood,1,sw,synthetic,synthetic_demo,,
+demo-0033,I keep cutting myself to feel something,low_mood,1,en,synthetic,synthetic_demo,,
+demo-0034,Nikiongea class nafeel kila msee ananicheka,social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0035,Today my parents lost their jobs and I don't know how I'll stay in school,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0036,Siku hizi familia yangu inanipigia simu kila saa,other,0,sw,synthetic,synthetic_demo,other,0
+demo-0037,"Today nothing feels enjoyable anymore, I just stay in bed",low_mood,0,en,synthetic,synthetic_demo,low_mood,0
+demo-0038,"there's no way out of this debt, I'm going to end it all",financial_strain,1,en,synthetic,synthetic_demo,,
+demo-0039,"Siku hizi nimeingia tu kuripoti, leo ilikuwa sawa",other,0,sw,synthetic,synthetic_demo,other,0
+demo-0040,Leo supp ya last sem bado inanikula akili,academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0041,Honestly my HELB hasn't come and rent is due on Friday,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0042,Kusema kweli nina presentation kesho na moyo unadunda sana,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0043,"Leo nimeingia tu kuripoti, leo ilikuwa sawa",other,0,sw,synthetic,synthetic_demo,other,0
+demo-0044,Today I have a presentation tomorrow and my heart is racing just thinking about it,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0045,Siku hizi nakosa chakula ili nipate nauli ya kuja shule,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0046,"sitaki kuishi tena, nimechoka na maisha",low_mood,1,sw,synthetic,synthetic_demo,low_mood,1
+demo-0047,"Kusema kweli life imekuwa boring mbaya, sina morale",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0048,Siku hizi nina presentation kesho na moyo unadunda sana,social_anxiety,0,sw,synthetic,synthetic_demo,social_anxiety,0
+demo-0049,Lately my GPA dropped and I don't know how to fix it before finals,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0050,"Siku hizi hii sem stress imeniweza, CATs ni mob",academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0051,Kusema kweli budaa hana doh na mathe anasema nitafute side hustle,financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0052,Keja rent iko due na ganji imeisha,financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0053,"Life imekuwa boring mbaya, sina morale",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0054,"Not gonna lie, my GPA dropped and I don't know how to fix it before finals",academic_stress,0,en,synthetic,synthetic_demo,academic_stress,0
+demo-0055,"Niko poa leo, nimechill tu",other,0,sheng,synthetic,synthetic_demo,other,0
+demo-0056,Manze najihisi mpweke hata nikiwa na watu,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0057,"Today the assignments are too much, I can't keep up with deadlines",academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0058,Supp ya last sem bado inanikula akili,academic_stress,0,sheng,synthetic,synthetic_demo,academic_stress,0
+demo-0059,Kusema kweli sina nguvu ya kufanya chochote,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0060,I feel like everyone in class is judging me when I speak,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0061,Today I have no energy to do anything and I don't know why,low_mood,0,en,synthetic,synthetic_demo,low_mood,0
+demo-0062,Leo nimefeli mtihani wa stats na naogopa nitafukuzwa,academic_stress,0,sw,synthetic,synthetic_demo,academic_stress,0
+demo-0063,"Honestly the assignments are too much, I can't keep up with deadlines",academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0064,Honestly I have no energy to do anything and I don't know why,low_mood,0,en,synthetic,synthetic_demo,low_mood,0
+demo-0065,"Siku hizi life imekuwa boring mbaya, sina morale",low_mood,0,sheng,synthetic,synthetic_demo,low_mood,0
+demo-0066,Manze nimefeli mtihani wa stats na naogopa nitafukuzwa,academic_stress,0,sw,synthetic,synthetic_demo,academic_stress,0
+demo-0067,Leo naogopa sana kuongea mbele ya watu,social_anxiety,0,sw,synthetic,synthetic_demo,social_anxiety,0
+demo-0068,Today I can't pay my fee balance and they won't give me an exam card,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0069,Nina CAT tatu wiki hii na sijasoma chochote,academic_stress,0,sw,synthetic,synthetic_demo,academic_stress,0
+demo-0070,"Manze hakuna kitu kinanifurahisha tena, nalala tu",low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0071,"Roommate wangu ni noma, anaongea usiku mzima",other,0,sheng,synthetic,synthetic_demo,,
+demo-0072,Manze nakosa chakula ili nipate nauli ya kuja shule,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0073,"Leo niko sawa, nataka tu kuandika hisia zangu",other,0,sw,synthetic,synthetic_demo,financial_strain,0
+demo-0074,Lately I feel empty and I've been crying every night this week,low_mood,0,en,synthetic,synthetic_demo,,
+demo-0075,"Not gonna lie, I broke up with my girlfriend last week and it's weird",other,0,en,synthetic,synthetic_demo,,
+demo-0076,"I want to kill myself, I can't do this anymore",low_mood,1,en,synthetic,synthetic_demo,,
+demo-0077,Manze nikiongea class nafeel kila msee ananicheka,social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0078,Today I feel so alone even when I'm with people,low_mood,0,en,synthetic,synthetic_demo,low_mood,0
+demo-0079,Leo najisikia mtupu na nimekuwa nikilia kila usiku,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0080,"Manze niko poa leo, nimechill tu",other,0,sheng,synthetic,synthetic_demo,,
+demo-0081,"Siku hizi nimehang na hii assignment ya coding, deadline ni kesho",academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0082,"Manze nimeingia tu kuripoti, leo ilikuwa sawa",other,0,sw,synthetic,synthetic_demo,,
+demo-0083,Today I feel like everyone in class is judging me when I speak,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0084,Leo kesho niko na presentation na niko na wasiwasi mob,social_anxiety,0,sheng,synthetic,synthetic_demo,social_anxiety,0
+demo-0085,"nataka kujiua, maisha haina maana",low_mood,1,sw,synthetic,synthetic_demo,,
+demo-0086,Manze HELB haijaingia na kodi ya nyumba inadaiwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0087,Manze kesho niko na presentation na niko na wasiwasi mob,social_anxiety,0,sheng,synthetic,synthetic_demo,social_anxiety,0
+demo-0088,"Siku hizi nimehang na project yangu, lecturer hajibu emails",academic_stress,0,sw,synthetic,synthetic_demo,academic_stress,0
+demo-0089,Siku hizi nina CAT tatu wiki hii na sijasoma chochote,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0090,"Leo hakuna kitu kinanifurahisha tena, nalala tu",low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0091,"Siku hizi niko poa leo, nimechill tu",other,0,sheng,synthetic,synthetic_demo,,
+demo-0092,"Leo mimi na dem tumeachana, ni sawa tu",other,0,sheng,synthetic,synthetic_demo,other,0
+demo-0093,Lately I have a presentation tomorrow and my heart is racing just thinking about it,social_anxiety,0,en,synthetic,synthetic_demo,social_anxiety,0
+demo-0094,Manze nina presentation kesho na moyo unadunda sana,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0095,Kusema kweli sina pesa ya karo na exam card imezuiliwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0096,Wazazi wamepoteza kazi na sijui nitamaliza shule aje,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0097,Assignments ni mingi sana siwezi maliza kwa deadline,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0098,tonight I'll go to the rooftop and that's it,low_mood,1,en,synthetic,synthetic_demo,,
+demo-0099,"Leo fees balance inanisumbua, sina chapaa kabisa",financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0100,"Not gonna lie, I can't pay my fee balance and they won't give me an exam card",financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0101,Honestly my roommate and I had a fight about cleaning,other,0,en,synthetic,synthetic_demo,,
+demo-0102,"Leo niko poa leo, nimechill tu",other,0,sheng,synthetic,synthetic_demo,,
+demo-0103,Sina marafiki hapa na naogopa kujiunga na kikundi,social_anxiety,0,sw,synthetic,synthetic_demo,social_anxiety,0
+demo-0104,"Leo exams zimeniweza manze, sijai soma kitu",academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0105,"Siku hizi sina mbogi hapa campo, kila mtu ako na group yake",social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0106,"Leo leo ilikuwa fiti, nimeenda gym",other,0,sheng,synthetic,synthetic_demo,,
+demo-0107,"Not gonna lie, I feel empty and I've been crying every night this week",low_mood,0,en,synthetic,synthetic_demo,,
+demo-0108,Siku hizi budaa hana doh na mathe anasema nitafute side hustle,financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0109,"niko done na life manze, nitajihang",low_mood,1,sheng,synthetic,synthetic_demo,,
+demo-0110,"Manze mimi na dem tumeachana, ni sawa tu",other,0,sheng,synthetic,synthetic_demo,other,0
+demo-0111,I have three CATs this week and I'm so behind on revision,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0112,"Nashtuka nikiwa kwa crowd, siwezi hata kukula cafeteria",social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0113,"Leo sina doh ya fare hii wiki, nitakam campo aje",financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0114,"Niko low manze, hata food sitaki",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0115,"nimefeli tena, ni bora nijiue",academic_stress,1,sw,synthetic,synthetic_demo,,
+demo-0116,"Lately the assignments are too much, I can't keep up with deadlines",academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0117,Leo assignments ni mingi sana siwezi maliza kwa deadline,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0118,"Leo nimehang na project yangu, lecturer hajibu emails",academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0119,Lately I can't pay my fee balance and they won't give me an exam card,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0120,My parents lost their jobs and I don't know how I'll stay in school,financial_strain,0,en,synthetic,synthetic_demo,financial_strain,0
+demo-0121,"I'm fine, just wanted to log my mood",other,0,en,synthetic,synthetic_demo,,
+demo-0122,"Not gonna lie, I don't have friends here and I'm too shy to join any group",social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0123,Manze sina nguvu ya kufanya chochote,low_mood,0,sw,synthetic,synthetic_demo,low_mood,0
+demo-0124,Kusema kweli HELB haijaingia na kodi ya nyumba inadaiwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0125,Lately I feel so alone even when I'm with people,low_mood,0,en,synthetic,synthetic_demo,,
+demo-0126,Honestly I don't have friends here and I'm too shy to join any group,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0127,"Siku hizi leo ilikuwa fiti, nimeenda gym",other,0,sheng,synthetic,synthetic_demo,other,0
+demo-0128,Today my HELB hasn't come and rent is due on Friday,financial_strain,0,en,synthetic,synthetic_demo,financial_strain,0
+demo-0129,Manze najisikia mtupu na nimekuwa nikilia kila usiku,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0130,Honestly I can't pay my fee balance and they won't give me an exam card,financial_strain,0,en,synthetic,synthetic_demo,financial_strain,0
+demo-0131,Kusema kweli mimi na roommate tumegombana juu ya usafi,other,0,sw,synthetic,synthetic_demo,other,0
+demo-0132,"Not gonna lie, my HELB hasn't come and rent is due on Friday",financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0133,"Fees balance inanisumbua, sina chapaa kabisa",financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0134,Today I failed my stats exam and I'm scared of being discontinued,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0135,"Kusema kweli niko low manze, hata food sitaki",low_mood,0,sheng,synthetic,synthetic_demo,low_mood,0
+demo-0136,nimefikiria kujinyonga usiku huu,low_mood,1,sw,synthetic,synthetic_demo,,
+demo-0137,"Leo niko down sana hii wiki, sitaki kuongea na mtu",low_mood,0,sheng,synthetic,synthetic_demo,low_mood,0
+demo-0138,Sina pesa ya karo na exam card imezuiliwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0139,"Niko sawa, nataka tu kuandika hisia zangu",other,0,sw,synthetic,synthetic_demo,other,0
+demo-0140,Honestly I panic in crowded places like the cafeteria,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0141,"Today just checking in, today was okay",other,0,en,synthetic,synthetic_demo,other,0
+demo-0142,My GPA dropped and I don't know how to fix it before finals,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0143,Nimefeli mtihani wa stats na naogopa nitafukuzwa,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0144,Kusema kweli nakosa chakula ili nipate nauli ya kuja shule,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0145,"Kusema kweli niko sawa, nataka tu kuandika hisia zangu",other,0,sw,synthetic,synthetic_demo,,
+demo-0146,Kusema kweli kesho niko na presentation na niko na wasiwasi mob,social_anxiety,0,sheng,synthetic,synthetic_demo,social_anxiety,0
+demo-0147,Lately I failed my stats exam and I'm scared of being discontinued,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0148,Honestly I feel so alone even when I'm with people,low_mood,0,en,synthetic,synthetic_demo,,
+demo-0149,"Leo ilikuwa fiti, nimeenda gym",other,0,sheng,synthetic,synthetic_demo,,
+demo-0150,"Lately nothing feels enjoyable anymore, I just stay in bed",low_mood,0,en,synthetic,synthetic_demo,low_mood,0
+demo-0151,"I've written letters to my family and given away my laptop, I won't need it",low_mood,1,en,synthetic,synthetic_demo,,
+demo-0152,Budaa hana doh na mathe anasema nitafute side hustle,financial_strain,0,sheng,synthetic,synthetic_demo,academic_stress,0
+demo-0153,"Kusema kweli nimehang na project yangu, lecturer hajibu emails",academic_stress,0,sw,synthetic,synthetic_demo,academic_stress,0
+demo-0154,Today my roommate and I had a fight about cleaning,other,0,en,synthetic,synthetic_demo,other,0
+demo-0155,Kusema kweli nina CAT tatu wiki hii na sijasoma chochote,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0156,"sitaki kuwa burden kwa mathe tena, ni bora niondoke milele",financial_strain,1,sheng,synthetic,synthetic_demo,financial_strain,1
+demo-0157,"Lately just checking in, today was okay",other,0,en,synthetic,synthetic_demo,other,0
+demo-0158,"Kusema kweli hakuna kitu kinanifurahisha tena, nalala tu",low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0159,Lately my roommate and I had a fight about cleaning,other,0,en,synthetic,synthetic_demo,,
+demo-0160,"Honestly nothing feels enjoyable anymore, I just stay in bed",low_mood,0,en,synthetic,synthetic_demo,low_mood,0
+demo-0161,I just want to sleep and never wake up,low_mood,1,en,synthetic,synthetic_demo,,
+demo-0162,I panic in crowded places like the cafeteria,social_anxiety,0,en,synthetic,synthetic_demo,social_anxiety,0
+demo-0163,Najihisi mpweke hata nikiwa na watu,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0164,"Nimeingia tu kuripoti, leo ilikuwa sawa",other,0,sw,synthetic,synthetic_demo,other,0
+demo-0165,"sina doh, fees haijalipwa, nitakunywa sumu",financial_strain,1,sheng,synthetic,synthetic_demo,,
+demo-0166,"I failed again, I don't want to live anymore",academic_stress,1,en,synthetic,synthetic_demo,,
+demo-0167,Leo HELB haijaingia na kodi ya nyumba inadaiwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0168,"Nimehang na hii assignment ya coding, deadline ni kesho",academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0169,Honestly I failed my stats exam and I'm scared of being discontinued,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0170,"deni ni nyingi sana, nataka kufa tu",financial_strain,1,sw,synthetic,synthetic_demo,,
+demo-0171,Siku hizi sina pesa ya karo na exam card imezuiliwa,financial_strain,0,sw,synthetic,synthetic_demo,financial_strain,0
+demo-0172,"hii stress imeniweza, nataka kujitoa",academic_stress,1,sheng,synthetic,synthetic_demo,low_mood,1
+demo-0173,everyone would be better off without me,low_mood,1,en,synthetic,synthetic_demo,low_mood,1
+demo-0174,Leo nikiongea class nafeel kila msee ananicheka,social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0175,"Niko down sana hii wiki, sitaki kuongea na mtu",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0176,Today I panic in crowded places like the cafeteria,social_anxiety,0,en,synthetic,synthetic_demo,social_anxiety,0
+demo-0177,Siku hizi najisikia mtupu na nimekuwa nikilia kila usiku,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0178,Manze supp ya last sem bado inanikula akili,academic_stress,0,sheng,synthetic,synthetic_demo,academic_stress,0
+demo-0179,"I've been saving my pills, tonight is the night",low_mood,1,en,synthetic,synthetic_demo,,
+demo-0180,Kusema kweli nikiongea class nafeel kila msee ananicheka,social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0181,"nimekusanya vidonge vingi, nitavimeza vyote leo",low_mood,1,sw,synthetic,synthetic_demo,,
+demo-0182,Leo nahisi kila mtu darasani ananihukumu nikiongea,social_anxiety,0,sw,synthetic,synthetic_demo,social_anxiety,0
+demo-0183,Siku hizi sina nguvu ya kufanya chochote,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0184,Siku hizi assignments ni mingi sana siwezi maliza kwa deadline,academic_stress,0,sw,synthetic,synthetic_demo,,
+demo-0185,Honestly I have three CATs this week and I'm so behind on revision,academic_stress,0,en,synthetic,synthetic_demo,academic_stress,0
+demo-0186,"Kusema kweli mimi na dem tumeachana, ni sawa tu",other,0,sheng,synthetic,synthetic_demo,other,0
+demo-0187,"Not gonna lie, the assignments are too much, I can't keep up with deadlines",academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0188,Nina presentation kesho na moyo unadunda sana,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0189,Manze mimi na roommate tumegombana juu ya usafi,other,0,sw,synthetic,synthetic_demo,,
+demo-0190,"Just checking in, today was okay",other,0,en,synthetic,synthetic_demo,,
+demo-0191,"Siku hizi nimeboeka na kila kitu, nakaa tu kwa keja",low_mood,0,sheng,synthetic,synthetic_demo,,
+demo-0192,Leo wazazi wamepoteza kazi na sijui nitamaliza shule aje,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0193,Honestly my parents lost their jobs and I don't know how I'll stay in school,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0194,"Manze roommate wangu ni noma, anaongea usiku mzima",other,0,sheng,synthetic,synthetic_demo,,
+demo-0195,Manze sina pesa ya karo na exam card imezuiliwa,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0196,"Not gonna lie, I'm fine, just wanted to log my mood",other,0,en,synthetic,synthetic_demo,,
+demo-0197,"Manze nimehang na project yangu, lecturer hajibu emails",academic_stress,0,sw,synthetic,synthetic_demo,academic_stress,0
+demo-0198,"Kusema kweli hii sem stress imeniweza, CATs ni mob",academic_stress,0,sheng,synthetic,synthetic_demo,,
+demo-0199,"Manze sina doh ya fare hii wiki, nitakam campo aje",financial_strain,0,sheng,synthetic,synthetic_demo,financial_strain,0
+demo-0200,Leo nakosa chakula ili nipate nauli ya kuja shule,financial_strain,0,sw,synthetic,synthetic_demo,,
+demo-0201,Lately I have three CATs this week and I'm so behind on revision,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0202,"Kusema kweli nimeingia tu kuripoti, leo ilikuwa sawa",other,0,sw,synthetic,synthetic_demo,,
+demo-0203,I feel empty and I've been crying every night this week,low_mood,0,en,synthetic,synthetic_demo,,
+demo-0204,"Siku hizi niko down sana hii wiki, sitaki kuongea na mtu",low_mood,0,sheng,synthetic,synthetic_demo,low_mood,0
+demo-0205,Leo familia yangu inanipigia simu kila saa,other,0,sw,synthetic,synthetic_demo,,
+demo-0206,Lately my parents lost their jobs and I don't know how I'll stay in school,financial_strain,0,en,synthetic,synthetic_demo,financial_strain,0
+demo-0207,"Today I'm fine, just wanted to log my mood",other,0,en,synthetic,synthetic_demo,,
+demo-0208,Siku hizi najihisi mpweke hata nikiwa na watu,low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0209,Manze budaa hana doh na mathe anasema nitafute side hustle,financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0210,"Not gonna lie, I have a presentation tomorrow and my heart is racing just thinking about it",social_anxiety,0,en,synthetic,synthetic_demo,social_anxiety,0
+demo-0211,"Manze nashtuka nikiwa kwa crowd, siwezi hata kukula cafeteria",social_anxiety,0,sheng,synthetic,synthetic_demo,,
+demo-0212,"Kusema kweli fees balance inanisumbua, sina chapaa kabisa",financial_strain,0,sheng,synthetic,synthetic_demo,,
+demo-0213,Today my GPA dropped and I don't know how to fix it before finals,academic_stress,0,en,synthetic,synthetic_demo,,
+demo-0214,"Hakuna kitu kinanifurahisha tena, nalala tu",low_mood,0,sw,synthetic,synthetic_demo,,
+demo-0215,Mimi na roommate tumegombana juu ya usafi,other,0,sw,synthetic,synthetic_demo,,
+demo-0216,Siku hizi naogopa sana kuongea mbele ya watu,social_anxiety,0,sw,synthetic,synthetic_demo,,
+demo-0217,Honestly I feel like everyone in class is judging me when I speak,social_anxiety,0,en,synthetic,synthetic_demo,,
+demo-0218,"Not gonna lie, nothing feels enjoyable anymore, I just stay in bed",low_mood,0,en,synthetic,synthetic_demo,,
+demo-0219,nimeandika barua za kuaga kwa familia yangu,low_mood,1,sw,synthetic,synthetic_demo,,
+demo-0220,Today I'm skipping meals so I can afford fare to campus,financial_strain,0,en,synthetic,synthetic_demo,,
+demo-0221,"Manze exams zimeniweza manze, sijai soma kitu",academic_stress,0,sheng,synthetic,synthetic_demo,academic_stress,0
+demo-0222,Honestly I broke up with my girlfriend last week and it's weird,other,0,en,synthetic,synthetic_demo,,
+demo-0223,"Kusema kweli niko poa leo, nimechill tu",other,0,sheng,synthetic,synthetic_demo,,

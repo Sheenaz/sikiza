@@ -1,0 +1,10 @@
+# Allow-list: send only what the serving image needs. Never student data.
+*
+!requirements.txt
+!triage/
+!serving/
+!configs/
+!data/lexicon/
+!data/library/
+!artifacts/model/
+**/__pycache__

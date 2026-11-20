@@ -1,0 +1,62 @@
+# Safety-valve lexicon — STARTER v0.1, NOT YET REVIEWED.
+#
+# Status: drafted from general English/Swahili knowledge plus the examples in the
+# proposal. Before any pilot it must be reviewed by (a) counsellors and (b) a panel
+# of current Strathmore students who use Sheng daily, then re-reviewed monthly
+# (Sheng drifts within months).
+#
+# Patterns are Python regexes applied to triage.text.normalise(text):
+# lowercase, accents stripped, intra-word hyphens/apostrophes removed
+# ("nime-hang" -> "nimehang", "don't" -> "dont"), letter runs capped at 2.
+#
+# tier: crisis   -> ANY match escalates to a human (OR-gate with the classifier).
+#                   Deliberately high-recall: a false alarm costs counsellor minutes.
+#                   Negation is NOT handled on purpose ("sitaki kujiua" still escalates).
+# tier: distress -> never escalates on its own; logged as a signal, used for drift
+#                   monitoring and as candidate terms for promotion by counsellors.
+
+version: "0.1.0-draft"
+reviewed_by: []          # e.g. ["Counselling Dept. 2026-11-25", "Student panel A"]
+reviewed_on: null
+
+rules:
+  # ---------------- crisis: English ----------------
+  - {id: en_kill_self, tier: crisis, lang: en, pattern: '\b(kill|end|hurt|harm|cut|hang)(ing)? (myself|my self|my life)\b'}
+  - {id: en_suicide, tier: crisis, lang: en, pattern: '\bsuicid\w*'}
+  - {id: en_want_die, tier: crisis, lang: en, pattern: '\b(want|wanna|wish|going|ready)( to)? (to )?die\b'}
+  - {id: en_dead_better, tier: crisis, lang: en, pattern: '\bbetter off dead\b|\bbetter off without me\b'}
+  - {id: en_end_it, tier: crisis, lang: en, pattern: '\bend it all\b|\bend everything\b|\bcant go on\b|\bcannot go on\b'}
+  - {id: en_no_live, tier: crisis, lang: en, pattern: '\b(dont|do not|no longer) want to (live|be alive|exist|wake up)\b|\bno reason to live\b'}
+  - {id: en_self_harm, tier: crisis, lang: en, pattern: '\bself ?harm\w*|\bcutting myself\b'}
+  - {id: en_overdose, tier: crisis, lang: en, pattern: '\boverdos\w*|\btake (all )?(my|the|these|those) pills\b'}
+  - {id: en_slang, tier: crisis, lang: en, pattern: '\bkms\b|\bunalive\w*'}
+  - {id: en_tired_life, tier: crisis, lang: en, pattern: '\b(tired|sick) of (life|living|being alive)\b'}
+  - {id: en_never_wake, tier: crisis, lang: en, pattern: '\bnever wake up\b|\bnot wake up\b'}
+  - {id: sw_nisiamke, tier: crisis, lang: sw, pattern: '\blala nisiamke\b|\bnisiamke (tena|kabisa)\b'}
+
+  # ---------------- crisis: Swahili ----------------
+  - {id: sw_jiua, tier: crisis, lang: sw, pattern: '\b\w*jiu[ae]\b', note: "kujiua, nitajiua, nijiue — to kill oneself"}
+  - {id: sw_jinyonga, tier: crisis, lang: sw, pattern: '\b\w*jinyong\w*', note: "kujinyonga — to hang oneself"}
+  - {id: sw_jidhuru, tier: crisis, lang: sw, pattern: '\b\w*jidhur\w*', note: "kujidhuru — to harm oneself"}
+  - {id: sw_jikata, tier: crisis, lang: sw, pattern: '\b\w*jikat[ae]\b', note: "kujikata — to cut oneself (may be accidental; accepted false alarm)"}
+  - {id: sw_kufa, tier: crisis, lang: sw, pattern: '\b(nataka|ningependa|natamani|ningetaka|niko tayari) kufa\b|\bnife tu\b'}
+  - {id: sw_sitaki_kuishi, tier: crisis, lang: sw, pattern: '\bsitaki (kuishi|kuwa hai|kuamka)\b'}
+  - {id: sw_sumu, tier: crisis, lang: sw, pattern: '\b\w*(kunywa|meza|mezea) sumu\b|\bsumu ya panya\b'}
+  - {id: sw_maana, tier: crisis, lang: sw, pattern: '\bmaisha (hayana|haina|hayan|hana) maana\b', note: "hopelessness — risk factor"}
+  - {id: sw_jitoa, tier: crisis, lang: sw, pattern: '\b\w*jito[ae]( uhai)?\b', note: "kujitoa (uhai) — named in proposal; also 'withdraw', accepted false alarm"}
+  - {id: sw_choka_maisha, tier: crisis, lang: sw, pattern: '\b(nimechoka|nmechoka|nimechoshwa) (na |kuishi )?(maisha|life|kuishi)\b'}
+
+  # ---------------- crisis: Sheng ----------------
+  - {id: sh_jihang, tier: crisis, lang: sheng, pattern: '\b\w*jihang\w*', note: "nitajihang — hang myself"}
+  - {id: sh_done_life, tier: crisis, lang: sheng, pattern: '\b(niko |nimekuwa )?done (na|with) (life|maisha)\b'}
+  - {id: sh_life_iishe, tier: crisis, lang: sheng, pattern: '\b(life|maisha) (iishe|iishie|imeisha kwangu)\b'}
+  - {id: sh_kuexit, tier: crisis, lang: sheng, pattern: '\bkuexit (life|maisha|hii dunia|dunia)\b'}
+
+  # ---------------- distress (signal only) ----------------
+  - {id: d_hang, tier: distress, lang: sheng, pattern: '\bnimehang\w*|\bniko hang\b', note: "proposal example; stuck/overwhelmed or 'hanging out' — ambiguous"}
+  - {id: d_imeniweza, tier: distress, lang: sheng, pattern: '\b\w* imeniweza\b|\bimenilemea\b'}
+  - {id: d_down, tier: distress, lang: sheng, pattern: '\bniko (down|low|chini)\b|\bnimeboeka\b'}
+  - {id: d_hopeless, tier: distress, lang: mixed, pattern: '\bhopeless\w*|\bworthless\b|\bsina (hope|matumaini|tumaini)\b'}
+  - {id: d_alone, tier: distress, lang: mixed, pattern: '\b(niko|nko) (pekee|peke yangu|alone)\b|\bno one cares\b|\bhakuna anajali\b'}
+  - {id: d_sleep, tier: distress, lang: mixed, pattern: '\b(siwezi|cant) (kulala|sleep)\b'}
+  - {id: d_broke, tier: distress, lang: sheng, pattern: '\bsina (doh|doo|ganji|chapaa|pesa|fare)\b'}

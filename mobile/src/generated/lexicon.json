@@ -1,0 +1,170 @@
+{
+ "version": "0.1.0-draft",
+ "rules": [
+  {
+   "id": "en_kill_self",
+   "tier": "crisis",
+   "pattern": "\\b(kill|end|hurt|harm|cut|hang)(ing)? (myself|my self|my life)\\b"
+  },
+  {
+   "id": "en_suicide",
+   "tier": "crisis",
+   "pattern": "\\bsuicid\\w*"
+  },
+  {
+   "id": "en_want_die",
+   "tier": "crisis",
+   "pattern": "\\b(want|wanna|wish|going|ready)( to)? (to )?die\\b"
+  },
+  {
+   "id": "en_dead_better",
+   "tier": "crisis",
+   "pattern": "\\bbetter off dead\\b|\\bbetter off without me\\b"
+  },
+  {
+   "id": "en_end_it",
+   "tier": "crisis",
+   "pattern": "\\bend it all\\b|\\bend everything\\b|\\bcant go on\\b|\\bcannot go on\\b"
+  },
+  {
+   "id": "en_no_live",
+   "tier": "crisis",
+   "pattern": "\\b(dont|do not|no longer) want to (live|be alive|exist|wake up)\\b|\\bno reason to live\\b"
+  },
+  {
+   "id": "en_self_harm",
+   "tier": "crisis",
+   "pattern": "\\bself ?harm\\w*|\\bcutting myself\\b"
+  },
+  {
+   "id": "en_overdose",
+   "tier": "crisis",
+   "pattern": "\\boverdos\\w*|\\btake (all )?(my|the|these|those) pills\\b"
+  },
+  {
+   "id": "en_slang",
+   "tier": "crisis",
+   "pattern": "\\bkms\\b|\\bunalive\\w*"
+  },
+  {
+   "id": "en_tired_life",
+   "tier": "crisis",
+   "pattern": "\\b(tired|sick) of (life|living|being alive)\\b"
+  },
+  {
+   "id": "en_never_wake",
+   "tier": "crisis",
+   "pattern": "\\bnever wake up\\b|\\bnot wake up\\b"
+  },
+  {
+   "id": "sw_nisiamke",
+   "tier": "crisis",
+   "pattern": "\\blala nisiamke\\b|\\bnisiamke (tena|kabisa)\\b"
+  },
+  {
+   "id": "sw_jiua",
+   "tier": "crisis",
+   "pattern": "\\b\\w*jiu[ae]\\b"
+  },
+  {
+   "id": "sw_jinyonga",
+   "tier": "crisis",
+   "pattern": "\\b\\w*jinyong\\w*"
+  },
+  {
+   "id": "sw_jidhuru",
+   "tier": "crisis",
+   "pattern": "\\b\\w*jidhur\\w*"
+  },
+  {
+   "id": "sw_jikata",
+   "tier": "crisis",
+   "pattern": "\\b\\w*jikat[ae]\\b"
+  },
+  {
+   "id": "sw_kufa",
+   "tier": "crisis",
+   "pattern": "\\b(nataka|ningependa|natamani|ningetaka|niko tayari) kufa\\b|\\bnife tu\\b"
+  },
+  {
+   "id": "sw_sitaki_kuishi",
+   "tier": "crisis",
+   "pattern": "\\bsitaki (kuishi|kuwa hai|kuamka)\\b"
+  },
+  {
+   "id": "sw_sumu",
+   "tier": "crisis",
+   "pattern": "\\b\\w*(kunywa|meza|mezea) sumu\\b|\\bsumu ya panya\\b"
+  },
+  {
+   "id": "sw_maana",
+   "tier": "crisis",
+   "pattern": "\\bmaisha (hayana|haina|hayan|hana) maana\\b"
+  },
+  {
+   "id": "sw_jitoa",
+   "tier": "crisis",
+   "pattern": "\\b\\w*jito[ae]( uhai)?\\b"
+  },
+  {
+   "id": "sw_choka_maisha",
+   "tier": "crisis",
+   "pattern": "\\b(nimechoka|nmechoka|nimechoshwa) (na |kuishi )?(maisha|life|kuishi)\\b"
+  },
+  {
+   "id": "sh_jihang",
+   "tier": "crisis",
+   "pattern": "\\b\\w*jihang\\w*"
+  },
+  {
+   "id": "sh_done_life",
+   "tier": "crisis",
+   "pattern": "\\b(niko |nimekuwa )?done (na|with) (life|maisha)\\b"
+  },
+  {
+   "id": "sh_life_iishe",
+   "tier": "crisis",
+   "pattern": "\\b(life|maisha) (iishe|iishie|imeisha kwangu)\\b"
+  },
+  {
+   "id": "sh_kuexit",
+   "tier": "crisis",
+   "pattern": "\\bkuexit (life|maisha|hii dunia|dunia)\\b"
+  },
+  {
+   "id": "d_hang",
+   "tier": "distress",
+   "pattern": "\\bnimehang\\w*|\\bniko hang\\b"
+  },
+  {
+   "id": "d_imeniweza",
+   "tier": "distress",
+   "pattern": "\\b\\w* imeniweza\\b|\\bimenilemea\\b"
+  },
+  {
+   "id": "d_down",
+   "tier": "distress",
+   "pattern": "\\bniko (down|low|chini)\\b|\\bnimeboeka\\b"
+  },
+  {
+   "id": "d_hopeless",
+   "tier": "distress",
+   "pattern": "\\bhopeless\\w*|\\bworthless\\b|\\bsina (hope|matumaini|tumaini)\\b"
+  },
+  {
+   "id": "d_alone",
+   "tier": "distress",
+   "pattern": "\\b(niko|nko) (pekee|peke yangu|alone)\\b|\\bno one cares\\b|\\bhakuna anajali\\b"
+  },
+  {
+   "id": "d_sleep",
+   "tier": "distress",
+   "pattern": "\\b(siwezi|cant) (kulala|sleep)\\b"
+  },
+  {
+   "id": "d_broke",
+   "tier": "distress",
+   "pattern": "\\bsina (doh|doo|ganji|chapaa|pesa|fare)\\b"
+  }
+ ]
+}

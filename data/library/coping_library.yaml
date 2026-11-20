@@ -1,0 +1,208 @@
+# Counsellor-approved coping-strategy library — DRAFT v0.1.
+#
+# Every entry starts as approved: false. The API serves ONLY approved entries
+# (unless retrieval.allow_draft_entries is true, for development). To approve:
+# a counsellor reviews the wording in all languages, sets approved: true,
+# approved_by and approved_on, and the library version is bumped. The version
+# is logged with every response, so each answer can be traced to its wording.
+#
+# Responses are RETRIEVED verbatim, never generated. `when` is used for matching
+# the student's message to the most relevant strategy within a category.
+
+version: "0.1.0-draft"
+
+crisis_response:
+  id: crisis_v1
+  approved: false
+  approved_by: null
+  approved_on: null
+  # VERIFY every number and service with the counselling department before pilot.
+  en: >-
+    Thank you for telling me. What you're feeling matters, and you don't have to
+    carry it alone. A counsellor is being notified now and will reach out to you.
+    If you are in danger right now, please call Kenya Red Cross on 1199 (free, 24/7)
+    or Befrienders Kenya on +254 722 178 177, or go to the nearest hospital.
+    If you can, stay with someone you trust until you hear from us.
+  sw: >-
+    Asante kwa kuniambia. Unachohisi ni muhimu, na huna haja ya kubeba hili peke yako.
+    Mshauri anaarifiwa sasa hivi na atawasiliana nawe. Kama uko hatarini sasa hivi,
+    tafadhali piga simu Kenya Red Cross 1199 (bure, saa 24) au Befrienders Kenya
+    +254 722 178 177, au nenda hospitali iliyo karibu. Ukiweza, kaa na mtu unayemwamini
+    hadi tuwasiliane nawe.
+  hotlines:
+    - {name: Kenya Red Cross, number: "1199", verify: true}
+    - {name: Befrienders Kenya, number: "+254722178177", verify: true}
+    - {name: Strathmore Counselling Office, number: "TODO", verify: true}
+
+strategies:
+  # ---------------- academic_stress ----------------
+  - id: acad_chunking
+    category: academic_stress
+    when: exams cats assignments deadlines too much work behind syllabus revision cat stress imeniweza
+    approved: false
+    en: >-
+      When the workload feels like a wall, shrink it. Pick ONE task, break it into the
+      first 25-minute step, and do only that, then take a 5-minute break. Progress
+      beats perfection.
+    sw: >-
+      Kazi ikizidi, igawanye. Chagua kazi MOJA, ianze kwa dakika 25 tu, kisha pumzika
+      dakika 5. Hatua ndogo ni bora kuliko kusubiri ukamilifu.
+  - id: acad_ask_lecturer
+    category: academic_stress
+    when: failed cat fail exam retake supp lecturer marks grades gpa discontinue
+    approved: false
+    en: >-
+      A bad mark is information, not a verdict on you. Write down the two topics that
+      cost you most and ask your lecturer or a classmate to go through one of them
+      this week. Academic Advising can also help you plan a retake.
+    sw: >-
+      Alama mbaya ni taarifa tu, si hukumu juu yako. Andika mada mbili zilizokuangusha
+      na umwombe mhadhiri au mwenzako mpitie moja wiki hii. Academic Advising pia
+      wanaweza kukusaidia kupanga.
+  - id: acad_sleep
+    category: academic_stress
+    when: night all nighter tired sleep late reading cram
+    approved: false
+    en: >-
+      Your memory consolidates while you sleep, so an all-nighter usually costs more
+      than it gains. Tonight, set a stop time for studying and protect at least
+      7 hours of sleep before the exam.
+    sw: >-
+      Akili huhifadhi ulichosoma ukiwa umelala. Leo weka saa ya kuacha kusoma na
+      ulale angalau masaa 7 kabla ya mtihani.
+
+  # ---------------- financial_strain ----------------
+  - id: fin_aid_office
+    category: financial_strain
+    when: fees school fees helb balance exam card clearance sina doh pesa fare ganji
+    approved: false
+    en: >-
+      Money worries are heavy, and many students quietly carry them. The Financial
+      Aid office can explain options such as payment plans, bursaries and HELB
+      follow-ups. Asking early gives you more options.
+    sw: >-
+      Shida za pesa ni nzito, na wanafunzi wengi wanazibeba kimya kimya. Ofisi ya
+      Financial Aid inaweza kukueleza njia kama mpango wa malipo, bursary na HELB.
+      Ukiuliza mapema, unapata chaguo zaidi.
+  - id: fin_budget
+    category: financial_strain
+    when: rent food keja budget broke month end upkeep
+    approved: false
+    en: >-
+      Try a 10-minute money check: list what must be paid this week (rent, food,
+      fare) and what can wait. Seeing the real numbers is often less frightening
+      than the cloud of worry, and it shows you exactly what help to ask for.
+    sw: >-
+      Jaribu dakika 10 za kupanga pesa: andika lazima-ulipe wiki hii (kodi, chakula,
+      fare) na kinachoweza kusubiri. Kuona namba halisi kunapunguza wasiwasi na
+      kukuonyesha msaada gani wa kuomba.
+  - id: fin_family_pressure
+    category: financial_strain
+    when: parents family home pressure send money siblings expectations
+    approved: false
+    en: >-
+      Carrying your family's hopes and finances is a lot. It's okay to name that
+      pressure to someone you trust. Talking it through with a counsellor can help
+      you find what is yours to carry and what isn't.
+    sw: >-
+      Kubeba matumaini na mahitaji ya familia ni mzigo mkubwa. Ni sawa kumweleza mtu
+      unayemwamini. Mshauri anaweza kukusaidia kutofautisha kilicho chako kubeba na
+      kisicho chako.
+
+  # ---------------- social_anxiety ----------------
+  - id: soc_breathing
+    category: social_anxiety
+    when: presentation speak class nervous panic heart racing anxious present
+    approved: false
+    en: >-
+      Before you speak, try box breathing: in for 4, hold for 4, out for 4, hold
+      for 4, and repeat four times. Nerves mean you care. Most listeners notice
+      them far less than you think.
+    sw: >-
+      Kabla ya kuongea, jaribu kupumua hivi: vuta pumzi hesabu 4, shikilia 4,
+      toa 4, shikilia 4, rudia mara nne. Wasiwasi unaonyesha unajali, na watu
+      wengi hawauoni kama unavyodhani.
+  - id: soc_small_step
+    category: social_anxiety
+    when: friends lonely fit in mbogi group no friends shy people judge
+    approved: false
+    en: >-
+      Connection grows from small steps. This week, pick one low-pressure moment,
+      such as sitting with a classmate at lunch or joining one club meeting, and
+      just show up. You don't have to be interesting, only present.
+    sw: >-
+      Urafiki huanza kwa hatua ndogo. Wiki hii, chagua nafasi moja rahisi, kama kukaa
+      na mwenzako wakati wa lunch au kwenda kwa mkutano mmoja wa club. Huna haja
+      ya kuvutia, kuwa tu pale.
+  - id: soc_grounding
+    category: social_anxiety
+    when: overthinking crowd anxious worried what people think embarrassed
+    approved: false
+    en: >-
+      When anxiety spikes, ground yourself with 5-4-3-2-1: name 5 things you see,
+      4 you can touch, 3 you hear, 2 you smell and 1 you taste. It brings your mind
+      back to the present.
+    sw: >-
+      Wasiwasi ukipanda, jaribu 5-4-3-2-1: taja vitu 5 unavyoona, 4 unavyoweza
+      kugusa, 3 unavyosikia, 2 unavyonusa na 1 unachoonja. Hurudisha akili yako
+      hapa na sasa.
+
+  # ---------------- low_mood ----------------
+  - id: low_reach_out
+    category: low_mood
+    when: sad down low alone empty niko down nimeboeka cry lonely
+    approved: false
+    en: >-
+      Feeling low is hard, and it helps not to sit with it alone. Is there one
+      person you could message today, even just to say hi? If this has lasted more
+      than two weeks, please book a session with a counsellor.
+    sw: >-
+      Kujihisi chini ni kugumu, na husaidia usikae nalo peke yako. Kuna mtu mmoja
+      unayeweza kumtumia ujumbe leo, hata salamu tu? Kama hali hii imedumu zaidi
+      ya wiki mbili, tafadhali panga kuonana na mshauri.
+  - id: low_activation
+    category: low_mood
+    when: no energy unmotivated bed tired cant do anything nothing matters
+    approved: false
+    en: >-
+      When motivation is gone, action can come first and feelings follow. Choose one
+      small thing you used to enjoy, like a short walk, a song or a shower, and do it
+      for 10 minutes today.
+    sw: >-
+      Hamasa ikikosekana, anza kutenda, hisia zitafuata. Chagua kitu kidogo ulichokuwa
+      ukipenda, kama kutembea kidogo, wimbo au kuoga, ukifanye kwa dakika 10 leo.
+  - id: low_sleep_routine
+    category: low_mood
+    when: cant sleep insomnia waking up night thoughts
+    approved: false
+    en: >-
+      Sleep and mood feed each other. Try a fixed wake-up time for the next few days,
+      put your phone away 30 minutes before bed, and write tomorrow's worries on
+      paper so your mind can let them go.
+    sw: >-
+      Usingizi na hisia huathiriana. Jaribu kuamka saa moja kila siku, weka simu
+      mbali dakika 30 kabla ya kulala, na uandike wasiwasi wa kesho kwenye karatasi.
+
+  # ---------------- other ----------------
+  - id: other_checkin
+    category: other
+    when: okay fine general update just checking day
+    approved: false
+    en: >-
+      Thanks for checking in. Noticing how you feel is a skill in itself. If
+      anything starts to weigh on you, you can come back here any time or book a
+      counsellor.
+    sw: >-
+      Asante kwa kuripoti. Kutambua unavyojihisi ni ujuzi. Kitu kikianza kukulemea,
+      unaweza kurudi hapa wakati wowote au kupanga kuonana na mshauri.
+  - id: other_relationship
+    category: other
+    when: relationship breakup boyfriend girlfriend dem family conflict roommate
+    approved: false
+    en: >-
+      Conflict with people close to us hurts. Try writing down what you need from
+      the situation in one sentence before you talk to them. A counsellor can help
+      you plan that conversation.
+    sw: >-
+      Migogoro na watu wa karibu inauma. Andika kwa sentensi moja unachohitaji kabla
+      ya kuongea nao. Mshauri anaweza kukusaidia kupanga mazungumzo hayo.

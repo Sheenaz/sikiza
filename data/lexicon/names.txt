@@ -1,0 +1,52 @@
+# Name gazetteer for pseudonymisation. One name per line, case-insensitive.
+# Deliberately EXCLUDES names that are also common words, because redacting them
+# would hide distress signals: Hope, Faith, Grace, Joy, Mercy, Imani, Baraka,
+# Neema, Zawadi, Furaha, Juma (= "week"), Purity, Precious.
+# To be extended from the real data (first names AND surnames).
+Wanjiru
+Wanjiku
+Wambui
+Wairimu
+Njeri
+Muthoni
+Nyambura
+Wangari
+Kamau
+Mwangi
+Njoroge
+Kariuki
+Otieno
+Ochieng
+Odhiambo
+Omondi
+Achieng
+Akinyi
+Atieno
+Awino
+Kiprono
+Kipchoge
+Kibet
+Chebet
+Cherono
+Jepkosgei
+Mutua
+Mwende
+Kioko
+Musyoka
+Wafula
+Wekesa
+Barasa
+Nafula
+Wanjala
+Brian
+Kevin
+Dennis
+Collins
+Sharon
+Cynthia
+Esther
+Victor
+Fatuma
+Amina
+Hassan
+Abdi

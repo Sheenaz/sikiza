@@ -1,0 +1,15 @@
+# NEVER commit real student data or anything derived from it
+data/raw/
+data/processed/
+artifacts/
+*.sqlite
+*.jsonl
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+mobile/node_modules/
+mobile/.expo/
+mobile/.env
+
+.DS_Store
