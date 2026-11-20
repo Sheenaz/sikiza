@@ -13,7 +13,7 @@ import numpy as np
 from _common import load_config, load_frames, resolve
 
 from triage.config import CATEGORIES
-from triage.evaluate import full_report
+from triage.evaluate import crisis_ranking, full_report
 from triage.pseudonymise import pseudonymise
 from triage.thresholds import recall_threshold
 
@@ -33,8 +33,10 @@ def main():
     args = ap.parse_args()
     from transformers import pipeline
 
+    from triage.transformer import pick_device  # CPU fallback where MPS is broken (macOS < 15)
+
     cfg = load_config()
-    clf = pipeline("zero-shot-classification", model=cfg["zero_shot"]["model"])
+    clf = pipeline("zero-shot-classification", model=cfg["zero_shot"]["model"], device=pick_device())
     frames, _, is_demo = load_frames(args.demo, use_augmented=False)
 
     def score(df):
@@ -52,13 +54,16 @@ def main():
     rep = full_report(frames["test"], (pt >= thr).astype(int), cats,
                       cfg["evaluation"]["bootstrap_iterations"], cfg["evaluation"]["ci"])
     rep["threshold"] = thr
+    rep["crisis_ranking"] = crisis_ranking(frames["test"]["crisis"].to_numpy(), pt,
+                                           cfg["evaluation"]["bootstrap_iterations"], cfg["evaluation"]["ci"])
     rep["demo_data"] = is_demo
     out = resolve("artifacts/reports")
     out.mkdir(parents=True, exist_ok=True)
     (out / "zero_shot.json").write_text(json.dumps(rep, indent=2, default=float))
     o = rep["overall"]
     print(f"zero-shot  crisis recall={o['crisis']['recall']:.3f} exact CI={o['crisis']['recall_exact_ci']} "
-          f"escalation={o['crisis']['escalation_rate']:.3f}  macro-F1={o['category']['macro_f1']:.3f}")
+          f"escalation={o['crisis']['escalation_rate']:.3f}  macro-F1={o['category']['macro_f1']:.3f} "
+          f"{o['category']['macro_f1_ci']}  threshold={thr:.4f}  ranking={rep['crisis_ranking']}")
 
 
 if __name__ == "__main__":

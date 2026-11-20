@@ -1,6 +1,6 @@
-# Torch-free serving image: onnxruntime + tokenizers only (~350 MB).
+# Torch-free serving image: onnxruntime + tokenizers only (~450 MB compressed).
 # Build from the project root:
-#   docker build -f serving/Dockerfile -t sheng-triage:0.1 .
+#   docker build -f serving/Dockerfile -t sikiza:0.1.0 .     (or: docker compose up --build)
 # Host on Kenya-based infrastructure (DPA 2019 data localisation for health data).
 FROM python:3.11-slim
 

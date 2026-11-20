@@ -1,0 +1,29 @@
+# Sikiza API: one command to build and run the serving container.
+#
+#   make model                    # download the trained int8 ONNX bundle (or train it: make demo)
+#   docker compose up --build     # API on http://localhost:8000  (docs: /docs)
+#
+# Defaults are for local review/development. For a deployment, set these in a .env file
+# next to this one (never commit it):
+#   ALLOW_DRAFT_LIBRARY=0          the API then refuses to start until counsellors approve the library
+#   COUNSELLOR_API_KEY=<long random string>
+#   ESCALATION_WEBHOOK=https://...  optional; receives only the escalation id, never message text
+services:
+  api:
+    build:
+      context: .
+      dockerfile: serving/Dockerfile
+    image: sikiza:0.1.0
+    container_name: sikiza-api
+    ports:
+      - "8000:8000"
+    environment:
+      ALLOW_DRAFT_LIBRARY: ${ALLOW_DRAFT_LIBRARY:-1}
+      COUNSELLOR_API_KEY: ${COUNSELLOR_API_KEY:-dev-key}
+      ESCALATION_WEBHOOK: ${ESCALATION_WEBHOOK:-}
+    volumes:
+      - sikiza-state:/app/state   # prediction log (no text) + escalation queue (pseudonymised)
+    restart: unless-stopped
+
+volumes:
+  sikiza-state:

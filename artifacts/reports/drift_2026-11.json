@@ -1,0 +1,198 @@
+{
+  "n_train": 134,
+  "n_new": 162,
+  "novelty_cutoff": 0.765722830178076,
+  "novel_share": 0.12345679012345678,
+  "expected_novel_share_if_no_drift": 0.05,
+  "centroid_cosine_shift": 0.03314112021443616,
+  "oov_token_rate": 0.12798954706634447,
+  "top_oov_tokens": [
+    [
+      "bana",
+      34
+    ],
+    [
+      "fr",
+      21
+    ],
+    [
+      "aki",
+      16
+    ],
+    [
+      "ukweli",
+      13
+    ],
+    [
+      "mafala",
+      12
+    ],
+    [
+      "wueh",
+      12
+    ],
+    [
+      "ok",
+      11
+    ],
+    [
+      "sasa",
+      10
+    ],
+    [
+      "yaani",
+      8
+    ],
+    [
+      "wth",
+      4
+    ],
+    [
+      "abt",
+      3
+    ],
+    [
+      "very",
+      3
+    ],
+    [
+      "nimeshikwa",
+      3
+    ],
+    [
+      "imenidunga",
+      3
+    ],
+    [
+      "hostel",
+      3
+    ],
+    [
+      "nimedungwa",
+      3
+    ],
+    [
+      "wameniharibia",
+      3
+    ],
+    [
+      "form",
+      3
+    ],
+    [
+      "wamenibana",
+      3
+    ]
+  ],
+  "clusters": [
+    {
+      "cluster": 0,
+      "size": 3,
+      "candidate_new_terms": [
+        [
+          "wueh",
+          3
+        ],
+        [
+          "wameniharibia",
+          3
+        ],
+        [
+          "mafala",
+          3
+        ]
+      ]
+    },
+    {
+      "cluster": 1,
+      "size": 4,
+      "candidate_new_terms": [
+        [
+          "mafala",
+          3
+        ],
+        [
+          "form",
+          3
+        ],
+        [
+          "wamenibana",
+          3
+        ],
+        [
+          "wueh",
+          3
+        ]
+      ]
+    },
+    {
+      "cluster": 2,
+      "size": 5,
+      "candidate_new_terms": [
+        [
+          "mafala",
+          3
+        ],
+        [
+          "wueh",
+          3
+        ],
+        [
+          "hostel",
+          3
+        ],
+        [
+          "nimedungwa",
+          3
+        ]
+      ]
+    },
+    {
+      "cluster": 3,
+      "size": 1,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 4,
+      "size": 3,
+      "candidate_new_terms": [
+        [
+          "mafala",
+          3
+        ],
+        [
+          "bana",
+          3
+        ],
+        [
+          "wueh",
+          3
+        ],
+        [
+          "nimeshikwa",
+          3
+        ],
+        [
+          "imenidunga",
+          3
+        ]
+      ]
+    },
+    {
+      "cluster": 5,
+      "size": 2,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 6,
+      "size": 1,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 7,
+      "size": 1,
+      "candidate_new_terms": []
+    }
+  ],
+  "alert": true
+}

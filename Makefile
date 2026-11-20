@@ -1,11 +1,17 @@
 PY := .venv/bin/python
 DEMO ?=            # set DEMO=--demo to run on the synthetic set
 
-.PHONY: setup demo augment baseline transformer transformer-full distilbert export evaluate fertility zeroshot serve test mobile-lexicon
+.PHONY: setup model docker demo augment baseline transformer transformer-full distilbert export evaluate fertility zeroshot serve test mobile-lexicon
 
 setup:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 	cd mobile && npm install
+
+model:                     ## download the trained int8 ONNX bundle from the GitHub release
+	sh scripts/fetch_model.sh
+
+docker:                    ## build and run the API container (needs artifacts/model)
+	docker compose up --build -d
 
 demo:                      ## full pipeline on synthetic data (smoke test, ~5 min on CPU)
 	$(PY) scripts/make_demo_data.py

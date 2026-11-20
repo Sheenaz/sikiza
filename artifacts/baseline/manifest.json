@@ -1,0 +1,90 @@
+{
+  "model_type": "tfidf_logreg",
+  "model_version": "baseline-46e01191",
+  "base_model": null,
+  "calibrator": {
+    "t_crisis": 1.7959426957469864,
+    "b_crisis": 0.0,
+    "t_category": 1.0941614300791762,
+    "method": "temperature"
+  },
+  "threshold": {
+    "threshold": 0.009900990099009901,
+    "t_cost": 0.009900990099009901,
+    "t_recall_floor": 0.09489018672207168,
+    "binding": "cost",
+    "calib_recall": 1.0,
+    "calib_escalation_rate": 1.0,
+    "calib_positives": 4,
+    "warning": "only 4 crisis examples in calib: threshold is fragile"
+  },
+  "lexicon_version": "0.1.0-draft",
+  "data_fingerprint": "1e7a909ab681d88f",
+  "demo_data": true,
+  "calib_ece_crisis": 0.07487283676054951,
+  "train_rows": 2139,
+  "calib_rows": 34,
+  "top_crisis_features": [
+    [
+      "word__want",
+      1.9818072524492485
+    ],
+    [
+      "word__maisha",
+      1.8138864924602744
+    ],
+    [
+      "word__want to",
+      1.7182664336189737
+    ],
+    [
+      "word__myself",
+      1.6758191277981898
+    ],
+    [
+      "word__to",
+      1.6182038708381195
+    ],
+    [
+      "word__life",
+      1.575329023941559
+    ],
+    [
+      "word__ive",
+      1.4913191050358416
+    ],
+    [
+      "word__kujinyonga",
+      1.3602254209603264
+    ],
+    [
+      "word__kujinyonga usiku",
+      1.3602254209603264
+    ],
+    [
+      "word__done na",
+      1.3005475761732836
+    ],
+    [
+      "word__na life",
+      1.3005475761732836
+    ],
+    [
+      "word__nitajihang",
+      1.3005475761732836
+    ],
+    [
+      "word__niko done",
+      1.3005475761732836
+    ],
+    [
+      "word__done",
+      1.3005475761732836
+    ],
+    [
+      "word__life iishe",
+      1.2868896143745514
+    ]
+  ],
+  "created_at": "2026-11-19T23:16:47+0300"
+}

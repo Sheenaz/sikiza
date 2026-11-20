@@ -138,3 +138,16 @@ def test_drift_surfaces_new_slang():
 def test_placeholder_hotlines_never_sent():
     _, hotlines = CopingLibrary(allow_draft=True).crisis_response("en")
     assert hotlines and all(any(c.isdigit() for c in h["number"]) for h in hotlines)
+
+
+def test_crisis_ranking_separates_perfect_and_random_scores():
+    import numpy as np
+
+    from triage.evaluate import crisis_ranking
+
+    y = np.array([0] * 45 + [1] * 5)
+    perfect = crisis_ranking(y, y.astype(float), n_boot=200)
+    assert perfect["roc_auc"] == 1.0 and perfect["recall_at_top20pct"] == 1.0
+    flat = crisis_ranking(y, np.full(len(y), 0.3), n_boot=200)
+    assert flat["roc_auc"] == 0.5
+    assert crisis_ranking(np.zeros(10), np.zeros(10))["roc_auc"] is None

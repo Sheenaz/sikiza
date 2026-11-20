@@ -75,7 +75,7 @@ def export_onnx(torch_dir: str | Path, out_dir: str | Path, calib_df=None, opset
             shutil.copy(torch_dir / extra, out_dir / extra)
 
     man = read_manifest(torch_dir)
-    man.update(model_type="onnx", source_torch_bundle=str(torch_dir), quantization="dynamic_int8_per_channel",
+    man.update(model_type="onnx", source_torch_bundle=Path(torch_dir).name, quantization="dynamic_int8_per_channel",
                model_version=f"{man.get('model_version', 'unknown')}-onnx-int8",
                max_length=scorer.max_length, pad_id=scorer.tok.pad_token_id, pad_token=scorer.tok.pad_token,
                size_mb={"fp32": round(fp32.stat().st_size / 1e6, 1), "int8": round(int8.stat().st_size / 1e6, 1)})

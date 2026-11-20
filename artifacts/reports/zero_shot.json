@@ -1,0 +1,270 @@
+{
+  "overall": {
+    "crisis": {
+      "n": 56,
+      "positives": 6,
+      "recall": 1.0,
+      "recall_ci": [
+        1.0,
+        1.0
+      ],
+      "recall_exact_ci": [
+        0.5407418735600995,
+        1.0
+      ],
+      "precision": 0.13043478260869565,
+      "false_alarm_rate": 0.8,
+      "escalation_rate": 0.8214285714285714,
+      "tp": 6,
+      "fn": 0,
+      "fp": 40,
+      "tn": 10,
+      "meets_target_0.95": false,
+      "warning": "escalates more than half of all messages \u2014 recall is not informative"
+    },
+    "category": {
+      "macro_f1": 0.5482575757575756,
+      "macro_f1_ci": [
+        0.4062221472241209,
+        0.6674465118215118
+      ],
+      "per_class_f1": {
+        "academic_stress": 0.7,
+        "financial_strain": 0.6,
+        "social_anxiety": 0.3333333333333333,
+        "low_mood": 0.5625,
+        "other": 0.5454545454545454
+      },
+      "confusion_matrix": {
+        "labels": [
+          "academic_stress",
+          "financial_strain",
+          "social_anxiety",
+          "low_mood",
+          "other"
+        ],
+        "matrix": [
+          [
+            7,
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            6,
+            1,
+            4,
+            1
+          ],
+          [
+            0,
+            0,
+            3,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            4,
+            9,
+            1
+          ],
+          [
+            0,
+            0,
+            5,
+            1,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  "english_only": {
+    "crisis": {
+      "n": 14,
+      "positives": 2,
+      "recall": 1.0,
+      "recall_ci": [
+        1.0,
+        1.0
+      ],
+      "recall_exact_ci": [
+        0.15811388300839305,
+        1.0
+      ],
+      "precision": 0.2222222222222222,
+      "false_alarm_rate": 0.5833333333333334,
+      "escalation_rate": 0.6428571428571429,
+      "tp": 2,
+      "fn": 0,
+      "fp": 7,
+      "tn": 5,
+      "meets_target_0.95": false,
+      "warning": "escalates more than half of all messages \u2014 recall is not informative"
+    },
+    "category": {
+      "macro_f1": 0.6547619047619048,
+      "macro_f1_ci": [
+        0.4,
+        0.7846153846153847
+      ],
+      "per_class_f1": {
+        "academic_stress": 1.0,
+        "financial_strain": 0.75,
+        "social_anxiety": 0.0,
+        "low_mood": 0.8571428571428571,
+        "other": 0.6666666666666666
+      },
+      "confusion_matrix": {
+        "labels": [
+          "academic_stress",
+          "financial_strain",
+          "social_anxiety",
+          "low_mood",
+          "other"
+        ],
+        "matrix": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "code_mixed": {
+    "crisis": {
+      "n": 42,
+      "positives": 4,
+      "recall": 1.0,
+      "recall_ci": [
+        1.0,
+        1.0
+      ],
+      "recall_exact_ci": [
+        0.3976353643835142,
+        1.0
+      ],
+      "precision": 0.10810810810810811,
+      "false_alarm_rate": 0.868421052631579,
+      "escalation_rate": 0.8809523809523809,
+      "tp": 4,
+      "fn": 0,
+      "fp": 33,
+      "tn": 5,
+      "meets_target_0.95": false,
+      "warning": "escalates more than half of all messages \u2014 recall is not informative"
+    },
+    "category": {
+      "macro_f1": 0.47626315789473683,
+      "macro_f1_ci": [
+        0.29812357817620977,
+        0.6125622389306599
+      ],
+      "per_class_f1": {
+        "academic_stress": 0.5,
+        "financial_strain": 0.5,
+        "social_anxiety": 0.375,
+        "low_mood": 0.48,
+        "other": 0.5263157894736842
+      },
+      "confusion_matrix": {
+        "labels": [
+          "academic_stress",
+          "financial_strain",
+          "social_anxiety",
+          "low_mood",
+          "other"
+        ],
+        "matrix": [
+          [
+            3,
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            3,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            3,
+            6,
+            1
+          ],
+          [
+            0,
+            0,
+            5,
+            1,
+            5
+          ]
+        ]
+      }
+    }
+  },
+  "threshold": 0.6658452749252319,
+  "crisis_ranking": {
+    "roc_auc": 0.69,
+    "roc_auc_ci": [
+      0.461423076923077,
+      0.8933333333333333
+    ],
+    "average_precision": 0.34423481923481924,
+    "average_precision_ci": [
+      0.06896551724137931,
+      0.7097096981965404
+    ],
+    "prevalence": 0.10714285714285714,
+    "recall_at_top20pct": 0.3333333333333333
+  },
+  "demo_data": true
+}

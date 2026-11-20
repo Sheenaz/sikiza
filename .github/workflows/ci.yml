@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Python tests (pipeline, safety valve, API)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      # serving dependencies only: the tests use the committed TF-IDF baseline bundle, not torch
+      - run: pip install -r requirements.txt pytest httpx
+      - run: python -m pytest -q
+
+  mobile:
+    name: App typecheck + valve parity with Python
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Offline valve (TypeScript) matches the server valve (Python)
+        run: |
+          pip install -r ../requirements.txt
+          python ../scripts/valve_cases.py > /tmp/cases.json
+          node scripts/valve-parity.ts /tmp/cases.json
+
+  docker:
+    name: Docker image builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch model bundle from the release
+        run: sh scripts/fetch_model.sh
+      - run: docker build -f serving/Dockerfile -t sikiza:ci .
+      - name: Smoke test
+        run: |
+          docker run -d --name api -p 8000:8000 -e ALLOW_DRAFT_LIBRARY=1 sikiza:ci
+          for i in $(seq 1 30); do curl -sf localhost:8000/health && break; sleep 2; done
+          curl -sf -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
+               -d '{"text":"nataka kujiua"}' | python3 -c "import json,sys; assert json.load(sys.stdin)['crisis'] is True"

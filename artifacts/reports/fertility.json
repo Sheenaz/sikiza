@@ -1,0 +1,275 @@
+{
+  "afroxlmr": {
+    "model": "Davlan/afro-xlmr-base",
+    "english_only": {
+      "fertility": 1.1758849557522124,
+      "share_ge3_pieces": 0.004424778761061947,
+      "words": 904
+    },
+    "code_mixed": {
+      "fertility": 1.566356720202874,
+      "share_ge3_pieces": 0.12510566356720204,
+      "words": 1183
+    },
+    "probe_terms": {
+      "nimehang": [
+        "▁nime",
+        "hang"
+      ],
+      "imeniweza": [
+        "▁i",
+        "meni",
+        "weza"
+      ],
+      "nimeboeka": [
+        "▁nime",
+        "boek",
+        "a"
+      ],
+      "kujitoa": [
+        "▁kuji",
+        "toa"
+      ],
+      "kujinyonga": [
+        "▁kuji",
+        "ny",
+        "onga"
+      ],
+      "mbogi": [
+        "▁",
+        "mbo",
+        "gi"
+      ],
+      "doh": [
+        "▁do",
+        "h"
+      ],
+      "ganji": [
+        "▁gan",
+        "ji"
+      ],
+      "chapaa": [
+        "▁chap",
+        "a",
+        "a"
+      ],
+      "keja": [
+        "▁ke",
+        "ja"
+      ],
+      "budaa": [
+        "▁bu",
+        "da",
+        "a"
+      ],
+      "mathe": [
+        "▁math",
+        "e"
+      ],
+      "manze": [
+        "▁man",
+        "ze"
+      ],
+      "sijai": [
+        "▁sija",
+        "i"
+      ],
+      "fiti": [
+        "▁fi",
+        "ti"
+      ],
+      "nitajihang": [
+        "▁nit",
+        "aji",
+        "hang"
+      ],
+      "nimechoka": [
+        "▁nime",
+        "cho",
+        "ka"
+      ]
+    }
+  },
+  "xlmr": {
+    "model": "FacebookAI/xlm-roberta-base",
+    "english_only": {
+      "fertility": 1.1758849557522124,
+      "share_ge3_pieces": 0.004424778761061947,
+      "words": 904
+    },
+    "code_mixed": {
+      "fertility": 1.566356720202874,
+      "share_ge3_pieces": 0.12510566356720204,
+      "words": 1183
+    },
+    "probe_terms": {
+      "nimehang": [
+        "▁nime",
+        "hang"
+      ],
+      "imeniweza": [
+        "▁i",
+        "meni",
+        "weza"
+      ],
+      "nimeboeka": [
+        "▁nime",
+        "boek",
+        "a"
+      ],
+      "kujitoa": [
+        "▁kuji",
+        "toa"
+      ],
+      "kujinyonga": [
+        "▁kuji",
+        "ny",
+        "onga"
+      ],
+      "mbogi": [
+        "▁",
+        "mbo",
+        "gi"
+      ],
+      "doh": [
+        "▁do",
+        "h"
+      ],
+      "ganji": [
+        "▁gan",
+        "ji"
+      ],
+      "chapaa": [
+        "▁chap",
+        "a",
+        "a"
+      ],
+      "keja": [
+        "▁ke",
+        "ja"
+      ],
+      "budaa": [
+        "▁bu",
+        "da",
+        "a"
+      ],
+      "mathe": [
+        "▁math",
+        "e"
+      ],
+      "manze": [
+        "▁man",
+        "ze"
+      ],
+      "sijai": [
+        "▁sija",
+        "i"
+      ],
+      "fiti": [
+        "▁fi",
+        "ti"
+      ],
+      "nitajihang": [
+        "▁nit",
+        "aji",
+        "hang"
+      ],
+      "nimechoka": [
+        "▁nime",
+        "cho",
+        "ka"
+      ]
+    }
+  },
+  "distilbert": {
+    "model": "distilbert/distilbert-base-multilingual-cased",
+    "english_only": {
+      "fertility": 1.2577433628318584,
+      "share_ge3_pieces": 0.04424778761061947,
+      "words": 904
+    },
+    "code_mixed": {
+      "fertility": 1.9323753169907016,
+      "share_ge3_pieces": 0.23499577345731193,
+      "words": 1183
+    },
+    "probe_terms": {
+      "nimehang": [
+        "nime",
+        "##hang"
+      ],
+      "imeniweza": [
+        "ime",
+        "##ni",
+        "##weza"
+      ],
+      "nimeboeka": [
+        "nime",
+        "##boek",
+        "##a"
+      ],
+      "kujitoa": [
+        "ku",
+        "##jit",
+        "##oa"
+      ],
+      "kujinyonga": [
+        "ku",
+        "##jiny",
+        "##onga"
+      ],
+      "mbogi": [
+        "m",
+        "##bo",
+        "##gi"
+      ],
+      "doh": [
+        "do",
+        "##h"
+      ],
+      "ganji": [
+        "gan",
+        "##ji"
+      ],
+      "chapaa": [
+        "cha",
+        "##paa"
+      ],
+      "keja": [
+        "ke",
+        "##ja"
+      ],
+      "budaa": [
+        "bu",
+        "##da",
+        "##a"
+      ],
+      "mathe": [
+        "math",
+        "##e"
+      ],
+      "manze": [
+        "man",
+        "##ze"
+      ],
+      "sijai": [
+        "si",
+        "##jai"
+      ],
+      "fiti": [
+        "fit",
+        "##i"
+      ],
+      "nitajihang": [
+        "nit",
+        "##aji",
+        "##hang"
+      ],
+      "nimechoka": [
+        "nime",
+        "##cho",
+        "##ka"
+      ]
+    }
+  }
+}

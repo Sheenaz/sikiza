@@ -4,16 +4,64 @@
 English–Swahili–Sheng student check-ins that sends crisis messages to a human and answers every
 other message with a **retrieved**, counsellor-approved coping strategy.
 
-```
-Student app ─▶ FastAPI ─▶ pseudonymise ─▶ safety valve ─┐
- (Expo RN)                                              ├─ OR ─▶ crisis? ─yes─▶ escalation queue + crisis response
-                         classifier (int8 ONNX) ────────┘            └─no──▶ retrieve approved strategy
-```
-
 > **Status:** the code is complete and tested. It has run end to end on **synthetic demo data only**.
 > No result here is a real result. Before any student uses it, three things must happen:
 > real labelled data, counsellor approval of the library, and student/counsellor review of the lexicon.
 > See "Before a pilot" below.
+
+## Submission contents
+
+| Deliverable | Where |
+|---|---|
+| Project overview, setup, architecture diagram, reproduction | this README |
+| AI-use disclosure | [`AI_USE.md`](AI_USE.md) |
+| Final report: problem framing, technique justification, results, limitations | [`REPORT.md`](REPORT.md) |
+| Data pipeline (scripted, reproducible) | `triage/data.py`, `triage/augment.py`, `triage/pseudonymise.py`, `scripts/make_demo_data.py`, `scripts/augment.py` |
+| Model training code | `triage/baseline.py`, `triage/transformer.py`, `triage/calibration.py`, `triage/thresholds.py`, `scripts/train_*.py`, `scripts/export_onnx.py` |
+| Serialized artifacts | `artifacts/baseline/` (TF-IDF + LR, in the repo); int8 ONNX bundle in the [v0.1.0 release](https://github.com/Sheenaz/sikiza/releases/tag/v0.1.0) (`make model`, 279 MB, too large for git) |
+| Evaluation outputs | `artifacts/reports/` (`eval.md`, `eval.json`, confusion matrices, fertility, drift) |
+| Docker | `serving/Dockerfile`, `docker-compose.yml` |
+| API service | `serving/app.py` (FastAPI) |
+| Client app | `mobile/` (Expo React Native) |
+| Tests and CI | `tests/`, `.github/workflows/ci.yml` |
+
+## Architecture
+
+```mermaid
+flowchart LR
+    App["Student app<br/>React Native (Expo)"] -->|HTTPS POST /v1/checkin| API["FastAPI<br/>(Docker, Kenya-hosted)"]
+    API --> P["Pseudonymise<br/>names, phones, IDs, M-Pesa codes"]
+    P --> V["Safety valve<br/>Sheng/Swahili/English keyword rules"]
+    P --> C["Classifier<br/>AfroXLM-R + LoRA, ONNX int8<br/>temperature-calibrated"]
+    V -->|any hit| G{"OR gate"}
+    C -->|"p(crisis) ≥ cost-derived threshold"| G
+    G -->|crisis| E["Escalation queue<br/>(counsellor API) + crisis response with hotlines"]
+    G -->|not crisis| R["Retrieve approved coping strategy<br/>for predicted category"]
+    R --> App
+    E --> App
+    API -.->|versions + scores, never text| L[("Audit log")]
+    App -.->|offline| OV["On-device keyword valve<br/>+ hotlines, queued for sync"]
+```
+
+Training side: seed check-ins → pseudonymise → grouped split by `seed_id` (train / calib / test) →
+augment train only → baseline and LoRA fine-tuning → temperature scaling and threshold on calib →
+ONNX int8 export, re-calibrated → evaluation on real (non-augmented) test messages only.
+
+## Reproduce
+
+Requirements: Python 3.11, Docker; Node 20+ only for the mobile app.
+
+**A. Run the trained service (about 5 minutes)**
+
+```bash
+git clone https://github.com/Sheenaz/sikiza.git && cd sikiza
+make model                      # download the int8 ONNX bundle from the release (SHA-256 checked)
+docker compose up --build       # API on http://localhost:8000, interactive docs at /docs
+curl -s -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
+     -d '{"text":"nimechoka na exams, sijui kama nitapass"}'
+```
+
+**B. Rebuild everything from scratch (about 10–15 minutes on a laptop CPU)**
 
 ## Proposal → code map
 
@@ -40,14 +88,13 @@ Student app ─▶ FastAPI ─▶ pseudonymise ─▶ safety valve ─┐
 | Monthly drift checks for new Sheng | `triage/drift.py`, `scripts/drift_report.py`, OOV counter in `triage/audit.py` |
 | < 400 ms round trip | `scripts/benchmark_latency.py`; dev builds of the app show ms per check-in |
 
-## Quick start (synthetic demo)
-
 ```bash
-make setup          # Python venv + mobile deps
+make setup          # Python venv (+ mobile deps)
 make demo           # demo data → augment → baseline → AfroXLM-R (2 epochs) → ONNX int8 → evaluate
-make test           # 34 tests
-make serve          # API on :8000 (draft library allowed in dev)
-cd mobile && cp .env.example .env && npx expo start
+make distilbert DEMO=--demo && make evaluate DEMO=--demo   # comparison model + full results table
+make test           # unit + API tests
+make serve          # API on :8000 without Docker (draft library allowed in dev)
+cd mobile && cp .env.example .env && npx expo start      # app; set EXPO_PUBLIC_API_URL in .env
 ```
 
 Every script prints a **DEMO DATA** banner when it runs on the synthetic set.
@@ -69,6 +116,8 @@ Every script prints a **DEMO DATA** banner when it runs on the synthetic set.
 Splits are fixed the first time (`data/processed/splits/splits.json`). The splits are never re-drawn once test results have been seen.
 
 ## Findings
+
+The full discussion is in [`REPORT.md`](REPORT.md). In short:
 
 1. **The success criterion needs more crisis examples than a random split gives.** A 95% CI lower bound
    ≥ 0.95 needs **≥ 72 test crises with zero misses** (exact Clopper–Pearson: 0.025^(1/n) ≥ 0.95).
@@ -99,18 +148,18 @@ Splits are fixed the first time (`data/processed/splits/splits.json`). The split
 ## Docker
 
 ```bash
-# build (only the files allow-listed in .dockerignore are sent: no data, no venv, no torch checkpoint)
-docker build -f serving/Dockerfile -t sheng-triage:0.1.0 .
+make model                       # or train it yourself: make demo
+docker compose up --build -d     # builds sikiza:0.1.0 and starts it on :8000
+docker compose logs -f api       # startup warnings (draft library, unreviewed lexicon, demo model)
+docker compose down              # stop (the state volume is kept)
 
-# development (draft library allowed)
-docker run -d --name triage-dev -p 8000:8000 \
-  -e ALLOW_DRAFT_LIBRARY=1 -e COUNSELLOR_API_KEY=dev-key \
-  -v sheng-triage-state:/app/state sheng-triage:0.1.0
-
-# production: no ALLOW_DRAFT_LIBRARY. The container REFUSES to start until the library is approved.
+# Production: create .env with ALLOW_DRAFT_LIBRARY=0 and a strong COUNSELLOR_API_KEY.
+# The container then REFUSES to start until the library is approved.
 # Kenya-hosted cloud VMs are usually x86, so build for that platform:
-docker buildx build --platform linux/amd64 -f serving/Dockerfile -t sheng-triage:0.1.0-amd64 .
+docker buildx build --platform linux/amd64 -f serving/Dockerfile -t sikiza:0.1.0-amd64 .
 ```
+
+Only the files allow-listed in `.dockerignore` are sent to the build: no data, no venv, no torch checkpoint.
 
 - Image: about 450 MB compressed (python:3.11-slim + onnxruntime + int8 model, no torch). It runs as non-root
   uid 10001, the model is read-only, and it has a built-in health check.

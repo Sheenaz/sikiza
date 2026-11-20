@@ -1,7 +1,12 @@
 # NEVER commit real student data or anything derived from it
 data/raw/
 data/processed/
-artifacts/
+artifacts/*
+# baseline bundle + reports below are from the SYNTHETIC demo set. A TF-IDF vocabulary
+# trained on real check-ins contains student words: do not commit those.
+!artifacts/baseline/
+!artifacts/reports/
+dist/
 *.sqlite
 *.jsonl
 .venv/

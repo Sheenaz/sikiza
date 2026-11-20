@@ -17,7 +17,7 @@ from _common import DEMO_BANNER, load_config, load_frames, resolve
 
 from triage.bundle import load_bundle
 from triage.calibration import expected_calibration_error
-from triage.evaluate import full_report, kappa, mcnemar
+from triage.evaluate import crisis_ranking, full_report, kappa, mcnemar
 from triage.pipeline import batch_decisions
 from triage.safety_valve import default_valve
 
@@ -72,6 +72,8 @@ def main():
             "classifier_only": full_report(test, d["classifier"], d["category"], cfg["bootstrap_iterations"], cfg["ci"]),
             "combined_or_gate": full_report(test, d["combined"], d["category"], cfg["bootstrap_iterations"], cfg["ci"]),
             "test_ece_crisis": expected_calibration_error(d["p_crisis"], test["crisis"].to_numpy()),
+            "crisis_ranking": crisis_ranking(test["crisis"].to_numpy(), d["p_crisis"],
+                                             cfg["bootstrap_iterations"], cfg["ci"]),
         }
         results[name] = rep
         correct[name] = {"crisis": d["combined"] == test["crisis"].to_numpy(),
@@ -112,6 +114,15 @@ def main():
             if c.get("warning"):
                 warns.append(f"- ⚠ {n} / {gate}: {c['warning']}")
     L += [""] + warns
+    L.append("\n**Crisis score ranking (threshold-free)**\n")
+    L.append("| model | ROC-AUC [95% CI] | average precision [95% CI] | chance AP | recall if top 20% escalated | test ECE |")
+    L.append("|---|---|---|---|---|---|")
+    for n, r in results.items():
+        q = r["crisis_ranking"]
+        if q.get("roc_auc") is not None:
+            L.append(f"| {n} | {fmt_ci(q['roc_auc'], q['roc_auc_ci'])} | "
+                     f"{fmt_ci(q['average_precision'], q['average_precision_ci'])} | {q['prevalence']:.3f} | "
+                     f"{q['recall_at_top20pct']:.3f} | {r['test_ece_crisis']:.3f} |")
     L.append("\n**English-only vs code-mixed (combined OR-gate)**\n")
     L.append("| model | group | n | crisis recall [95% CI] | macro-F1 |")
     L.append("|---|---|---|---|---|")

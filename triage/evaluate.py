@@ -71,6 +71,32 @@ def crisis_metrics(y, decision, n_boot: int = 2000, ci: float = 0.95) -> dict:
     }
 
 
+def crisis_ranking(y, p, n_boot: int = 2000, ci: float = 0.95) -> dict:
+    """Threshold-free view of the crisis score: does the model rank crises above non-crises?
+
+    Needed because a very low cost-derived threshold can escalate everything, which makes
+    recall uninformative. ROC-AUC 0.5 = chance; average precision's chance level = prevalence.
+    Also reports the recall obtained if only the top 20% highest-scoring messages were escalated.
+    """
+    from sklearn.metrics import average_precision_score, roc_auc_score
+    y = np.asarray(y).astype(int); p = np.asarray(p, dtype=float)
+    if y.min() == y.max():
+        return {"roc_auc": None, "average_precision": None}
+
+    def auc(a, b):
+        return roc_auc_score(a, b) if 0 < a.sum() < len(a) else np.nan
+
+    def ap(a, b):
+        return average_precision_score(a, b) if a.sum() > 0 else np.nan
+
+    k = max(1, int(round(0.2 * len(p))))
+    top = np.zeros(len(p), dtype=bool); top[np.argsort(-p, kind="stable")[:k]] = True
+    return {"roc_auc": float(roc_auc_score(y, p)), "roc_auc_ci": bootstrap_ci(auc, y, p, n=n_boot, ci=ci),
+            "average_precision": float(average_precision_score(y, p)),
+            "average_precision_ci": bootstrap_ci(ap, y, p, n=n_boot, ci=ci),
+            "prevalence": float(y.mean()), "recall_at_top20pct": float(y[top].sum() / y.sum())}
+
+
 def category_metrics(y_true: list[str], y_pred: list[str], n_boot: int = 2000, ci: float = 0.95) -> dict:
     labels = CATEGORIES
     yt, yp = np.asarray(y_true), np.asarray(y_pred)
