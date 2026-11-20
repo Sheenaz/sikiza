@@ -53,8 +53,15 @@ def main():
         print("           ", {w: len(p) for w, p in list(res[key]["probe_terms"].items())[:8]})
     out = resolve("artifacts/reports")
     out.mkdir(parents=True, exist_ok=True)
-    (out / "fertility.json").write_text(json.dumps(res, indent=2, ensure_ascii=False))
-    print(f"-> {out / 'fertility.json'}")
+    name = "fertility_demo.json" if args.demo else "fertility.json"
+
+    def clean(o):   # an empty language group gives NaN, which is not valid JSON
+        if isinstance(o, dict):
+            return {k: clean(v) for k, v in o.items()}
+        return None if isinstance(o, float) and o != o else o
+    res = clean(res)
+    (out / name).write_text(json.dumps(res, indent=2, ensure_ascii=False))
+    print(f"-> {out / name}")
 
 
 if __name__ == "__main__":

@@ -19,10 +19,13 @@ DEMO_BANNER = ("\n" + "!" * 78 + "\n!! DEMO DATA: synthetic template rows. Every
 
 
 def load_frames(demo: bool, use_augmented: bool = True):
-    seed, is_demo = load_seed(allow_demo=demo)
+    cfg = load_config()
+    if demo:   # --demo always means the synthetic set, even when real data is present
+        seed, is_demo = load_seed(cfg["data"]["demo_csv"])[0], True
+    else:
+        seed, is_demo = load_seed(allow_demo=False)
     if is_demo:
         print(DEMO_BANNER)
-    cfg = load_config()
     split_path = resolve(cfg["data"]["splits_dir"]) / ("splits_demo.json" if is_demo else "splits.json")
     if split_path.exists():
         splits = json.loads(split_path.read_text())

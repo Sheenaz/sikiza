@@ -1,7 +1,7 @@
 PY := .venv/bin/python
 DEMO ?=            # set DEMO=--demo to run on the synthetic set
 
-.PHONY: setup model docker demo augment baseline transformer transformer-full distilbert export evaluate fertility zeroshot serve test mobile-lexicon
+.PHONY: setup model docker real data drift demo augment baseline transformer transformer-full distilbert export evaluate fertility zeroshot serve test mobile-lexicon
 
 setup:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
@@ -12,6 +12,23 @@ model:                     ## download the trained int8 ONNX bundle from the Git
 
 docker:                    ## build and run the API container (needs artifacts/model)
 	docker compose up --build -d
+
+data:                      ## real data: Zindi CSVs + labels -> data/zindi/zindi_seed.csv
+	$(PY) scripts/prepare_zindi.py
+
+real:                      ## full pipeline on the real Zindi data (~1 h on a laptop CPU)
+	$(MAKE) data augment baseline
+	$(PY) scripts/train_transformer.py --model afroxlmr --epochs 3
+	$(PY) scripts/train_transformer.py --model distilbert --epochs 3
+	$(PY) scripts/export_onnx.py --src artifacts/afroxlmr_torch --out artifacts/model
+	$(PY) scripts/evaluate.py --bundles artifacts/baseline artifacts/afroxlmr_torch artifacts/distilbert_torch artifacts/model
+	$(PY) scripts/fertility.py
+	$(PY) scripts/zero_shot.py
+	$(MAKE) drift
+
+drift:                     ## no-drift control (held-out real messages) vs a shift to Sheng/Swahili
+	$(PY) scripts/drift_report.py --new split:test --name control_real_test
+	$(PY) scripts/drift_report.py --new data/demo/demo_seed.csv --name sheng_shift
 
 demo:                      ## full pipeline on synthetic data (smoke test, ~5 min on CPU)
 	$(PY) scripts/make_demo_data.py

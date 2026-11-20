@@ -6,11 +6,13 @@ project:
   seed: 42
 
 labels:
-  categories: [academic_stress, financial_strain, social_anxiety, low_mood, other]
+  # substance_use added after the proposal: ~30% of the real Zindi messages are about alcohol/drugs.
+  categories: [academic_stress, financial_strain, social_anxiety, low_mood, substance_use, other]
 
 data:
-  # Real, consented, de-identified Strathmore check-ins. NEVER commit this file.
-  seed_csv: data/raw/strathmore_checkins.csv
+  # Real student messages: Zindi BNBR Kenya Tech4MentalHealth, relabelled (scripts/prepare_zindi.py).
+  # For the consented Strathmore check-ins use data/raw/strathmore_checkins.csv (NEVER commit that file).
+  seed_csv: data/zindi/zindi_seed.csv
   # Synthetic demo rows — for pipeline smoke tests ONLY, never for reported results.
   demo_csv: data/demo/demo_seed.csv
   augmented_csv: data/processed/augmented.csv

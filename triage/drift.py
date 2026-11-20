@@ -56,14 +56,27 @@ def drift_report(train_texts: list[str], new_texts: list[str], lexicon_terms: se
     a, b = embed(train_texts), embed(new_texts)
     nn = NearestNeighbors(n_neighbors=2, metric="cosine").fit(a)
     base = nn.kneighbors(a)[0][:, 1]          # skip self
-    cutoff = float(np.quantile(base, 0.95))
+    # Two rules, each calibrated so that ~2.5% of NO-drift messages trip it (~5% combined).
+    cutoff = float(np.quantile(base, 0.975))
     d_new = nn.kneighbors(b, n_neighbors=1)[0][:, 0]
     train_vocab = {t for x in train_texts for t in tokens(x)}
-    # An embedding fit on training text cannot "see" n-grams it never saw (TF-IDF/SVD
-    # maps them to ~0), so a message is also novel if >= 25% of its words are unseen.
-    oov_rate = np.array([sum(t not in train_vocab for t in tokens(x)) / max(1, len(tokens(x)))
-                         for x in new_texts])
-    novel = (d_new > cutoff) | (oov_rate >= 0.25)
+
+    def oov_of(texts, vocab):
+        return np.array([sum(t not in vocab for t in tokens(x)) / max(1, len(tokens(x))) for x in texts])
+
+    # An embedding fit on training text cannot "see" n-grams it never saw (TF-IDF/SVD maps them
+    # to ~0), so a message is also novel if an unusually large share of its words is unseen.
+    # "Unusually large" is calibrated by 5-fold cross-validation on the training messages: real
+    # student text is short and full of typos, so a fixed cut-off (it was 25%) raised false alarms.
+    rng = np.random.default_rng(0)
+    fold = rng.integers(0, 5, len(train_texts))
+    ref = np.concatenate([
+        oov_of([t for t, f in zip(train_texts, fold) if f == k],
+               {w for t, f in zip(train_texts, fold) if f != k for w in tokens(t)})
+        for k in range(5)])
+    oov_cutoff = float(max(np.quantile(ref, 0.975), 0.25))
+    oov_rate = oov_of(new_texts, train_vocab)
+    novel = (d_new > cutoff) | (oov_rate > oov_cutoff)
 
     lex = lexicon_terms or set()
     clusters = []
@@ -83,7 +96,7 @@ def drift_report(train_texts: list[str], new_texts: list[str], lexicon_terms: se
     oov = Counter(t for x in new_texts for t in set(tokens(x)) if t not in train_vocab and t.isalpha())
     return {
         "n_train": len(train_texts), "n_new": len(new_texts),
-        "novelty_cutoff": cutoff, "novel_share": float(novel.mean()),
+        "novelty_cutoff": cutoff, "oov_cutoff": oov_cutoff, "novel_share": float(novel.mean()),
         "expected_novel_share_if_no_drift": 0.05,
         "centroid_cosine_shift": shift,
         "oov_token_rate": float(oov_rate.mean()),

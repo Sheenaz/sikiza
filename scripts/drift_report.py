@@ -28,19 +28,25 @@ def lexicon_terms() -> set[str]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--new", required=True)
+    ap.add_argument("--new", required=True,
+                    help="CSV with a text column, or 'split:test' for the held-out real test messages (no-drift control)")
+    ap.add_argument("--name", default=None, help="report file suffix (default: YYYY-MM)")
     ap.add_argument("--bundle", default=None)
     ap.add_argument("--demo", action="store_true")
     args = ap.parse_args()
 
     frames, seed, _ = load_frames(args.demo, use_augmented=False)
     train = frames["train"]["text"].tolist()
-    new = [pseudonymise(t) for t in pd.read_csv(args.new)["text"].astype(str)]
+    if args.new.startswith("split:"):
+        new_texts = frames[args.new.split(":", 1)[1]]["text"].astype(str)
+    else:
+        new_texts = pd.read_csv(args.new)["text"].astype(str)
+    new = [pseudonymise(t) for t in new_texts]
     emb = torch_embedder(resolve(args.bundle)) if args.bundle else tfidf_embedder(train)
     rep = drift_report(train, new, lexicon_terms(), emb)
     out = resolve("artifacts/reports")
     out.mkdir(parents=True, exist_ok=True)
-    path = out / f"drift_{time.strftime('%Y-%m')}.json"
+    path = out / f"drift_{args.name or time.strftime('%Y-%m')}.json"
     path.write_text(json.dumps(rep, indent=2))
     print(f"novel share {rep['novel_share']:.1%} (≈5% expected without drift) | "
           f"centroid shift {rep['centroid_cosine_shift']:.4f} | OOV rate {rep['oov_token_rate']:.1%}")

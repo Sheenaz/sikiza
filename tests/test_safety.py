@@ -76,16 +76,16 @@ def test_temperature_scaling_reduces_overconfidence():
     rng = np.random.default_rng(0)
     y = rng.integers(0, 2, 500)
     z = (y * 2 - 1) * 1.0 + rng.normal(0, 1, 500)
-    cal = Calibrator.fit(z * 5, y, np.zeros((500, 5)), np.zeros(500, int))
+    cal = Calibrator.fit(z * 5, y, np.zeros((500, 6)), np.zeros(500, int))
     assert cal.t_crisis > 2.5   # recovers the x5 over-confidence
 
 
 def _seed(n=80):
-    cats = ["academic_stress", "financial_strain", "social_anxiety", "low_mood", "other"]
+    cats = ["academic_stress", "financial_strain", "social_anxiety", "low_mood", "substance_use", "other"]
     return pd.DataFrame({
         "seed_id": [f"s{i}" for i in range(n)],
         "text": [f"message number {i} about exams na pesa" for i in range(n)],
-        "category": [cats[i % 5] for i in range(n)],
+        "category": [cats[i % 6] for i in range(n)],
         "crisis": [1 if i % 10 == 0 else 0 for i in range(n)],
         "group": ["code_mixed"] * n,
     })

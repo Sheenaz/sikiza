@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 
 from .safety_valve import default_valve
-from .text import normalise
+from .text import tokens, normalise
 
 # Bidirectional-ish swap lists (English / Swahili -> Sheng and back).
 # STARTER LIST — to be extended with the student panel; synthetic Sheng may not match real usage.
@@ -143,6 +143,12 @@ def augment_frame(seed: pd.DataFrame, n_per_seed: int = 15, rng: np.random.Gener
                 v, method = noise_variant(v, rng), "swap+noise"
             if base is not r.text:
                 method = "bt+" + method
+            # content safety: noise must not delete the message itself (e.g. "Yes" -> "", "hopeless" -> " aki")
+            if not v.strip():
+                continue
+            seed_toks = set(tokens(r.text))
+            if len(seed_toks) <= 3 and not (seed_toks & set(tokens(v))):
+                continue
             # label safety: a variant must keep the seed's valve status
             if default_valve().check(v).crisis_hit != default_valve().check(r.text).crisis_hit:
                 continue

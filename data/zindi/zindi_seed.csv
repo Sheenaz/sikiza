@@ -1,0 +1,885 @@
+seed_id,text,category,crisis,language,zindi_label,zindi_file,n_copies,zindi_ids,labelled_by,reviewed,crisis_ai
+z-f29cfe4560,I feel that it was better I dieAm happy,low_mood,1,en,Depression,train,1,SUAVK39Z,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-ee99308cf1,Why do I get hallucinations?,substance_use,0,en,Drugs,train,1,9JDAGUV3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7a7be7bb92,I am stresseed due to lack of financial support in school,financial_strain,0,en,Depression,train,1,419WR1LQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fa81cc10bc,Why is life important?,other,1,en,Suicide,train,1,6UY7DX6Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4552722b9f,How could I be helped to go through the depression?,low_mood,0,en,Depression,train,1,FYC0FTFB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-562bffea68,What are the effects of depression to ones health,low_mood,0,en,Depression,train,1,V6VSDJ5I,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-545083cbda,Why is everything so hard to deal with in this life,low_mood,0,en,Depression,train,1,9736J4UE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4250a9b9e4,I feel emotionally overwhelmed,low_mood,0,en,Depression,train,1,AY8L479Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8eef8e57ff,How to manage taking alcohol?,substance_use,0,en,Alcohol,train,1,OSFJV5EC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-47cb31e0b5,Is heaven open for us who smoke bhang?,substance_use,0,en,Drugs,train,1,U4SGUGGM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2c784a9d43,How to survive without money?,financial_strain,0,en,Depression,train,1,JGBMEUC1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-75e552c5c5,How do i stop this? What do I do when life becomes unbearable?,low_mood,0,en,Alcohol,train,1,LM8GPR0X,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4e5ef8bbfc,"I was ever sad,alone and always on drugsNow I know how to cope with negative aspects in my life",low_mood,0,en,Depression,train,1,EIF8Y8MX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-de9db39b5f,"I feel empty,absent minded",low_mood,0,en,Depression,train,1,03TVUJ9J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f60b44d12c,I experienced depression in my studies,academic_stress,0,en,Depression,train,1,CBMIYRK7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-be6a23eb8d,I feel like am alone in this world,low_mood,0,en,Depression,train,1,Y5MH83OX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3b4fb5c476,I feel low and out of place,low_mood,0,en,Depression,train,1,OHIWTBLA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-954f8671ee,What should i do to get out of depression?,low_mood,0,en,Depression,train,1,0LPO6TKU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-07e78887ab,How can I stop using alcohol?,substance_use,0,en,Alcohol,train,4,WQG9NYO0 E7BSF5F4 YECHMD4P N4WXTO2Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-059f7f08d5,"I feel hopeless, unworthy and useless …How do I cope with stress and frorge the past?",low_mood,0,en,Depression,train,1,WYDRQKK9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6f3ed032e2,Does mediataton help stop weed addiction?,substance_use,0,en,Drugs,train,1,H6HGNIPM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b58a74aeab,"I feel bad because life difficulties, I also feel bad that I have no one to control",low_mood,0,en,Depression,train,1,JJFB80YG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d51d2f8b1d,What are the effects of smoking bhang?,substance_use,0,en,Drugs,train,2,SI6LH9S9 CGF1MPRY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-35ba2ff5d7,"Sadness,hatredNow feeling is happiness",low_mood,0,en,Depression,train,1,P4T442GZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7a20c886f4,"Feelings then were like everything was falling apart,Now things are in control",low_mood,0,en,Depression,train,1,6T60B8ZM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-76ad45ac2b,how do I cope with ta difficult situation?what will I d to avoid it?,low_mood,0,en,Depression,train,1,EL8WHB10,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7ca396ce3a,Deteriorating academic performance,academic_stress,0,en,Depression,train,1,K9DGPFW6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f8b8aec070,Effect of alcohol both in the society and my body,substance_use,0,en,Alcohol,train,1,46DPSGSJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-db574da888,How could i stop using bhang,substance_use,0,en,Drugs,train,1,AWTMRJ2C,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c3bd717fbe,How to avoid drug abuse?,substance_use,0,en,Drugs,train,1,Z38CHPES,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-edd1461d82,How will I stop? What addiction means.,substance_use,0,en,Alcohol,train,1,NUJNN8HA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1a12915542,I feel rejected,low_mood,0,en,Depression,train,1,O7SRICTV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e9da888336,Is it right for depressed person to use drugs,substance_use,0,en,Depression,train,1,TY6R8YBF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ba52395ff9,I just stopped taking alcohol because i thought it was not good for me,substance_use,0,en,Alcohol,train,1,4DDQ2BRX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c81c51ba0f,How do I seek help from alcoholism,substance_use,0,en,Alcohol,train,1,CV11SA2H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c9a688c3a3,i am  very stressed,low_mood,0,en,Depression,train,1,NYZTVG5E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b5881e442a,Main challenges of depression and their side effects to my health,low_mood,0,en,Depression,train,1,G5GF4H7P,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8e2cdacb36,feel confused and helpless and was pushed to the cornerFeeling kind of better,low_mood,0,en,Depression,train,1,ZB73RBET,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-810ae0b80f,How  does one avoid bad company?,substance_use,0,en,Drugs,train,1,93G4A70N,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9419f8a09c,How to avoiod depression in campus,low_mood,0,en,Depression,train,1,X45W9Q0S,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-041d912dba,Causes of suicide by youths,other,1,en,Suicide,train,1,ZBUCI1MA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d7ebcdc4df,What are the effects of alcohol?,substance_use,0,en,Alcohol,train,1,J9T35NVE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b00092a151,"I feel very low,how do I overcome it?",low_mood,0,en,Depression,train,1,JP9NVFHD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a79377abf4,I feel painful and unwanted,low_mood,0,en,Depression,train,1,ML2SKCYN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8027ccf28a,What can I do to change the situation?,low_mood,0,en,Depression,train,1,MT04SPT2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0fa76e201d,What to do to resist the bad feeling?,low_mood,0,en,Depression,train,1,G4VUYDC1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0b75902935,"Too much classwork, and how do I cope ith many responsibilities",academic_stress,0,en,Depression,train,1,5M88BU4L,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9916cb56b6,How can I stop alcohol,substance_use,0,en,Alcohol,train,1,2ANINIO7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-84c376ae61,"I am facing a lot of challenges in life financially, emotionally, psycologically and with no solutions…How can I safely look for solutions about depression on google",financial_strain,0,en,Depression,train,1,BXMHPTHE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9d4a165ac0,I always feel down,low_mood,0,en,Depression,train,1,459AWRKP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0d81a4c504,sad and lonely,low_mood,0,en,Depression,train,1,2ZH6D7O3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-727c008df2,I feel I'm unworthy and wasted,low_mood,0,en,Depression,train,1,9XPAAVP5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3c85ee64f7,what are the best ways I can follow to stop using it,substance_use,0,en,Alcohol,train,1,8MPE9DNC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9ebd4ec34b,I think I can handle my drink,substance_use,0,en,Alcohol,train,1,65WCW3PH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-98902e69e8,I feel depressed because of relationship issueS,low_mood,0,en,Depression,train,1,J4ES54MZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2b55018205,How can i stop taking alcohol,substance_use,0,en,Alcohol,train,2,97VW5839 3WINGR1Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2767dcc1fd,what can I do to minimize my alcoholism,substance_use,0,en,Alcohol,train,1,6T8HVMG3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1b27f33fb5,How to deal and overcome bad situation,low_mood,0,en,Suicide,train,1,0RFTD03Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-74b42fb774,Effects of alcohol?,substance_use,0,en,Alcohol,train,1,KBYAYAJC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c9d74b8ac9,I used my rent money in gambling,financial_strain,0,en,Depression,train,1,9WUGXUWF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-99c328e6ea,Why do i exist?,low_mood,1,en,Depression,train,1,QKBV071K,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-bbee9e312b,Will Prayer help me out of sucidal thoughts.,low_mood,1,en,Suicide,train,1,BM946H9J,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-7434637098,How can I get help?,low_mood,0,en,Depression,train,1,IBADW0FW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-09bed8d7ee,Who could be the reason for depression?,low_mood,0,en,Depression,train,1,5I2N159N,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-16da359283,I do suffer depression at times and i think the best way to avoid it is keeping myself busy,low_mood,0,en,Depression,train,1,KTL0D91A,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c3c3207d32,How to avoid alcohol,substance_use,0,en,Alcohol,test+train,3,1JALYOEE QNG7K64Y 5NEYXWJK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d0954bd9c,Lonely and happiness,low_mood,0,en,Depression,train,1,HD9XSQZD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fc327f143b,is there harm fo me when I take alcohol,substance_use,0,en,Alcohol,train,1,T65023SD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d7d06851a2,What is the  importance of alcohol?,substance_use,0,en,Alcohol,train,1,YAKKXF3T,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-04ec5a475e,I feel indescribable sadness,low_mood,0,en,Depression,train,1,PENYQE5S,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c3bce6c225,What are the common ways to reduce depression,low_mood,0,en,Depression,train,1,89FS5OH2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5f0f6ba406,I feel so low,low_mood,0,en,Depression,train,2,HSAB9P4S D7VAHRPJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-69a263c977,Parental negletion causing  my depression,low_mood,0,en,Depression,train,1,RI9SGXM0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2241a85f3d,Effects of alcohol on my body health,substance_use,0,en,Alcohol,train,1,4B8XOMN7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-96f9ecac94,I have a bad company of friends that influence me to smoke weed,substance_use,0,en,Drugs,train,1,NGK6ZM5H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bb441f09b2,why is that I don’t succed in what I do,low_mood,0,en,Depression,train,1,TD9B0JK7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c5c1f329b3,Is there self worth in life?,low_mood,1,en,Suicide,train,1,SCTJPCQ1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-65a3c963c1,I have low self esteem,low_mood,0,en,Depression,train,2,QDBMJA08 3J7JPGD7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6401caba76,How can I overcome alcoholism?,substance_use,0,en,Alcohol,train,1,YS9D64RF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9ab630f3b7,How can i stop using weed,substance_use,0,en,Drugs,train,1,MKWX9595,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-132595a98a,I am downhearted. How can I overcome the feeling?,low_mood,0,en,Depression,train,1,HIE8CSV7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c6e2fa2245,How to stop alcohol,substance_use,0,en,Alcohol,train,1,F6LTQ978,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a7f8d9bb4a,should I stop drinking alcohol,substance_use,0,en,Alcohol,train,1,P1R7AXPE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d7b00ed588,How to overcome such an incident,low_mood,0,en,Suicide,train,1,SCBE9RL5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-30c4c63781,Side effects and problems associated with depression,low_mood,0,en,Depression,train,1,27LQQZQ3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-149a7eb6e9,"I feel so irritated, why does this happen?",low_mood,0,en,Depression,train,1,KHJGZIB1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-de6a62e761,What is the best way to withdraw from drugs?,substance_use,0,en,Drugs,train,1,VPIOXWS8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5573d003e6,Feelings of anxiety and fear and feelings of inadequacy,social_anxiety,0,en,Depression,train,1,4HDJ2MLK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-77f4484863,What is a good of life?,other,1,en,Alcohol,train,1,IXEQA3Y4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8e389c6aa3,What are the effects of depression?,low_mood,0,en,Depression,train,1,X7ONF6SO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-33f44c66b5,Measures to take to overcome suicidal thoughts,low_mood,1,en,Suicide,train,1,MTTRV505,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-cfd18670d1,how do I  avoid getting addicted,substance_use,0,en,Alcohol,train,1,GR0P3AXE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fbf3be28d7,Feeling lonelyNow I feel better,low_mood,0,en,Depression,train,1,DQYT5T05,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7fb93a6055,why do we use bhang?,substance_use,0,en,Drugs,train,1,50NFWPFO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c6e5d42b7d,I felt incomplete and overthinking stress,low_mood,0,en,Depression,train,1,G1CNQX97,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fc4e06312d,"My feelings were chaotic,sad,isolatedNow better",low_mood,0,en,Depression,train,1,7ONNL6JS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b09c308cb2,How to study to avoid failing  of my exams,academic_stress,0,en,Depression,train,1,HBG8Z32E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a4ea35fbb9,"Was sad,lonely,confusedNow happy and content",low_mood,0,en,Depression,train,1,RICJ4SMV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7bee455b2e,How can i stop drug abuse?,substance_use,0,en,Drugs,test+train,2,87FJU3OA L21RGZEA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-49264472e0,Why do we drink anyway? What is the effect of overdrinking alcohol?,substance_use,0,en,Alcohol,train,1,4091K7GR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-82c0ba55ff,How to overcome this peer pressure of taking alcohol?,substance_use,0,en,Alcohol,train,1,PTJM4W2F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b8e0ba2da0,I am thinking about school expenses,financial_strain,0,en,Depression,train,1,M4SRHJHN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c573557460,how do I handle pain,low_mood,0,en,Depression,train,1,F4UA4E08,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d8e8c7770,what can I do inorder to stop alcohol abuse,substance_use,0,en,Alcohol,train,1,4YAZ71T4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1b2926f8cf,How to manage social drinking?,substance_use,0,en,Alcohol,train,1,RG2YXG81,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8970f55c2a,Why is life so difficult?,low_mood,1,en,Suicide,train,2,QY55OB2E 9EJV3WJK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9c0768d21b,I am sad,low_mood,0,en,Depression,train,2,SP3FVI1L W907767X,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cddbb42330,It feels as if my head is exploding Lots of burnout Am feeling much better,low_mood,0,en,Depression,train,1,LZX05AM2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1001a4f5be,I feel hopelessFor now I am just fine,low_mood,0,en,Depression,train,1,TNLKFJ3W,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-53a4302a4c,"I got to a stagnation point,dropped out of classes",academic_stress,0,en,Depression,train,1,VSMF1JK5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5ea8262800,what are the advantages of taking bhang?,substance_use,0,en,Drugs,train,1,0WD80PHP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9f6485439f,I feel stressed and hopeless,low_mood,0,en,Depression,train,1,1I1423F8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c7d9332297,Challenging,low_mood,0,en,Depression,train,1,SD3C3HNH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-98440be137,I feel abandoned and lonely,low_mood,0,en,Depression,train,1,9XHFLZW0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fe5c4a5f5e,I can't stop smoking weed because of the good feeling of calmness.,substance_use,0,en,Drugs,train,1,PBVEUVY5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-81bba39a18,I am overwhelmed by life.,low_mood,1,en,Suicide,train,1,V0SS50TS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-da563f6661,I feel terrible,low_mood,0,en,Depression,test+train,2,1VIUC0G0 VUWHXYI6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1d9b544ebd,Is taking drugs worth it?,substance_use,0,en,Drugs,train,1,J6DZPN7V,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dc39bb3cad,I feel like days were flying past me,low_mood,0,en,Depression,train,1,4JF0OXGT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3c69b2fdc4,Why do bad things always happen to me?,low_mood,0,en,Depression,train,1,S1FD3U91,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-69fe1deba7,Lonely and stressed,low_mood,0,en,Depression,train,1,T62AVHMC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-12d8e1331e,How can I avoid wasting my money on alcohol with friends,substance_use,0,en,Alcohol,train,1,11CGOZLV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3181f8fc7e,Dissappointed,low_mood,0,en,Depression,train,1,UL95QSEX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-df8bb282e1,How does one come out of depression?,low_mood,0,en,Depression,train,1,4FZFI3HJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8456073f81,How to stop the addiction,substance_use,0,en,Alcohol,train,1,33K6R2R3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-43f56cd3d1,"I am Lonely and nott myself, simply because of relationship issues",low_mood,0,en,Depression,train,1,LPV5XWOK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cf3c6d2232,I'm still depressed and worried of my mental health,low_mood,0,en,Depression,train,1,X8GDM3BF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ec37962e0a,How will I stop?,substance_use,0,en,Alcohol,train,1,OZFGITK8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-408588ec7c,What can one do to reduce the feeling of depression?,low_mood,0,en,Depression,train,1,HF2DDNQZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d92c9120d,How to reduce excess intake of alcohol,substance_use,0,en,Alcohol,train,1,YYNUDOWG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-89d709266f,whom should I disclose to my issues,low_mood,0,en,Depression,train,1,P7Z3JK1D,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2207be23e4,Impacts of alcohol in real life,substance_use,0,en,Alcohol,train,1,L1GXD7QK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9319f15922,How can I stop taking bhang?,substance_use,0,en,Drugs,test+train,2,P6F3W88R FPVU61TO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a71627d71a,I was so depressed and I feel like the whole world was against me,low_mood,0,en,Depression,train,1,XPNDRLBZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ae56083143,"I really feel bored with the situation I am in , and experiencing dizzines  and a lack of appetite",low_mood,0,en,Depression,train,1,TU17R8EH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-01dcdce573,I feel things were not going my way and feel like giving up,low_mood,0,en,Depression,train,1,MNARVFA1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d44ed5e60a,I feel like I have wasted my life,low_mood,0,en,Depression,train,1,3HVSN1L9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-635bf8a1d4,"Insomia,headache,social problems",low_mood,0,en,Depression,train,1,AET542VI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1bb39d3383,How can I do without alcohol when stressed?,substance_use,0,en,Alcohol,train,1,E064SNA9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bbd3b31227,What makes one an addict of alcohol?,substance_use,0,en,Alcohol,train,1,39NBD6FO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d6a6ce2425,How can i stop drinking,substance_use,0,en,Alcohol,train,1,TFB5T5K9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-730d398125,How to stop/ reduce alcohol,substance_use,0,en,Alcohol,train,1,X1ROWD34,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2f2ce7a7c7,How can I do without a relationship?,low_mood,0,en,Depression,train,1,5SQF3ZIP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a5e555e5a8,How to gain momentum in academics,academic_stress,0,en,Depression,train,1,PW1OUC5S,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-eba6dca526,I feel that nobody loved me as much if I was in my own world I feel much bette,low_mood,1,en,Depression,train,1,HFT4O5RI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-949b167e51,I feel like the world is against me,low_mood,0,en,Depression,train,1,BIQ3K5MF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a26b0148b4,How can I stop drug usage?,substance_use,0,en,Drugs,train,1,RPR79301,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3f2adb8728,Does bhang affect your memory?,substance_use,0,en,Drugs,train,1,SRRPHNPR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f5e8dca71d,"I haveI had a feeling of being lone ranger, but I'm okay now",low_mood,0,en,Depression,train,1,X8ZI1GT6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d23a466a1,How to stop bhang?,substance_use,0,en,Drugs,train,1,OSOAIJEZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3e49b5cfda,I feel like giving up everything,low_mood,0,en,Depression,train,1,UVSIAT7E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5d153837ea,I feel sad,low_mood,0,en,Depression,train,3,K186E1KR ZP5PTWOV T8BIPMVF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d0a7698dc,I feel less important to anyone,low_mood,0,en,Depression,train,1,IMXTN5TC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d07166de13,Causes of alcoholism. ways in which one can do to stop alcohol,substance_use,0,en,Alcohol,train,1,DXPY4E6H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-002792f1ec,Ways to stop alcohol addiction,substance_use,0,en,Alcohol,train,1,Z5ZE798J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b2a942303b,I feel so low like the only way out is death,low_mood,1,en,Depression,train,1,SDRU0I0I,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-eefea5c54a,What is more to life?,other,1,en,Drugs,train,1,7QCXEWFU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-77794fab22,"Looking for employment,still depressed",financial_strain,0,en,Depression,train,1,F9NRCHYI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dc04475a09,what do I do to stop?,substance_use,0,en,Drugs,train,1,519MFQ9G,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bcbd32dcd6,i feel well okay,other,0,en,Depression,train,1,AWQDGRT6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e6a2ce21ef,I feel low and lost hope in everythingI feel better now,low_mood,0,en,Depression,train,1,PO5PLBDQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e3017218f1,I have a disease that drained all resources from my family,financial_strain,0,en,Depression,train,1,DGPCPMEH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-19c0d6db05,I am involved in a Love affair and I would like to know hw can I control myself?,other,0,en,Depression,train,1,5JLVKXY3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-174a730f24,I waste money on alcohol,substance_use,0,en,Alcohol,train,1,H9JJ8H3N,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-31c19e364d,What are the best coping strategies to deal with stress?,low_mood,0,en,Alcohol,train,1,GUDI29F9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-58788daa63,"my sister oftenly faints, this troubles me",other,0,en,Depression,train,1,W1E9KIF6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d4da72989,Hopeless and how to get out of it,low_mood,0,en,Depression,train,1,9U6OKPXX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-75f1ce36d3,I am depressed and want solitude,low_mood,0,en,Depression,train,1,4XNB1V5E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3b6a644f9c,Is withdrawal from people helpful from commiting suicide?,low_mood,1,en,Suicide,train,1,VHHH5F68,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-f9c0cc833c,i feel stressed,low_mood,0,en,Depression,train,1,NHTQ6O30,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2e12800966,Is there a peer counselling programme,other,0,en,Depression,train,1,FHO1C5EF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e34fd1b865,How to overcome alcoholism?,substance_use,0,en,Alcohol,train,1,7TYFSZHT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-76f9bb9c00,How can I stop taking alcohol?,substance_use,0,en,Alcohol,train,2,MO49SQRK EFK2DMIY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-62e8f414ce,I hate my life,low_mood,1,en,Depression,train,1,JGF06QXV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a1231e5cc3,I have given up with everything in life,low_mood,1,en,Depression,train,1,2WAYPCEQ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-62810c93ea,Causes of suicide,other,1,en,Suicide,train,1,U9T40R7Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9d5d2535a1,im feeling stressed,low_mood,0,en,Depression,train,1,H7X049T2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-da3e0e8300,Why is the larger percentage of youths involved in alcoholism,substance_use,0,en,Alcohol,train,1,CEAOWJOR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5b7a102309,Where i get money for my needs…Where do I get money  for personal needs?,financial_strain,0,en,Depression,train,1,BXPHSVEO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0806f8360f,How do i get better?,low_mood,0,en,Depression,train,1,C7QD5SLH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-53e7e2c655,How to avoid the thoughts?,low_mood,0,en,Suicide,train,1,C4Q8W3C9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5e5f0bc7b5,What is the reason for depression?,low_mood,0,en,Depression,train,1,Z5XWUAEQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1a31af189c,Why do people think of commiting suicide?,other,1,en,Suicide,train,1,Y7B63LQT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e8487d36fc,What are the effects of drug consumption?,substance_use,0,en,Drugs,train,1,SGZIY718,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5b3f577411,How do I overcome the feeling of being  weaker and weaker in thoughts,low_mood,0,en,Depression,train,1,QCIAO332,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aea04095e0,I feel horrible and unsatisfied,low_mood,0,en,Depression,train,1,1A99866J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-daed73a411,Ways of overcoming peer influence of alcoholism.,substance_use,0,en,Alcohol,train,1,2K0PN69M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e1ebacc9e7,How do I stop taking alcohol? Do you recommend rehabilitation,substance_use,0,en,Alcohol,train,1,7X4ZSOCS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-83de0c54cf,What will my mum think of me whren she finds out that I smoke weed?,substance_use,0,en,Drugs,train,1,YNB3JEUO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7c3b9919ad,Will alcohol lead me to a bad place in life,substance_use,0,en,Alcohol,train,1,AP3VVFX6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e0780dcc7f,Why do I suffer?,low_mood,1,en,Suicide,train,1,JPRV8I5J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a87f59272f,Depressed about broken relationship with a church pastor after having sex with his highschool daughter,low_mood,0,en,Depression,train,1,L9NXPIEN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a6b5476b91,Who can guide me whn depressed?,low_mood,0,en,Depression,train,1,7L9G3QJ9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d602a5c7f,I am financially constrained over school fees and my  family background is not stable with a lot of debts…I have an elderly brother who could easily support me but has no job even after graduating,financial_strain,0,en,Depression,train,1,J55053XP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-396490ea46,stressed and overwhelmed by the many thingof lifeRight now I'm taking things easy,low_mood,0,en,Depression,train,1,YMIV9TAR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-82637e1cb6,I feel very discouraged my self esteem went low,low_mood,0,en,Depression,train,1,ROK05XD3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4a1aba1443,"I feel unloved, unwanted",low_mood,0,en,Depression,train,1,JOWFMRU7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fb888f0656,I need advise on how to avoid alcohol,substance_use,0,en,Alcohol,train,1,CPZ81QFJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4dcb87ec92,Does smoking make one cool?,substance_use,0,en,Drugs,train,1,1V9AWIGY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fdb2b96157,I feel depressed because of issues with my best friend and my parents I was at my lowest point being lowkey everyday,low_mood,0,en,Depression,train,1,R0AW64SP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-98cc69cbc3,I never feel like I am npt worth living,low_mood,0,en,Depression,train,1,TD15L93X,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-d1149fcc1f,feel so low and sad,low_mood,0,en,Depression,train,1,9QYAHRR5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-88e9c08e83,Being left by the person i loved the most,low_mood,0,en,Depression,train,1,NUCSE95E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f46f0e9590,I feel trapped,low_mood,0,en,Depression,train,1,8NNK7CZJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e2e9e82d46,This are my loneliest moments,low_mood,0,en,Depression,train,1,94N9JHU2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bd50d37d82,I was once depressed and I feel like giving up with my life,low_mood,0,en,Depression,train,1,CZ0V545V,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-0cc8d70437,I tried asking how to stop the habit,substance_use,0,en,Alcohol,train,1,UUB5FREC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1ee5d0726e,what are ways of dealing with depression,low_mood,0,en,Depression,train,1,LD2JTQWZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9595957b6c,I want to be alone in no company of friends,low_mood,0,en,Depression,train,1,DQXPXEQN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-60faf77b8e,I told myself to be strong enough,low_mood,0,en,Depression,train,1,PB50CNUF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2db9132a65,"Lonely, isolated, very weak",low_mood,0,en,Depression,train,1,6QZH2CWL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0b274cd792,I feel helpless,low_mood,0,en,Depression,train,2,JYHRF3IE 2DQC65OW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-60d11e0f3e,Is life this hard?,low_mood,0,en,Depression,train,1,NQL6BXUU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6146874c03,Why is it that my health is deteroriating?,substance_use,0,en,Alcohol,train,1,F5N4RU80,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1b036a3611,"I feel withdrawn,alone,stresssed sad",low_mood,0,en,Depression,train,1,KPWR5OTH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-21636ebfc4,How can I overcome suicide from heartbreak?,low_mood,1,en,Suicide,train,1,IO6PZ9Y1,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-a77d01cffb,I feel desparate…why is the world so unfair,low_mood,0,en,Depression,train,1,F0I7GIGE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cb6eb9d03d,I feel like the world is falling apart,low_mood,0,en,Depression,train,1,698A4P0J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-38757f1c99,Effects of alcohol in my life?,substance_use,0,en,Alcohol,train,1,WLEWY07N,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5ad3e47c73,How to deal with hallucinations?,substance_use,0,en,Drugs,train,1,24NNBTL7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ba5f76168a,"Sad, lonely and tired",low_mood,0,en,Depression,train,1,1HA77QQ3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aa600ea35b,feel very lonelyI'm quite okay,low_mood,0,en,Depression,train,1,YZWFPP8M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ae8eee2009,I take alcohol for personal realization.,substance_use,0,en,Alcohol,train,1,A4BCYETH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e3046b4d41,how to quit alcohol?,substance_use,0,en,Alcohol,test+train,2,YIXKUJUC 5G7R1F52,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f2d9bacf16,is life even worth it,low_mood,1,en,Suicide,train,1,NIAOYQXU,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-c1560e7d31,I feel that everything was coming to an end,low_mood,1,en,Depression,train,1,N2DJJ1XY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-74e6dfa972,What are the effects of alcohol on our bodies,substance_use,0,en,Alcohol,train,1,XY588V2F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1dd599a186,How to manage my relationship,other,0,en,Suicide,train,1,D64IPYOU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-36d2f678cf,What is the solution for feeling hopeless,low_mood,0,en,Depression,train,1,SAWSGYZB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2cd0f85856,How can i motivate myself when feeling low,low_mood,0,en,Depression,train,1,0UNXTGLP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-86dfc978c8,Never sought assistance,other,0,en,Suicide,train,1,UTKO2AZD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e45f8d8f3b,Is alcohol really harmful?,substance_use,0,en,Alcohol,train,1,2ASR64M6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-016822124a,What could i do to deal with frustrations?,low_mood,0,en,Drugs,train,1,BGPNXEE0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a34974da1f,why some things happen over and over again,other,0,en,Suicide,train,1,93HHN24Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-272d3dcd93,I did not seek help,other,0,en,Suicide,train,1,MOVEQ145,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-727e1bfb1d,Does weed do any  good?,substance_use,0,en,Drugs,train,1,ZHP9VVGC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-96b66b95bb,I feel heart broken,low_mood,0,en,Depression,train,1,SA2FYD2A,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-046dea94d2,If the person i wronged will forgive me and accept reconcilliation,other,0,en,Suicide,train,1,WGML4P7B,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c6eea9e158,"I feel like the world was against me, especially from friends and relatives who were close to me I conqured it that my life is more important",low_mood,0,en,Depression,train,1,3GLOZPU4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-02e547c4c2,The feeling was like alone in the world,low_mood,0,en,Depression,train,1,SMVFTBV1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-25ff8d0e58,"Sad,lonely",low_mood,0,en,Depression,train,1,8E412HHJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-16684f52cb,I feel like giving up,low_mood,1,en,Depression,train,2,X0YHNC8N DEAG586I,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-de1ebcc86a,Is it childlish to feel depressed,low_mood,0,en,Depression,train,1,KLX5TBWE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-72cd5197d2,How can I shun from the same?,low_mood,0,en,Depression,train,1,ZFTOS18U,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-adec0aafd2,Feeling relieved,other,0,en,Depression,train,1,OM77C6FZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-010783aa37,Whom will I approach when mentally disturbed?,low_mood,0,en,Depression,train,1,NOXKH5TS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-55cb8a6407,why do I always feel heartbroken all the time,low_mood,0,en,Suicide,test+train,2,37IG68E9 X0016IPJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cc95d89238,I have experienced stress which led to depressionI had the issue handled,low_mood,0,en,Depression,train,1,YDMU6CHX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6b2a36127c,I fee sad and unwanted,low_mood,0,en,Depression,train,1,Q4R2NXGE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-793426c02d,how can I be helped to come out of depression?,low_mood,0,en,Depression,train,1,WBGFUUCK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2ca5a4f5ea,I am broke and very  unpreparedness in exams,academic_stress,0,en,Depression,train,1,AAKPNVQO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-36ded036b3,What if I live in an isolated place?,low_mood,0,en,Depression,train,1,2JTGDT5L,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7e43f8b6e8,How i stop the behaviour of alcohol taking,substance_use,0,en,Alcohol,train,1,UU3DHPUN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-11a6c53399,how I can be able to handle my stress and not feel like taking away my life,low_mood,1,en,Suicide,train,1,ATO107VQ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-b241510e50,"what could be the cause of my depression,how can I overcome it",low_mood,0,en,Depression,train,1,TBAG3V8T,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e1e7499665,Can beer lead to any problem?,substance_use,0,en,Alcohol,train,2,6IGFTWHT OGX0QSGU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e8c194a44c,How to stop?,substance_use,0,en,Drugs,train,1,1AOWXKXV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1df1ce7e7e,I am in a financial crisis,financial_strain,0,en,Depression,train,1,FAFZLNY4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1feb99e547,I have smoked weed and addidcted and need assistance?,substance_use,0,en,Drugs,train,1,SRK3NE8O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-44d2f80657,Is alccohol the only form of entertainment for the young adults?,substance_use,0,en,Alcohol,train,1,LGBXU9PN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8f12ecf139,I lost my father,low_mood,0,en,Depression,train,1,4VMEBNDV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6d8c3e6df3,Why I needed to keep holding on to nothing. If my life really ahd a purpose,low_mood,1,en,Suicide,train,1,2QRTGS6A,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-d1120a9b15,How to convince someone against commiting suicide,other,0,en,Suicide,train,1,E1NEHTU0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3cc5b9502d,"I feel bad about myself, I dont want to interact with anyone",low_mood,0,en,Depression,train,1,019YKKY0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4ad0ee2fe4,How to control my emotions. How to stop drinnking.,substance_use,0,en,Alcohol,train,1,A04YR7N0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-06f363b361,I feel so lowI feel good and better now,low_mood,0,en,Depression,train,1,XBFD6MDZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bcea24179c,I feel like commiting suicide and need solutions to the problem which led to the depression,low_mood,1,en,Depression,train,1,EK67UMY1,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-99cbab0974,Financial issues,financial_strain,0,en,Depression,train,1,124Y7IO6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bcc3c890e6,How can i stop bhang?,substance_use,0,en,Drugs,train,1,6XVOCUMI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e7f84ec572,"How do I deal with depression,should I do?",low_mood,0,en,Depression,test+train,2,MIZ8T6M9 W2D2M625,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9ae3284adf,I feel like nobody cares,low_mood,0,en,Depression,train,1,ZN43XFVV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a482073dea,I have and the feeling I had was not very pleasing,low_mood,0,en,Depression,train,1,4SB4B0B5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3507c16d93,How should I overcome depression? Why must it be me?,low_mood,0,en,Depression,train,1,OLQHJ0PO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-017e6b1da7,How can I stay without smoking?,substance_use,0,en,Drugs,train,1,UZFCOXZP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b21c577eb8,How to stop the addiction?,substance_use,0,en,Alcohol,train,1,1M6N5OI2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a596dd977f,I feel like killing myself and killing the people who caused my depression,low_mood,1,en,Depression,train,1,BHG2VBMC,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-206400aa9d,I almost gave up and got no assistance,low_mood,0,en,Depression,train,1,8BKND7CF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2d6b5e2302,Am I addicted?,substance_use,0,en,Alcohol,train,1,8UAQNJAY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ccda503432,Is alcohol helpful to ones health,substance_use,0,en,Alcohol,train,1,JFXSWJSP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dccca81a2c,What is a permanent solution to depressed person?,low_mood,0,en,Depression,train,1,57OCJ216,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fbd5c7faec,How to deal with the problems which can lead to suicide,low_mood,1,en,Suicide,train,1,D4PDKNYF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aebb603bd6,how to quit alcohol,substance_use,0,en,Alcohol,train,1,0TID986J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9ee7ac5c72,I am overwhelmed on how to deal with the issue below I am fine now,low_mood,0,en,Depression,train,1,V8L9C5XG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dda4f1ca64,"I feel severely depressed I withdraw from people, and prefer to be alone",low_mood,0,en,Depression,train,1,COHF4DEW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d6445a0694,I lost a bet with house rent,financial_strain,0,en,Depression,train,1,GI46OIMU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6561a14cb8,I feel uneasy difficulty with life,low_mood,0,en,Depression,train,1,MVVH8XCA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3413d34c70,"I have feel sad and hopeless, not sure if that's depression",low_mood,0,en,Depression,train,1,BS8XRA3X,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aeff72ca80,Are there any helpful effects of bhang?,substance_use,0,en,Drugs,train,1,DP6D3EG6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dbebafe7fd,"I am very nervous and bothered,",social_anxiety,0,en,Depression,train,1,V0C7LKYN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-58380912b0,Where can I find a rehabilitation center?,substance_use,0,en,Drugs,train,1,5272SYMK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c628d29b5c,"Suicidal thoughts, stress, hyper-arousal",low_mood,1,en,Depression,train,1,PKIO2M1G,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-e46939e9f4,What are the main causes of excessive alcohol taking,substance_use,0,en,Alcohol,train,1,PQP1IRYK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-53adade157,I don't feel like talking to anyone,low_mood,0,en,Depression,train,1,SJ2J5OEL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b78aa5c21b,What can I do to be relieved?,low_mood,0,en,Depression,train,1,1IHTBDJ2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5d4d3fb35f,Main causes of depression and how to deal with them when they arise,low_mood,0,en,Depression,train,1,LIHIU7DI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-18d752db6f,I feel lonely and discouraged,low_mood,0,en,Depression,train,1,U3T52WN4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a4dd4efe20,SadI am good,low_mood,0,en,Depression,train,1,52BWXOL8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4c5ad5930e,I feel like life does not make sense,low_mood,0,en,Depression,train,1,KWNGKGHQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-eddcbd5fd5,How to limit myself from getting depressed,low_mood,0,en,Depression,train,1,3MXZDXDL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-74d1c9bd93,"I feel like my life is done, no more joy in life",low_mood,1,en,Depression,train,1,2KOGKZUF,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-44a6aa13f1,The loss of my beloved father,low_mood,0,en,Depression,train,1,JZRQUUF1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a1b23a221d,"Why do people take alcohol and how benefitial is it to their life, What should one do to avoid taking alcohol",substance_use,0,en,Alcohol,train,1,48HYYYED,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-82a14568ea,how can I make money,financial_strain,0,en,Depression,train,1,PMFIIRXF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f345b883f4,I feel lonely and  no one wanted to stay around me,low_mood,0,en,Depression,train,1,IW10CAAM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e2a0c47d80,feeling unloved or unwanted and I dont deserve to be alive,low_mood,1,en,Depression,train,1,W6C11AZK,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-2be210221f,How to overcome the frustration,low_mood,0,en,Suicide,train,1,1ECHO6JY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4323d72398,What are the causes of depression and the effects,low_mood,0,en,Depression,train,1,Q06DDJ1O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b0091c0c57,"I felt emotionally low and sad most of the time I feel better, stronger and happier now",low_mood,0,en,Depression,train,1,J3ORYNFV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-14de74c2e1,I am financially  instable,financial_strain,0,en,Depression,train,1,WZ2MGVEF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-eec5ad2dd7,Why all this challenges had to come my way where no one thought of me,low_mood,0,en,Suicide,train,1,QEMQKIIN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bc82d435d4,How to stop taking alcohol,substance_use,0,en,Alcohol,test+train,2,9DOVTEWF 7BURQ08H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7fe9c81ad8,I am devastated and  angry at ather people,low_mood,0,en,Depression,train,1,EV19B9ZK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c75a78b4ec,How can I stop?,substance_use,0,en,Alcohol,train,1,VVC47SJA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3faf90b815,What are the effects and how can i get rid of it,substance_use,0,en,Alcohol,train,1,79DO3BLF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-16658b5bc0,"I need help, who can help me manage my situation?",low_mood,0,en,Depression,train,1,U26JDVW1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aaf5d3e98f,How can I get financial sponsorship,financial_strain,0,en,Depression,train,1,4HP750CC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-63bbec41fa,what do I do  to avoid stress,low_mood,0,en,Depression,train,1,ZZQSS6H4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bb6fff71c7,I feel sickly and lack appetite,low_mood,0,en,Depression,train,1,DPRVXK1C,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ff43e4617d,"I feel like life is not good,since I had no one to talk to",low_mood,0,en,Depression,train,1,LPXJIQ0F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-84ab76189f,what is the worst experience from alcohol,substance_use,0,en,Alcohol,train,1,XS8XILTW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-db8cdde9c0,Why depression occurs,low_mood,0,en,Depression,train,1,YOJA9LQH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-66a74c1ac5,what should I do to stop alcoholism?,substance_use,0,en,Alcohol,train,2,IKLQJKBL BOHSNXCN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3be86c962d,"I felt sad,was stressed,lowi am now better",low_mood,0,en,Depression,train,1,DMC1XK7H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-396cf8b672,My family split and I am deeply affected,low_mood,0,en,Depression,train,1,FIH2SDXX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-590731741b,Loss of a close family member,low_mood,0,en,Depression,train,1,SRN1G752,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e02a51b834,What are the means to avoid alcohol?,substance_use,0,en,Alcohol,train,1,HXYQVQWR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-22fbaaa447,Family issue,other,0,en,Depression,train,1,PNXEUYN8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-280d3766c1,"What am I going to do to reconcile with parents,they have rejected me?",other,0,en,Depression,train,1,XWU3Z6IA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7ab2004242,How can i get out of depression in future,low_mood,0,en,Depression,train,1,806HFIMM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-538fa56cfd,"Had a problem with my personal looks,feel sad",low_mood,0,en,Depression,train,1,458NTYKE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b1e195d988,How can i stop alcohol?,substance_use,0,en,Alcohol,train,1,530N0OSW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8d30072c5a,How can I overcome peer pressure,substance_use,0,en,Alcohol,train,1,HRDQXFHE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cbd6513421,I was depressed way back in highschool while looking for schoolfees,financial_strain,0,en,Depression,train,1,ETG5YAOK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4c7a7ced91,What more is life?,other,1,en,Alcohol,train,1,5HNNAWYU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6af19e3d09,Can I ever get back to my old person,substance_use,0,en,Alcohol,train,1,5THWQBRK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a8382cf3ff,Can I kill myself?,low_mood,1,en,Depression,train,1,8P56CL8S,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-77a1db7028,I do not find pleasure in doing things,low_mood,0,en,Depression,train,1,4V3L91FT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cfc1d57d31,How can I overcome depression,low_mood,0,en,Depression,train,2,F0NI9AOY 8B74B1L2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3e5185680f,What can I do not to get depressed?,low_mood,0,en,Depression,train,1,A1TVAV77,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-49fc11902f,Is there anything i can do to avoid  smoking weed?,substance_use,0,en,Drugs,train,1,O55WPPEO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f8b3791d1c,How can i stop drinking alcohol,substance_use,0,en,Alcohol,train,1,NO6BCAST,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7e48460e81,I don't feel loved,low_mood,0,en,Depression,train,1,W9HP80YU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-498e8a5a16,Low and alone,low_mood,0,en,Depression,train,1,ZI14LEQ6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0e9fc9543d,I am still thinking of getting back to alcohol,substance_use,0,en,Alcohol,train,1,DN5UJHKK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c15bedae36,How can I overcome the alcohol addiction,substance_use,0,en,Alcohol,train,1,WI9JJNVI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d276f04aa8,Does drinking alcohol solve all your problems?,substance_use,0,en,Alcohol,train,1,XBAYE2FN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-07be2afa38,I am fearful of failure when I start drinking alcohol,substance_use,0,en,Alcohol,train,1,DJEL7KQ1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a5f01a120b,I was much depressed and a lot of confusion,low_mood,0,en,Depression,train,1,LMD13ZEK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8d1f43aa84,"I really feel so down, disgusted and diserted, I feel more depresses and seeking for guidance",low_mood,0,en,Depression,train,1,9LQLIVJN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3fd861d124,"I feel lonely,how do I get out of this position",low_mood,0,en,Depression,train,1,R0RZ3ISJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4b809adc3b,"I feel so low sickly,I was lonelyCurrently feeling better after guidance and counselling",low_mood,0,en,Depression,train,1,NM3JOH4T,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-33d0787526,why do some people judge me too quickly and why do I fail in everything,social_anxiety,0,en,Depression,train,1,8BR3ZDDW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c20b267a27,I'm still depressed,low_mood,0,en,Depression,train,1,1YK7RQ1V,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-def6c02cbd,How to help when you depressed?,low_mood,0,en,Depression,train,1,5C7PZ719,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0f937f0bee,"I feel withdrawn, how do I get over an ex?",low_mood,0,en,Depression,train,1,Q7T5GJPT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-319e46ccd3,I am experiencing a challenge in raising my school fees and  it was not an easy task because of the family issues,financial_strain,0,en,Depression,train,1,UXMHC2DY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c6cfe46460,I feel alone and that everyone had deserted me when I need them the most,low_mood,0,en,Depression,train,1,8A0L8D4F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c88694019a,I am an addict.,substance_use,0,en,Alcohol,train,1,QJRZKSBF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b7b9e52bda,How do I quit drinking excessive alcohol,substance_use,0,en,Alcohol,train,1,EXF1GZG5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3687d2e6da,what exactly is depression,low_mood,0,en,Depression,train,1,4N0N95OJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-333232bb70,How can i stop using alcohol and in what ways can it affect my future?,substance_use,0,en,Alcohol,train,1,ZMXITBVW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-96df7a88dc,why should I stop taking alcohol,substance_use,0,en,Alcohol,train,1,822XTUHN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7bf236b705,Why are most of my friends ignoring me? why is it I am going through much in life compared to others,social_anxiety,0,en,Suicide,test+train,2,PW3IHHIH DT2E8Z0Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-904b8a41c8,feel that life is unworthy,low_mood,1,en,Depression,train,1,MFSIUMOQ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-cebc20bbb2,How can I quit alcoholism?,substance_use,0,en,Alcohol,train,1,4WT396Z8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-387e9b84f5,What are ways to quit bhang use?,substance_use,0,en,Drugs,train,1,AXB45SPX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-046420724e,Fear of the future which is unpredictable and feelings of anxiety,social_anxiety,0,en,Depression,train,1,1ZFDUBIG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dab1d7d136,Should I ignore my friends?,social_anxiety,0,en,Alcohol,train,1,AZ86LNQL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9cd314fdfe,I am making efforts to quit but it is challenging,substance_use,0,en,Drugs,train,1,D911LP0M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a1ee6e5617,Should I go back to ex girlfriend?,other,0,en,Suicide,train,1,X6ZOTZ9W,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4963ec9440,I feel like God had abandoned me or rather I am  not supposed to be born or existd,low_mood,1,en,Depression,train,1,J6JW6ZKN,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-3a749a0595,what can I do with my life now,low_mood,0,en,Depression,train,1,RCNR7KU0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d2412ae31d,How does someone commit suicide?,low_mood,1,en,Suicide,train,1,T6WTTRZR,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-942af0dce5,I feel lonely and sad,low_mood,0,en,Depression,train,1,A9YBOHVL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9af9385558,I feel wasted and used by my GF,low_mood,0,en,Depression,train,1,BVG5L5JW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-872f5ad33a,How can you come out from a depressing situation?,low_mood,0,en,Depression,train,1,QCRNZLUK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-621f6434e5,Am i not a man enough?,social_anxiety,0,en,Alcohol,train,1,4HOGHNMY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a1edc8eef0,How do you get to the point of depression?,low_mood,0,en,Depression,train,1,OED97WAE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-10eeff7ee4,How will campus education be of help?,academic_stress,0,en,Depression,train,1,C23HZKC4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-347e07f316,why am I thinking of suicide?,low_mood,1,en,Suicide,train,1,758KAJFQ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-b2d97246d5,Death of a beloved one,low_mood,0,en,Depression,train,1,X0WLSH74,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-45e0ca41c0,Does alcohol add value to me?,substance_use,0,en,Alcohol,train,1,49OI9LFV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1e45449692,"I Just want to sleep, relax, not consult anybody or a feel to see anybody",low_mood,0,en,Depression,train,1,YWFB8BMK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-898ec44c8f,I feel sad and lost,low_mood,0,en,Depression,train,1,2KPKRR5Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f9b24a9c52,How better would I quit?,substance_use,0,en,Drugs,train,1,W1OOD0X1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-85beb62340,How can i cope up with the reality of financial distress?,financial_strain,0,en,Drugs,train,1,MSEG1EUS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dc4cdb4371,What are the effects of bhang?,substance_use,0,en,Drugs,test+train,5,KR577F9W YPERKZ41 22L09P4C BIAU48IL CVXS5L3C,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-84376448a3,How to quit drinking completely?,substance_use,0,en,Alcohol,train,1,NSKVDVTP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3d4ba9fd9c,how can I overcome it?,substance_use,0,en,Alcohol,train,1,BT009XFM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9dd68e34e1,"Getting unexpected results, -dissatisfied,",low_mood,0,en,Depression,train,1,KO08Y83E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e53de13128,I have relationship issues,other,0,en,Depression,train,1,JHPJKYTB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-47722d7496,Is it possible to overcome depression,low_mood,0,en,Depression,train,1,BWX7DDGA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8b41c74adb,I feel suicidal but dont know who to talk to,low_mood,1,en,Suicide,train,1,ML4Q1EUL,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-4985ff587d,Being financially unstable,financial_strain,0,en,Depression,train,1,1FN3F19Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-000ae7e818,How can i get schoolfee to continue with my education,financial_strain,0,en,Depression,train,1,SKQSS8U2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c7a49f4e4f,I feel bad and viewed life as negativecurrently am better,low_mood,0,en,Depression,train,1,C4ZFBQCG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5a3286bbd3,"I feel lost, unloved, used annd I just wanted to be alone",low_mood,1,en,Depression,train,1,66S4DCDN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-98db038ce8,Is life really fair?,low_mood,0,en,Suicide,train,1,SLQD8WSJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d293c9b0eb,How to cope with the situation,substance_use,0,en,Alcohol,train,1,AHEFY73G,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0c0b09c998,How to avoid bad company?,substance_use,0,en,Alcohol,train,1,0KPI3LLQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0a92310758,hopeless,low_mood,0,en,Depression,train,2,HYC7XX9D N5NIMS0Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dd232974f2,Why is alcohol sold along the school perimeter,substance_use,0,en,Alcohol,train,1,4AEMAVSI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-302ca4f36b,What ways I would use to get rid of my messed up life?,low_mood,0,en,Suicide,train,1,DQ0ZRCBG,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-407613c01b,"how does it feel to drink,will I get addicted by drinking once",substance_use,0,en,Alcohol,train,1,9KB39E0J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f571588b3d,how can I feel good about myself?,low_mood,0,en,Depression,train,1,QNZTZXTG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-40b24c1abd,What are  the effects of bhang to one health. Reasons why young people use bhang,substance_use,0,en,Drugs,train,1,3NYXT52Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-10f213e8c0,What to do in order to heal,low_mood,0,en,Suicide,train,1,SJ7CFS9T,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f4839beeeb,Can alcohol make me forget my problem temporarily?,substance_use,0,en,Alcohol,train,1,KQFPSMHC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-941af250e9,I feel like I can't handle my thoughts,low_mood,0,en,Depression,train,1,TW5OZ0FT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7a74259573,What are the effects of alcohol on the liver,substance_use,0,en,Alcohol,train,1,TI7ZV4JN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-08d79f48ed,I feel like nothing mattered and everything was a messNow I feel like things matter,low_mood,0,en,Depression,train,1,SODQJHO6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e3bfd4be02,I cannot raise money for my education,financial_strain,0,en,Depression,train,1,E5CV0MKI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-643596bc9c,My relatives deny me…I wonder if I am part of my family?,other,0,en,Depression,train,1,WYHWQWGQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c354a2662f,How can one avoid depression?,low_mood,0,en,Depression,train,1,PU0V70X8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fc4d6c9527,how can I overcome stress,low_mood,0,en,Depression,train,1,QAA28H63,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dce6d8a743,How do I make it go away?,low_mood,0,en,Suicide,train,1,PXYR9D4W,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3d801b0db9,What are the causes of depression?,low_mood,0,en,Depression,train,2,9XGSA7NA 87074JKC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ca5a5e2116,Is taking alcohol bad?,substance_use,0,en,Alcohol,train,1,I7DEVJAV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1b813a6288,I am bored,low_mood,0,en,Depression,train,1,0HK6V5IQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bd1f94b41b,what is the cure for depression,low_mood,0,en,Depression,train,1,5U9CA7JB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-65885a6fbd,How can i feel better about myself,low_mood,0,en,Depression,train,1,JG53WKEQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-75afbef37e,Whats the meaning of life?,other,0,en,Depression,train,1,WV139P3G,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bafa4b4e9f,Why did my close relatives betray me?,other,0,en,Depression,train,1,KTB98LYD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7e94169e17,I feel very lonely that no one could understand,low_mood,0,en,Depression,train,1,G56ZI56J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7e7a110d8a,What is the benefit of alcohol,substance_use,0,en,Alcohol,train,1,43COYA4O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-70af27d55f,Should iI talk to my friends and peer counsellor about my depression ?,low_mood,0,en,Depression,train,1,ZVE1876W,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-192af65d7a,how can I be helped to heal from depression,low_mood,0,en,Depression,train,1,1NYXESRZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8b875e8866,I went through FGM when young even though I consented,other,0,en,Depression,train,1,RFP8XV4M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-31c4ce9eb2,I feel like giving up in life,low_mood,1,en,Depression,test+train,3,68SJ8EY6 345EH7SW 03BMGTOK,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-900d9d2cf2,how to get over depression,low_mood,0,en,Depression,train,1,B2YVEKVV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f11a065ef7,How can I reduce my intake,substance_use,0,en,Alcohol,train,1,3PQMK4FM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7edea1c4dc,What are the causes of suicide,other,1,en,Suicide,train,1,F3UCEDHO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9dc34266f3,Why does one feel paranoid?,substance_use,0,en,Drugs,train,1,NNJL1HJH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-79c78f1b1c,How can I stop this addiction,substance_use,0,en,Alcohol,train,1,0RLWLLGO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d0f561c0a,Feelings of defeat(post exams depression)Motivated to do better,academic_stress,0,en,Depression,train,1,5QW8WM9C,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-07097782e7,I feel like calling off the semester,academic_stress,0,en,Depression,train,1,U8PFW5XV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2d0dc01fe8,I asked God to take away the feeling since it was so strong,low_mood,1,en,Suicide,train,1,VDCJVJSQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-df043398a3,What can i doto receive relief?,substance_use,0,en,Alcohol,train,1,QK0XURE8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-16c3573b85,Why is alcohol manufactured?,substance_use,0,en,Alcohol,train,1,NWDQ09Y6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-910bcd40bd,I feel a lot of stress,low_mood,0,en,Depression,train,1,AQXE8YUQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f8e18c57e1,How do I deal with  pessimistic thoughts,low_mood,0,en,Depression,train,1,5MQ7A91J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-71572e5e11,How to avoid and deal with the situation and how to respond to it,other,0,en,Suicide,train,1,KVEYGOTJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f6979167e4,What makes my girlfriend cheat on me even after sacrificing everything for her sake,other,0,en,Suicide,train,1,LH9R1DBT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0f595a8ede,I feel overwhelmed with many thoughts to deal,low_mood,0,en,Depression,train,1,2NXFMOKE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-20151cbabe,I feel alone and unwanted by people around me,low_mood,0,en,Depression,train,1,BJLZVXMC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-75ae5b022e,How to stop thinking about suicide,low_mood,1,en,Suicide,train,1,HSE1ZTR9,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-6ce6ab7ebd,I feel like my life was being wasted,low_mood,0,en,Depression,train,1,3PJWHC2U,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-905138fb70,how to quit the habit,substance_use,0,en,Alcohol,train,1,SDPWD1PN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1d2a5f26b7,Defering from classes because of finacial constraints,financial_strain,0,en,Depression,train,1,6O89B9EY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cb87b475f4,How do I seek for assistance with depression?,low_mood,0,en,Depression,train,1,T7JBP0IC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-520f929f9c,I am dealing with  boredom,low_mood,0,en,Depression,train,1,1961MJ2S,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9977af07a1,Is there any importance of living again? Why live with no love from those who surround you?,low_mood,1,en,Suicide,train,1,4OESQ1EK,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-a0b2c8cdd4,The way to stop addiction,substance_use,0,en,Alcohol,train,1,X8O9GH1U,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0cac53f7d0,"how will I overcome it,I had an issue with my results and feel so depressed",academic_stress,0,en,Depression,train,1,LADM6UFA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-71c4826e83,I was dumped and how long should I stay single or sould I jump into another  relationship?t,other,0,en,Depression,train,1,QOFKBPUS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-28fda37707,I feel heartbroken,low_mood,0,en,Depression,train,1,URI1V0R3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7899e3cafa,Alcohol is caused by what issues and why?,substance_use,0,en,Alcohol,train,1,M2JMY4OO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b1c82744eb,How can I  get rid of depression,low_mood,0,en,Depression,train,1,G44KLZZ4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-14c8f9d452,what is this I am experiencing I didn’t know it was depression,low_mood,0,en,Depression,train,1,JRZYO5O8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bfe0807a08,Can I get help?,low_mood,1,en,Suicide,train,1,3M7810JM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ff8529d382,I asked if alcohol was a right solution to problems,substance_use,0,en,Alcohol,train,1,MADILFL0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f65a85d50f,I feel hopeless and wanting to give up,low_mood,0,en,Depression,train,1,2QC3W148,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0fe4b21348,"When someone is depressed he/she feels down, discouraged and alone I feel out of this place, lonely and discouraged",low_mood,0,en,Depression,train,1,WSAVYFFX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6ef2a09194,Ways of distracting myself,low_mood,0,en,Suicide,train,1,SEBOGNIF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5a9d41a51b,Why am I depressed?,low_mood,0,en,Depression,train,2,HE9RC42N 3X9HWVR4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aab8309da1,Is suicide the solution?,low_mood,1,en,Suicide,train,1,I8ZPACQI,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-66a34e8ab7,I  feel so low and demotivated I am now okay and happy in life,low_mood,0,en,Depression,train,1,DAYJJ61Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-76a65f4023,how could I deal with the situation that was disturbing me,low_mood,0,en,Depression,train,1,RYJ3OZ9F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0463d0da56,I am depressed because of the death of my uncle who provided for my basic needs,low_mood,0,en,Depression,train,1,8ABCNKW4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5df84ba5e8,is it really true that weed makes one mad?,substance_use,0,en,Drugs,train,1,DY1JKMGM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d0bb643055,Is it normal to feel depressed?,low_mood,0,en,Depression,train,1,JAN18LES,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-33eb5c8016,What is the meaning of life?,other,1,en,Suicide,train,1,FCE44MSH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-47f368e3b3,I have a feeling of emptiness and alone,low_mood,0,en,Depression,train,1,F8W8NSJJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f7bd58ca70,How can I stop the drinking habit?,substance_use,0,en,Alcohol,train,1,Q5E4HDTA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2453d17fb7,I want to give up,low_mood,1,en,Depression,train,1,73NZU7G2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7cc08439f7,I was felling stressed and low. How can I cope with the situation,low_mood,0,en,Depression,train,1,22RORUIT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1636d13b27,I take alcohol for stress management.,substance_use,0,en,Alcohol,train,1,S116D8SI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-81b4f2cfa3,What are the causes of depression,low_mood,0,en,Depression,train,1,JM5OPG3I,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-69534c4949,What are the coping mechanisms and prevention of depression,low_mood,0,en,Depression,train,1,PJLYRD1P,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4f7dade6b4,How can I quit alcoholism,substance_use,0,en,Alcohol,train,1,QQL0MAIX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1d9baa0a70,Is alcohol harmful to my health,substance_use,0,en,Alcohol,train,1,OMRH3DVV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c4df60ccba,"If one looses a close relative, what advice could she be given?",low_mood,0,en,Depression,train,1,9DNFBSL2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c6efeaa31a,Is alcohol a good stress remover?,substance_use,0,en,Alcohol,train,1,PTGL895A,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d54a211efa,I am lonely,low_mood,0,en,Depression,train,1,I3I44B31,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-df2e479d8a,I lack interest in my life,low_mood,1,en,Depression,train,1,6V3ZR95L,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ba3da128d0,Is little consumption harmful? Owing the fact that I dont misbehave,substance_use,0,en,Alcohol,train,1,X7MFCWB0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a72ea9a347,Financial I am okay,financial_strain,0,en,Depression,train,1,DQG9CGRC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d9f034afa9,what would I do to do away with my problems,substance_use,1,en,Alcohol,train,1,4UV2FRHD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-da2a8ad5f2,How can i motivate myself,low_mood,0,en,Suicide,train,1,TZ35PP65,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c7967fe45b,Is it possible for one to avoid taking bhang?,substance_use,0,en,Drugs,train,1,JOJHW6FC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-46fb5159ad,what is the best way to avoid alcohol,substance_use,0,en,Alcohol,train,1,18GKJ3U8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5fd0e70ac9,I felt worhtless and like I did not deserve to be alive,low_mood,1,en,Depression,train,1,ZTHQDLGP,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-a4580f4189,"I feel alone ,how can I get better?",low_mood,0,en,Depression,train,1,8CQ5NA5Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ab1895e99b,"I feel rejected,alone and frustratedi live one day at a time",low_mood,0,en,Depression,train,1,6S0LACRA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ef64086010,I feel so low and I want to isolate myself,low_mood,0,en,Depression,train,1,D0P1CB0F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b66ca08579,why do young people use bhang?,substance_use,0,en,Drugs,train,1,BK5X5HHN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e66bf5883e,Can bhang make you crazy?,substance_use,0,en,Drugs,train,1,S7MHCGJH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c494b23235,I took the alcohol and I loved the feeling,substance_use,0,en,Alcohol,train,1,UDSG21T6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-479d431863,is it normal having depression,low_mood,0,en,Depression,train,1,NHTBS1LG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e91792548d,I feel alone,low_mood,0,en,Depression,train,1,CA0859HT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fa3e00fed2,How do I stop taking alcohol? Does alcohol have any other benefitto the body?,substance_use,0,en,Alcohol,train,1,LBV4ISID,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c45370c59f,I feel awful about my life,low_mood,0,en,Depression,train,1,3933159G,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9eb88cee74,"Feelings of being low,under the weatherNow I'm better",low_mood,0,en,Depression,train,1,6X6OH52Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f745fd1c95,Why should I quit bhang?,substance_use,0,en,Drugs,train,1,CUERB14Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-502efe0de4,How to deal with romantic relationships,other,0,en,Depression,train,1,MF0708RN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ad4b2b35c9,What should i do when depressed? What can one do to reduce the feelings?,low_mood,0,en,Depression,train,1,Y3P3JZP1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4bea32b994,What causes suicidal thoughts?,other,1,en,Suicide,test+train,2,ZIPNKKK7 F7AI3ZLC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7890f999a5,I feel suicidal after a break up,low_mood,1,en,Depression,train,1,KOORZYC0,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-089b899e0c,"I have experienced,feel a heavy burden",low_mood,0,en,Depression,train,1,DCPL2SXG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a2fc9c8df6,Why are drugs supplied to students?,substance_use,0,en,Drugs,train,1,HB8BVVJ8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-52e9ffff04,How can I overcome stress to make my life more smooth,low_mood,0,en,Depression,train,1,4ZTPSBEF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-66992ed36b,I had two miscarriages,low_mood,0,en,Depression,train,1,KH0NT5XD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ac2eb7d27c,"I feel lost,did not what to doI stay positive",low_mood,0,en,Depression,train,1,3QGFARA3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-903dc93884,What is the effect of not talking to someone when feeling suicidal,low_mood,0,en,Suicide,train,1,MYPDFILX,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-95512f519d,"I feel neglected,sad",low_mood,0,en,Depression,train,1,FU6XHANF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fb8cff608d,I am dealing with family issues,other,0,en,Depression,train,1,84L7CK98,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bf3ebfb060,Is suicide really the best method of solving a problem,low_mood,1,en,Suicide,train,1,NIKN6HS2,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-addcbfc71d,What can i do to avoid the shame from the village people,social_anxiety,0,en,Suicide,train,1,OSZQ8K2J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fa69b3cec2,How could I survive without my friends,social_anxiety,0,en,Suicide,train,1,VG5P3433,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1234a150ae,This has been occuring quite often,low_mood,0,en,Depression,train,1,L6CVBCFS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c99fce34e5,How to avoid negative peer pressure,substance_use,0,en,Alcohol,train,1,EW1NTSYD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f75ce1fbbc,How do i do away with alcohol?,substance_use,0,en,Alcohol,train,1,R7L7Y1IG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0e51184745,I am dealing with  a break up from my girlfriend and a parents death,low_mood,0,en,Depression,train,1,GXWI7EJL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-505a14d572,I feel like I hate myself and that all the choices I have made are awful,low_mood,0,en,Depression,train,1,PY1C5ZVD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e9735e2262,how do I improve on my performance,academic_stress,0,en,Depression,train,1,ZV03WYKN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cb73bb6f49,How to handle suicide and incidencesof suicide to youths,other,0,en,Suicide,train,1,NQ7HK3NP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b71d7e6e99,Which is the best alcohol for me?,substance_use,0,en,Alcohol,train,1,PNR0M0CI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f9faf6e9cd,How to avoid alcoholism?,substance_use,0,en,Alcohol,train,1,447QAS4Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-78c56022b9,How do I sought for help in wanting to commit suicide,low_mood,1,en,Suicide,train,1,PTSOT6WO,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-2563a9d594,I failed exams I had an F,academic_stress,0,en,Depression,train,1,X1F6M1BU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7a5d321193,I feel like I am nothing in the worldm[',low_mood,0,en,Depression,train,1,CN5UZZA0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dc6bd0c46f,How can i get back selfworth?,low_mood,0,en,Suicide,train,1,YKET9W6S,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c0f4404da6,Lack of financial support and relationship heartbreaks,financial_strain,0,en,Depression,train,1,8KUTQA8G,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-138eea97f8,What steps should one take when depressed,low_mood,0,en,Depression,train,1,XK6D0XGQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-317f4d6234,I feel uncomfortable,low_mood,0,en,Depression,train,1,V00KVMET,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-23be1e06a7,I am really down with a lot of headaches,low_mood,0,en,Depression,train,1,HE9MDURK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aa1545e9e9,why does someone drink too much?,substance_use,0,en,Alcohol,train,1,QCT744TT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7abf3e9b69,Will i be criticized for taking weed?,substance_use,0,en,Drugs,train,1,CI8NAQTY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6aee70e9fb,What could be causes of stress and boredom,low_mood,0,en,Depression,train,1,ZSF30K8E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3d1e11a44d,How could I leave depression?,low_mood,0,en,Depression,train,1,M1KNYEPT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-54766fa65a,How to overcome and how o utilize finances,financial_strain,0,en,Alcohol,train,1,W0AUKZRT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9f22133fd1,How can I seek guidance and counselling in our school,other,0,en,Depression,train,1,0U0Y49QR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-feb1a9f8d4,Causes of depression -How to contol depression,low_mood,0,en,Depression,train,1,6IT1WAXZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-264e0bb671,Can i be helped?,low_mood,0,en,Suicide,train,1,7HSK66Q3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-99c65b83d2,I went bankrupt because of alcohol,substance_use,0,en,Alcohol,train,1,09UQ1YVQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-76518ef84b,Why is life is unfair,low_mood,0,en,Alcohol,train,1,FAU3TYWK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-200cb458cd,How can I come out of this behaviour,substance_use,0,en,Alcohol,train,1,LTM0VOJQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7d5d7cad4f,Is taking alcohol harmful,substance_use,0,en,Alcohol,train,1,JZG8HMQ7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4c605cb606,How can i stop using alcohol,substance_use,0,en,Alcohol,train,1,TZGXQ1SQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3cf3035530,Is it right to smoke weed in the name of doing it for the culture?,substance_use,0,en,Drugs,train,1,3NQJBPAE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-608319756c,Relationship issues,other,0,en,Depression,test+train,2,JBSV1NI3 PGGZ2N8A,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-288a353867,ways in which one can do to control the thoughts of suicide,low_mood,1,en,Suicide,train,1,LXE8Y8YR,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-560888f114,Feelings of unworthyness Don't want to associate with people Feeling things will not work out as expected,low_mood,0,en,Depression,train,1,ZPPBDI79,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b9e9a02857,how should i avoid it,substance_use,0,en,Alcohol,train,1,D62XN9BS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c45b131a06,I feel that the world is coming to an end,low_mood,1,en,Depression,train,1,83YRGPF8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5fb95cfa6c,My hustle is not picking up,financial_strain,0,en,Depression,train,1,S6Z4BOS6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-beba14396e,how will I live without depression?,low_mood,0,en,Depression,train,1,WAQY2UT3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c4d6b94738,What can i do to avoid loss of concentration in class through fantasizing in class and study times-on romance and ponographic issues,academic_stress,0,en,Depression,train,1,UY04AGX9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0b2c814daf,how can the addiction be avoided,substance_use,0,en,Drugs,train,1,20JTA1GT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7cc35e0cf9,Between bhang and cigarette which is more harmful?,substance_use,0,en,Drugs,train,1,B5R3WNYS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-efcc67f5a2,"I feel so low, what can I do?",low_mood,0,en,Depression,train,1,5MXEJTEL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-22bea24006,I need to talk to a friend.,low_mood,0,en,Suicide,train,1,6FEFKN0F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8b0cba38be,How can I forgive myself from the past?,low_mood,0,en,Depression,train,1,4EHEFJ7J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ceff66183e,I feel like I am a nobody,low_mood,1,en,Depression,train,1,0QXYZFYQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8842b10826,Major steps taken to get rid of alcohol consumption,substance_use,0,en,Alcohol,train,1,NC74KWCJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6082afd518,The world is out of control,low_mood,0,en,Depression,train,1,JQ7A9X4T,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-db8b6ea9b6,Lossing bets,financial_strain,0,en,Depression,train,1,R00OLRGP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-38cdca5761,What are the effects of taking alcohol?,substance_use,0,en,Alcohol,train,1,1SYJ01MY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-46d30b2aa7,Why is bhang prohibited yet it is just like any other drug?,substance_use,0,en,Drugs,train,1,LZGOZDYD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-480842d411,Not experienced,other,0,en,Depression,train,1,7L4SAC5S,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6d3e350645,I feel like crumbling down,low_mood,1,en,Depression,train,1,73C44L96,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0e6db5e9e9,"At home ,no one listens to me, my parents started neglecting and despising me,what can I do?",other,0,en,Depression,train,1,KB43N6AK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b183993984,Is weed harmful?,substance_use,0,en,Drugs,train,1,M0DT8TFB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8468a4d5d9,"I feel bad,now am fine",low_mood,0,en,Depression,train,1,20KAZ8T1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ae4863dc64,Low self esteem,low_mood,0,en,Depression,train,1,C8VZAJWW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9bf8fba090,Is weed really going to give me the energy I needed?,substance_use,0,en,Drugs,train,1,IO9JHGW7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-adb1124c5f,I never sought any assistance,other,0,en,Suicide,train,1,Z6F1A8PK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7574ef25a9,How to stop alcohol intake,substance_use,0,en,Alcohol,train,1,C2GBAI5D,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-26f0b67028,how to deal with migraines,other,0,en,Depression,train,1,H35L8ZD9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-149a1f8aed,Is suicide the best remedy?,low_mood,1,en,Suicide,train,1,139DFUFL,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-a77d66409f,I did not ask for any assistance at first but later and sought for assistance and it helped me in a good way,other,0,en,Suicide,train,1,6SZ3EXJ3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0c69343bd8,"I feel confused, how can  I overcome the problem?",low_mood,0,en,Depression,train,1,S6WK4NBL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f41561f27a,How do I resist peer pressure?,substance_use,0,en,Drugs,train,1,ULID3I4V,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-db7bf5ebf2,I was just tired,low_mood,0,en,Suicide,train,1,MYHIEXZJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f5c7cadbbc,Where can i get money to be drinking daily?,substance_use,0,en,Alcohol,train,1,0OSLJ1HL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-138bdb2dd6,Why is it so hard to stop being a weed addict?,substance_use,0,en,Drugs,train,1,XDD8ATSC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1e9eaaff09,I feel very low and at times,low_mood,0,en,Depression,train,1,LGAPCAYO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a95dbe8762,Why am I alive?,low_mood,1,en,Suicide,train,1,KFPOMS0P,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-65173eb98a,Life is just hard,low_mood,0,en,Depression,train,1,69V3L12G,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-014651f03e,How to become my oldself again,low_mood,0,en,Suicide,train,1,GVDXRQPY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-44f8449ee2,How can someone stop it?,substance_use,0,en,Alcohol,train,1,IO4JHIQS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d192f7f4c7,I feel unworthy,low_mood,0,en,Depression,train,1,1DS3P1XO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dcd1246dd2,I feel so discouraged with life,low_mood,0,en,Depression,train,1,ORF71PVQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3ba0908e63,How to overcome bad feelings and emotions,low_mood,0,en,,test,1,02V56KMO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-576d0c0a95,I was so depressed feel like got no strength to continue,low_mood,0,en,,test,1,03LZVFM6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0b16d66d2f,I feel so low especially since I had no one to talk to,low_mood,0,en,,test,1,0EPULUM5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-de66d7c0e9,can i be successful when I am a drug addict?,substance_use,0,en,,test,1,0GM4C5GD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6bf3e77f87,"I am dissapointed,I need a sense of closure",low_mood,0,en,,test,1,0IYM8BYT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-47d460092f,I lost hope,low_mood,0,en,,test,1,0JFJVD28,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-afb36e2a14,I feel unloved and uncared for,low_mood,0,en,,test,1,0OZGUFOF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-adc095e1c9,What are factors that leads to addiction of alcohol,substance_use,0,en,,test,1,0WP999ZX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2a594c9490,"Is the advice of drinking moderatly ,prudent?",substance_use,0,en,,test,1,0ZA45Y5F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-62e1fdeaeb,How to limit myself from getting regular depression,low_mood,0,en,,test,1,13V2N1XF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f4ce06e075,I needed to know whether the alcohol releases stress,substance_use,0,en,,test,1,16THDEEP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8f1e83fbd4,I was sad and did not want to go out,low_mood,0,en,,test,1,1AU3C3HI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-524bd42b64,Am I that ugly,social_anxiety,0,en,,test,1,1D7TE9IY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4e8186e158,How should I avoid alcohol intake? what are the advantages of alcohol intake?,substance_use,0,en,,test,1,1MHNW745,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0a32486bf4,I was pale and lost appetite,low_mood,0,en,,test,1,1TZY1GIP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ca30f6d5d2,I am going through loss of a loved one…I am going through a breakup,low_mood,0,en,,test,1,1ZTKVYXC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-da6f4c7bef,Depressed due to the loss of a relative,low_mood,0,en,,test,1,23C43VXB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9c727b36be,"Why me?, why so?, why now?",low_mood,0,en,,test,1,255YNCPV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-eb0da6b8ed,feeling sad and lonely Now feeling contentment and ability to withstand depression,low_mood,0,en,,test,1,25NGSGR3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7812e2e32e,Can I overcome depression?,low_mood,0,en,,test,1,289054IS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b6ea4ee42e,How would I quite alcoholism,substance_use,0,en,,test,1,28AM1F1Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ea9af45d50,"Downplayed,self rejection",low_mood,0,en,,test,1,2EC4OIPR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8ef13976e5,What brings a person into commiting suicide,other,1,en,,test,1,2FCIOIC1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-539668bcde,Does this make me feel any better?,other,0,en,,test,1,2L8WA7A4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0306583928,"feel no one undestands,Now feel like family got me",low_mood,0,en,,test,1,2Q7GS1WB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-693f8226b7,How can someone overcome heartbreak?,low_mood,0,en,,test,1,2SFRZEYJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c58ba0d7c3,I feel very anxious,social_anxiety,0,en,,test,1,2ZODHMOB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f0940da81a,What does someone do when dissapointed,low_mood,0,en,,test,1,30F40YH4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b7a2a58e84,"Family issues, my relationship and friends",other,0,en,,test,1,36UOSKA4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8bb781c6f8,Is there a reason for living.,low_mood,1,en,,test,1,370FVIAF,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-c623aacb02,I have used all drugs all and I need help,substance_use,0,en,,test,1,3B7S1S6B,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-89b94fd6e1,I felt so unwanted and out of place but now I feel better and my self esteem is high,low_mood,0,en,,test,1,3H1OFXL7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-18084f308e,I feel  less motivated and how can I be?,low_mood,0,en,,test,1,3NMNSYA4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-340bf71654,How can I limit myself from taking bhang?,substance_use,0,en,,test,1,3PLATXLT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a8231de2b2,Where can i find money for school  fees without telling my father?,financial_strain,0,en,,test,1,3SS0AHGQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b06b82c6ed,I never seeked for any assistance but i feared it.,other,0,en,,test,1,427XJQBB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1b2fcc9301,Then I feel like breaking apart,low_mood,0,en,,test,1,44XZ10QC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-73c44ccb61,How to stop smoking bhang,substance_use,0,en,,test,1,4DL9UOQL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-36ba0e882d,"Feel  like I want to be alone, like commiting suicide as a way of escaping shame, feel like moving away from the community …I feel a deep sense of hatred",low_mood,1,en,,test,1,57VMVY5S,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-eab6c2a15b,The feeling that I don't belong to this world and am of no use continuing to live,low_mood,1,en,,test,1,5AP5IX9B,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-d2990e0ef3,I feel issolated I am happy and well,low_mood,0,en,,test,1,5JK5HYM9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c63522f96b,"I am Feeling bitter,unwanted and unloved",low_mood,0,en,,test,1,62MJYMB4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a81c09c65c,How to deal with child support,financial_strain,0,en,,test,1,64MWIS95,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a67cc42be3,How can I get away with depression?,low_mood,0,en,,test,1,6HICH3FC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-206b17b939,I am facing rejection,low_mood,0,en,,test,1,6JTLBUO2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7bcfec4850,How do I overcome this financial problem? -How do I go about this depression to obtain the best solution,financial_strain,0,en,,test,1,6LTXVB46,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b89810d5a8,What can i do to avoid the shame of failing my exams,academic_stress,0,en,,test,1,6O5GQX0Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d6aaca2d9a,I feel betrayed,low_mood,0,en,,test,1,6T33I7B8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1f6c719308,"I feel like the world was against me,feel like I was bother to may family members",low_mood,0,en,,test,1,6TSGOG4R,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-de2aefc83e,I feel isolated from the reality of life,low_mood,0,en,,test,1,6UFUYHR7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-23b45eeb03,Who produced alcohol?,substance_use,0,en,,test,1,6V2783JI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-50acddcc5b,what can I do to avoid depression,low_mood,0,en,,test,1,6X7DK2U3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7f5a54e5c5,How can I maintain my peace of mind,low_mood,0,en,,test,2,728CHZ04 74N1XY6J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4466d1040e,Why do people commit suicide?,other,1,en,,test,1,72NC368J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1ed76c2098,How to stop consuming alcohol,substance_use,0,en,,test,1,7BRH6PT9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4d453639f4,Does alcohol solve all your problems or its just to make you forget for a while,substance_use,0,en,,test,1,7CGD8W08,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2392d3237e,I feel like I am in a strange world,low_mood,0,en,,test,1,7ERDSQ4Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-97ea83c68f,do I mean anything to anybody in this world?,low_mood,0,en,,test,1,7GV9GMHR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4c9dad56c3,Who cares?,low_mood,0,en,,test,1,7HYJWJTB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a0a57f7599,How can I avoid myself from getting depressed thoughts?,low_mood,0,en,,test,1,7IMGIR6F,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f24d203998,Would I get the solution or going to die,low_mood,0,en,,test,1,7MFR419R,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-52d513721c,"I feel suicidal , I have lost my parents",low_mood,1,en,,test,1,7NDP01F0,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-8b2cf62ca3,why do I have to go through this life?,low_mood,0,en,,test,1,7U5FD20H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-78624d0536,"I feel dillusioned ,what is the remedy for depression",low_mood,0,en,,test,1,82MKUDEC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-01baf3146f,Only experienced difficult times-emotion wise,low_mood,0,en,,test,1,8B9ADEWI,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-01272f0846,How to cope with challenges of life?,low_mood,0,en,,test,1,8BFV4VOX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fb84439681,what I can do to avoid bad friends and characters,other,0,en,,test,1,8P6YOLMS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fe4d44db60,How to regulate myself from taking bhang?,substance_use,0,en,,test,1,8Q25BIL1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1883210c5d,I was in a cycle of feeling sad and hopeless,low_mood,0,en,,test,1,8SSR9UYN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5dcfba8d35,"feel very bad,everything was going wrong",low_mood,0,en,,test,1,8YXQSEHH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bdc5cd1d44,will i stop one day.,substance_use,0,en,,test,1,8Z4UTZVE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-57628c327f,Why would I be the one to suffer?,low_mood,0,en,,test,1,96Q2X9PY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-be1faba9e3,I feel guilty for wanting to abort my 2 year old child How do I deal with the trauma,other,0,en,,test,1,9CZ5DDHT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ea20aa2674,How do I deal with addiction,substance_use,0,en,,test,1,9JW2PGV8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e437bc365b,desserted and how can I overcome this,low_mood,0,en,,test,1,9L13GJIT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3ccd107f94,My life has lost its meaning.,low_mood,1,en,,test,1,9OTMSDU9,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-865e42e9b5,How could I overcome such temptations,substance_use,0,en,,test,1,9VW7CPBV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8adb662a71,How can a person get out from drinking alcohol?,substance_use,0,en,,test,1,9YVCQS7J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4f870ed1bf,"I impregnated a girl, should I let her abort?",other,0,en,,test,1,A08XVOJ9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8204219444,I was depressed when I got pregnant,low_mood,0,en,,test,1,A1QFJ71D,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a45c61cc32,Is bhang harmful to my health? If I can stop taking bhang,substance_use,0,en,,test,1,A54FELHT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cc4441b0b8,When is the right age to consume alcohol,substance_use,0,en,,test,1,A8F3BDON,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5fdfde6c13,"Hopelessnesss,feeling like giving up",low_mood,1,en,,test,1,AFY1KE95,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-504ea32be9,Is it advisable for a depressed person to take drugs,substance_use,0,en,,test,1,AHNC9LX3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7b6b52d8fe,The issue of retake in university,academic_stress,0,en,,test,1,AJ95VZJW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ad850193cc,When is the right time to smoke?,substance_use,0,en,,test,1,ANDTOXCS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-56be84db10,"The world crashing, bitterness, intense pain",low_mood,0,en,,test,1,AYR375LB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3517b8f2f0,i almost gave up in life includingmy education,low_mood,1,en,,test,1,AYUG2VBI,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-527be3365a,"Feelings of helplessness,insomnia,lack of motivationsuicidal ideas",low_mood,1,en,,test,1,BKOSUA7B,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-84bc3dcff9,"How to overcome depression, the impacts of depression",low_mood,0,en,,test,1,BKZ07QBO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cf7e12deb9,i feel  bad about myself,low_mood,0,en,,test,1,BPHRVS1H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8a1c01e1eb,Is there hope for me?,low_mood,0,en,,test,1,BQ3RI60R,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8bba0d48e1,stressed,low_mood,0,en,,test,1,BU07VJUX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-447dafb29f,What should I do to overcome depression?,low_mood,0,en,,test,1,BUUPSFJ1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d97c992985,Is it good to terminate my life?,low_mood,1,en,,test,1,BUXSYAXO,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-9f02a87736,Can weed cause head damage to its users?,substance_use,0,en,,test,1,C41T92F7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c9d6396a99,Why does God allow bad things to happen?,other,0,en,,test,1,C8631YTB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a9e57494a9,"I experienced a challenge of depression,it was bad",low_mood,0,en,,test,1,CCI1EP67,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ed0df74539,Frustrated did not who to trust or talk to,low_mood,0,en,,test,1,CL6VO0ZL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-47ae40e72f,what's next after school?,academic_stress,0,en,,test,1,CMSUI7KZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6db303d31f,"i feel horrible,still depressed",low_mood,0,en,,test,1,CQ2F9IGN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b3ffc81b16,How to overcome the issue of using alcohol,substance_use,0,en,,test,1,CR5KBERA,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-eacdabccf2,"I feel low,what should I do?",low_mood,0,en,,test,1,CVZ52G5M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ae1b00c20c,I feel overwhelmed by life,low_mood,0,en,,test,1,DCK8JTB2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6d22b09fd9,"At that time, I was isolated and feeling alone",low_mood,0,en,,test,1,DE19DTOL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d4c1ab6097,How can I be able to trust again?,social_anxiety,0,en,,test,1,DG908K5U,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-28cbae8873,Is it bad to commit suicide?,low_mood,1,en,,test,2,DGDIRALY OWJE6CPQ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-726ead0fd4,Effects of too much consumption of alcohol and how to get rid of it,substance_use,0,en,,test,1,DI4P2QQX,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b3f4e54b03,why would suicide ring in my mind,low_mood,1,en,,test,1,DKVGD1IJ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-8bff1915e3,How will you assist young generation to avoid alcohol,substance_use,0,en,,test,1,DODZ41OP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-96961bccd6,how can I overcome my depression,low_mood,0,en,,test,1,DPJ4OEC9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cdb7bd83ca,Why do I have to repeat a unit yet attend all classes?,academic_stress,0,en,,test,1,DWV43DRV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9c9a7095f2,does everyone get depressed,low_mood,0,en,,test,1,DYI2P5P3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2a6762b68d,Why do campus ladies like being unfaithful to their patners,other,0,en,,test,1,DYVKY1ON,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-74aa4dfc07,What would really cause me to commit?,low_mood,1,en,,test,1,E0VNIWL4,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-42fa8003cb,How to minimize alcohol intake,substance_use,0,en,,test,1,E41VQ01H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ba55571bf2,how do I overcome the depression,low_mood,0,en,,test,1,E5KD22KF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-95d5e2dff8,Does God really exist?,other,0,en,,test,1,E6RVMA41,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-736fbdebb5,What can I do to avoid the influence of taking alcohol from friends?,substance_use,0,en,,test,1,EE5FDBNM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8b0f9b07ec,I feel a lot of bitterness and resentment,low_mood,0,en,,test,1,EIDANND5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e6a76f5d44,I feel sad and confused,low_mood,0,en,,test,1,EY6IC0E4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a600b234aa,what motivates people to take alcohol,substance_use,0,en,,test,1,F33BM4FZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ac87e15b2b,What is the effect of alcohol to my health,substance_use,0,en,,test,1,F49KVD16,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9cd8a1901b,I was frustrated after giving birthNow I appreciate motherhood,low_mood,0,en,,test,1,F4M78KUC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b293ef209f,I asked many people if it is worthy killing oneself,low_mood,1,en,,test,1,FFO4UILJ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-82f980b58f,I feel like the world is pointing fingers at me,social_anxiety,0,en,,test,1,FHJ1IH58,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9c69da2506,Lost my girlfriend during a holiday,low_mood,0,en,,test,1,FKJB1707,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b4dea20697,Can I stop taking drugs?,substance_use,0,en,,test,1,FRZBEQH7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-719eb6276b,A lack of School fees making me  fail my examinations,financial_strain,0,en,,test,1,FUOOXD1M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-73bcae0839,I have a feeling that I failed terribly,academic_stress,0,en,,test,1,FV80RL12,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3af45e947a,what was wrong with my life,low_mood,0,en,,test,1,G1QBYL4O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dcd6c74cd8,have you ever tasted alcohol once in your life,substance_use,0,en,,test,1,GC265VS9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b8edb7ffd2,I feel the urge of vengeance after being cheated on by my boyfriend,other,0,en,,test,1,GFM2D42Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9267ae96fc,I hate myself and everyone around me somehow,low_mood,0,en,,test,1,GGNQOSTW,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1b3eb71385,restless and absent minded,low_mood,0,en,,test,1,GGX9MUZS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b76eb84f88,Can I get better,low_mood,0,en,,test,1,GHKPUMG2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e8ee505167,I would like to know how to stop a drinking habit,substance_use,0,en,,test,1,GIBCN23O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dc90d0ef4a,does  drinking sove your  emotional problems,substance_use,0,en,,test,1,GNTLJ0E7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-37c73d7308,I have negative thoughts about my life…I want to know how o control my thoughts so I can stop fretting about life and start living,low_mood,0,en,,test,1,GT67A35X,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ea97e0cee8,"I feel stagnated, should I be a street child?",low_mood,0,en,,test,1,GTF1GHCS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-434d0916fb,what are the effects of alcohol in my life?,substance_use,0,en,,test,1,GW73P4MY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bd57b71407,How to cope with stress,low_mood,0,en,,test,1,GX06HFUO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f8c1824a88,i feel low and helplessStill not okay,low_mood,0,en,,test,1,H4ATKPDS,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d6b98571cc,how to avoid drugs,substance_use,0,en,,test,1,H4L5M9EC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-78b6c5e4bf,"Will i ever have peace of mind, since i am facing many and tough challenges",low_mood,0,en,,test,1,HB2GBCNY,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-34f49d486d,How do you cope with depression?,low_mood,0,en,,test,1,HFHX9FY3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a3b9258e16,How to stop drinking,substance_use,0,en,,test,1,HNOBGMQR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0ca083b644,Effects brought about by depression,low_mood,0,en,,test,1,HORZOP1I,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-48f472742b,I feel life is so unfair,low_mood,0,en,,test,1,HT3X6CBT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dbfded2f15,Is alcohol a solution to stress,substance_use,0,en,,test,1,HZ481ZV9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c6f12d790d,Will people judge me for trying to take my life,low_mood,1,en,,test,2,I4QJFX7S SXWT5DIS,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-f58b5dd84a,how can a person stop drinking alcohol,substance_use,0,en,,test,1,I7C5YIBV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9d7b0076ec,What are the effects of alcoholism?,substance_use,0,en,,test,1,I8XKEO6Q,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b21049f583,Why is life so unfair?,low_mood,0,en,,test,1,ICAT0M7H,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-008a4a5433,What can I do to clear my mind?,low_mood,0,en,,test,1,IJ2CEKCQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fe5510bffe,I just feel like not doing anything,low_mood,0,en,,test,1,IJHBPXRO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3833e4ea6a,Death of My sister,low_mood,0,en,,test,1,IRVOJF0A,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ffa5789015,I never sought for assistance for this. I was scared too. I planned to go for assistance but found someone else in session and went away,other,0,en,,test,1,ITPITEXJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2581d1e5df,how can I find comfort in my own mental situation,low_mood,0,en,,test,1,IV09XHLO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9f3903cf11,I'm not sure whether it is depression or something else,low_mood,0,en,,test,1,IZ0BUDDN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1329545dcf,What do I gain after taking alcohol,substance_use,0,en,,test,1,J4VYS10W,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-14d210190e,What am I to benefit if I commited?,low_mood,1,en,,test,1,J89G2EAB,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-5e4fc2ebc6,How can I do away with the issue of taking alcohol?,substance_use,0,en,,test,1,JGI2B1K2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-126e652e78,How to quit the habit of drinking,substance_use,0,en,,test,1,JJSOMO3W,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dff911683f,What are the effects of bhang in real life?,substance_use,0,en,,test,1,JTTTLHQZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-22d7074b20,I never asked for assistance,other,0,en,,test,1,JY50ZNP9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dad81ce340,I was about to die,low_mood,1,en,,test,1,K0732B8A,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-46844cbedb,Is alcohol good for my health? What other things I can do to tackle my problems rather than use of alcohol.,substance_use,0,en,,test,1,K1N9Q5UD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2eca6c9ea1,Can I make it through?,low_mood,0,en,,test,1,K4YUOEO3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2b07c2dc1c,feel lonely and stressed,low_mood,0,en,,test,1,K6LT8NSF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-76ab5a240c,Why do I want to commit suicide?,low_mood,1,en,,test,1,K7PGBHJ1,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-45ca37453d,My parents are hostile…Overcoming depression,low_mood,0,en,,test,1,K83YUYRB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dff07c195e,What can I do to stop alcohol indulgence,substance_use,0,en,,test,1,KCCMSUEO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-88e553388a,Why do my friends take alcohol,substance_use,0,en,,test,1,KFXWZ5UZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e7a5e5b4fa,Why is life so hard?,low_mood,0,en,,test,1,KO185AS3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-07500953d0,I am always unhappy,low_mood,0,en,,test,1,KOHTZ87Y,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-acd969fb79,what life of alcohol is better,substance_use,0,en,,test,1,KRK4V810,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d8ebae620b,What are the conditions that make someone to be involved in bhang taking,substance_use,0,en,,test,1,KXANZF15,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-57abd8d18b,How can I start feeling great about myself without smoking weed?,substance_use,0,en,,test,1,LA7HU1TD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b34ad78a03,I have too much debt,financial_strain,0,en,,test,1,LDQPDSEQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f6a24a5a8f,Then I feel that life made no sense Now I feel that I need to find a better way to deal with it,low_mood,0,en,,test,1,LDXD2SH6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a49fa47e6a,What are the side effects  of anger,other,0,en,,test,1,LFTDM9RL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9670a51d7d,How can i sustain my needs with less amounts of money,financial_strain,0,en,,test,1,LILA0SH7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3d85cd9a65,How can I get a long lasting solution to depression?,low_mood,0,en,,test,1,LNMBLTH4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f9a3f2e49f,How can I cope with stress without taking alcohol?,substance_use,0,en,,test,1,LREDNA2Z,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1825a552dd,what can I replace with taking drugs?,substance_use,0,en,,test,1,LU8M98TQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-64151933c5,I wanted to jump off a building or drink sleeping pills,low_mood,1,en,,test,1,LURBO1AA,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-4d7db8afe8,I feel depressed,low_mood,0,en,,test,1,M1H2TZHZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c4667ba093,What are the ways to get out of alcoholism,substance_use,0,en,,test,1,MGGGVEEK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-4e0ecd9f4d,Should I continue or minimize taking alcohol?,substance_use,0,en,,test,1,MHZNTK7J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cd290adcb7,"Confused, devastated and I feel so alone My self-esteem is so lowt",low_mood,0,en,,test,1,MOR6QVHM,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-225a8e6d9f,Should I commit suicide,low_mood,1,en,,test,1,MZ0W3E21,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-056210ecc5,"I feel stressed,lost hope",low_mood,0,en,,test,1,N0M5HFZ4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cc90b2003d,What will my family think of me when they foind out that I take alcohol?,substance_use,0,en,,test,1,N3RP8SW2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-750d478d05,Lack of funds,financial_strain,0,en,,test,1,N4MHVE6D,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a185b4a7d9,Is alcohol a possible way out of a devastating situation,substance_use,0,en,,test,1,N6AYNOKV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-206913451d,I feel oppressed and helplessI feel now happy,low_mood,0,en,,test,1,N82L56BF,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-65afed16af,If commiting suicide would sort all of my problems?,low_mood,1,en,,test,1,N9K4UUS4,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-8a5ab6d68f,I haveI feel so weak and left out,low_mood,0,en,,test,1,NAF8DOAZ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dad3e60989,what are the effects of blacking out from alcohol,substance_use,0,en,,test,1,NAFC0V61,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-43f2a100a4,will I get help?,low_mood,0,en,,test,1,NBH3E9YH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1f9839b955,Can I stop taking weed?,substance_use,0,en,,test,1,NE6LYAT9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-83633483ad,I am so emotional,low_mood,0,en,,test,1,NKILW1NP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c3b22d07d1,Did my parents give birth to me inorder for me to suffer like this.,low_mood,0,en,,test,1,O7K8KU2O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-dae3e59055,how to stay away from alcohol,substance_use,0,en,,test,1,OHRCIS8J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9f42748fa2,"How can I stop taking alcohol, effects of alcohol in my life",substance_use,0,en,,test,1,OKHQWFS5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-482a718968,I feel discouraged,low_mood,0,en,,test,1,OMAPSLZT,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ef00c0405e,I feel there was no reason to continue living,low_mood,1,en,,test,1,OOY8GDRH,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-bf613efa58,I had to call off the semester and defer because of financial constraints…Am I too old to resume back to school after deferrin the semester after a lac of school fees,financial_strain,0,en,,test,1,OPZP8AD6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-085d46a90f,How do I seek counselling.,other,0,en,,test,1,OQ3TLQ4J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e64600a1da,Is it normal to have suicidal thoughts?,low_mood,1,en,,test,1,OUREQSFZ,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-86eaf81073,I feel so down and empty,low_mood,0,en,,test,1,OWAUAIR6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2901bbb75e,What does one do to avoid alcohol after taking it,substance_use,0,en,,test,1,P6Y2IXU4,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6064898eb0,How can I stop stressing?,low_mood,0,en,,test,1,PCRO6970,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b04d07111e,I feel like a piece of shit,low_mood,0,en,,test,1,PCRSZ9UV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c2376d5c86,I was completely downrecovering and way better,low_mood,0,en,,test,1,PHH1ERZG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d48a91773a,I feel like taking away my life,low_mood,1,en,,test,1,PM7CUC6D,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-ee5f77fb11,How to manage depression,low_mood,0,en,,test,1,PM8EMAGV,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1a5128b5d7,What will I do to get out of depression?,low_mood,0,en,,test,1,PRURL087,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-14d5a3c5d7,I feel so bad because I had sleepless nightsi'm feeling better,low_mood,0,en,,test,1,PT0X6CU5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-20811dfc63,Why should someone keep drinking even if someone is not interested,substance_use,0,en,,test,1,PUVTNFYO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-78da5dfdb9,Who was to pay my school fees?,financial_strain,0,en,,test,1,PYTVXEF9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-df21a23c7f,how can I avoid it,other,0,en,,test,1,PZ024QY0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-2819c7f8f4,how can you convince someon who is about to commit suicide,other,0,en,,test,1,Q4WRS0PQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a0a7e76b92,I am  experiencing low self-esteem,low_mood,0,en,,test,1,Q7OA0QNU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cd5565c302,How do I make friends when depressed?,social_anxiety,0,en,,test,1,QHA0QIDB,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e1ddadef03,I  feel like the whole world is crumbling down as each day life is becoming more and more hard,low_mood,0,en,,test,1,QNVFKVPO,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5f0cfae4f6,I feel as if the world is against me,low_mood,0,en,,test,1,QSI99X2N,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-61a19ffe2d,Why was I even born?,low_mood,1,en,,test,1,QTD01ME7,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-ba2be54908,"Lack of school fees, which made me defer my studies and my dad refusing to pay my fees because he hates me",financial_strain,0,en,,test,1,QWEPGVLE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7967f69df2,Hatred and guilt,low_mood,0,en,,test,1,R5TQVK1E,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a16143af83,I am feeling broke,financial_strain,0,en,,test,1,R7X390UC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f6e420d9d2,Is taking small quantities of alcohol considered harmful?,substance_use,0,en,,test,1,RBDC9TXE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-66294b07b9,how can I abstain from bad company,other,0,en,,test,1,RBJKAVC6,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9d5c7467f6,Can I manage to live once again?,low_mood,0,en,,test,1,RBU7ND89,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f8efd2dd72,Which is the right alcohol for me?,substance_use,0,en,,test,1,RMOUHSEU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-89cb59bcfd,"I feel very low emotionally,with a lot of anger and sadness",low_mood,0,en,,test,1,RRFBVOW9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-a8a956db87,How will my guardians react to my difficult  situation,other,0,en,,test,1,RT2TOM8I,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-d447a4ccac,I feel so down and overwhelmed,low_mood,0,en,,test,1,S3S91EPE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-285554bdf6,"I feel low,could not actively do daily activites at home or go out with friends",low_mood,0,en,,test,1,S86OIM9K,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-cb0f8fe09f,How can i recover from alcohol?,substance_use,0,en,,test,1,SAPK1D54,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-7f085539c5,I feel very sad and lack the strength to do good in my life,low_mood,0,en,,test,1,SC9WIG5M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9f7904804a,Depressed due to not achieving beyond my expectations,academic_stress,0,en,,test,1,SE85CBXL,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-b0dc8356d5,What does bhang do to your body?,substance_use,0,en,,test,1,SELKNMCN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e4ae5d4f02,"Emptiness,worthlesness,unhappy most of the time",low_mood,0,en,,test,1,SF4BGQSH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6b26adf8ed,What can i do to avoid my friends and does bhang has effects?,substance_use,0,en,,test,1,SKWI5DBU,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-31f4660bac,I feel lost,low_mood,0,en,,test,1,SLAB1M8M,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-8638989f7e,How to overcome the situation?,low_mood,0,en,,test,1,SN0Y3CB9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9eb9802d25,I feel bad and view life negatively,low_mood,0,en,,test,1,SNVUHXY1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-1096cd1df4,I feel bored and awkward,low_mood,0,en,,test,1,SQJTBF4L,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-681422bfe3,What could i do to quit taking alcohol,substance_use,0,en,,test,1,TC5Z7J76,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-22a16ad052,How can I avoid alcoholism,substance_use,0,en,,test,1,TUI47XO3,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-09468ff94d,Is bhang important in health issues?,substance_use,0,en,,test,1,UA7A354V,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ef0cb3f358,I  feel depressed because my problems aren't over yet everyday is a challenge to wake up and face life,low_mood,0,en,,test,1,UPST0OK2,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e291ee0259,how will I overcome challenges,low_mood,0,en,,test,1,USO2MI7J,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0170deacc8,Can I ever get better from depression?,low_mood,0,en,,test,1,V0A2N0K5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-243e3815f9,Would weed help me relax  my mind ?,substance_use,0,en,,test,1,V26UYHV9,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0ece76f0f5,How to stop this addiction?,substance_use,0,en,,test,1,VB7VFL75,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-3f6fa6b0a4,I am too stressed,low_mood,0,en,,test,1,VIV8YU3K,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c81455ce46,can I get saved from alcohol?,substance_use,0,en,,test,1,VLMY8JHQ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-5a3375cbd9,I am sad and traumatized,low_mood,0,en,,test,1,VT4U2VXD,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-eaa6023b95,I feel lonely,low_mood,0,en,,test,1,VVD03CXJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-bf077f633b,death of a family member,low_mood,0,en,,test,1,WDYSQ3BP,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-6058c047c0,It was a disturbing feeling,low_mood,0,en,,test,1,WLI8IPM8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c8de55fbeb,How can one do away with depression,low_mood,0,en,,test,1,WOKOVI83,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-ae793675f2,How can i stop being a drunkard?,substance_use,0,en,,test,1,WVGL15DG,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-9f375d9f7a,"How to completely stop using alcohol, -possible effects of alcohol to my health",substance_use,0,en,,test,1,X2E196ZE,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-af8a428294,I feel like I want to end my life,low_mood,1,en,,test,1,X72WL59G,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-1f90e6ec9e,I am anxious of what is going to happen in the future,social_anxiety,0,en,,test,1,XDK01LYR,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c56aa07725,Can the habit be stopped at once?,substance_use,0,en,,test,1,XLE74IX1,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0b6202f9f4,How can I stop drinking?,substance_use,0,en,,test,1,XU4HGW9C,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aee9dd1192,I don't see the need to live in the world,low_mood,1,en,,test,1,XUHRT8P4,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-6f5bf50d09,How do I go about solving my problem?,other,0,en,,test,1,XXMTEUX8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-89f8ced8ab,I feel depressed because of lack of school fees…How can I raise money for school fees,financial_strain,0,en,,test,1,XYRTMPGC,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-302f1c405c,Dumped with my boyfriend?,low_mood,0,en,,test,1,Y3QTMIO7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-76f97497f9,Asked for financial support from wellwishers,financial_strain,0,en,,test,1,Y5S49JQ7,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-13e2566a55,how can I limit my drinking,substance_use,0,en,,test,1,YAK9NY3K,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f54c717b20,"If a person rejects you, what would you do?",social_anxiety,0,en,,test,1,YCHHQT18,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-aedaee554a,Is suicide the right decision?,low_mood,1,en,,test,1,YDIWQZA5,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-9df9781f14,What can i do to pass at school? what can i do to forget about a man I love ?,academic_stress,0,en,,test,1,YG9CPVR0,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-f8e2719797,What are the effects of abusing bhang?,substance_use,0,en,,test,1,YIJ0CEQJ,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-82bca3007d,I feel like committing suicide,low_mood,1,en,,test,1,YMT18ON6,ai_suggested+ai_checked; crisis human-reviewed,1,1
+z-d3ff43cc5f,Measures to handle depression and feeling,low_mood,0,en,,test,1,YNOCXCJN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-c4679b7088,I feel like I've lost hope,low_mood,0,en,,test,1,YO2RYXV5,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0c034f32ff,How to stop drinking?,substance_use,0,en,,test,1,YSSD2IXK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-e28b7c5e70,Financial Crisis,financial_strain,0,en,,test,1,Z78UM6R8,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fb360f9c09,Yes,other,0,en,,test,1,Z9A6ACLK,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-45e5c2821f,My girlfriend dumped me,low_mood,0,en,,test,1,ZDUOIGKN,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-96e5c0fe53,How can I go back to being my old self?,low_mood,0,en,,test,1,ZHQ60CCH,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-fd52fe71ca,Is it true bhang is  medicinal?,substance_use,0,en,,test,1,ZVIJMA4O,ai_suggested+ai_checked; crisis human-reviewed,1,0
+z-0035e3ceba,how can I overcome the problem?,other,0,en,,test,1,ZYIFAY98,ai_suggested+ai_checked; crisis human-reviewed,1,0

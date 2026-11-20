@@ -4,10 +4,24 @@
 English–Swahili–Sheng student check-ins that sends crisis messages to a human and answers every
 other message with a **retrieved**, counsellor-approved coping strategy.
 
-> **Status:** the code is complete and tested. It has run end to end on **synthetic demo data only**.
-> No result here is a real result. Before any student uses it, three things must happen:
-> real labelled data, counsellor approval of the library, and student/counsellor review of the lexicon.
-> See "Before a pilot" below.
+> **Status:** the code is complete and tested, and the models are trained and evaluated on **884 real
+> messages from students at Kenyan universities** (Zindi BNBR Tech4MentalHealth, relabelled for this
+> task). Those messages are in English; Swahili/Sheng performance is still only exercised on synthetic
+> data. Before any student uses it: human review of the labels, counsellor approval of the library,
+> and student/counsellor review of the Sheng lexicon. See "Before a pilot" below.
+
+## Data
+
+| Dataset | Use | Where |
+|---|---|---|
+| **Zindi: Basic Needs Basic Rights Kenya – Tech4MentalHealth** (2020). 925 statements and questions written by students at Kenyan universities, originally tagged Depression / Alcohol / Suicide / Drugs. Redistributed here under the dataset's terms; credit to Zindi and BNBR Kenya. | Real seed, training **and** test data | `data/zindi/Train.csv`, `Test.csv` (original files) |
+| Sikiza labels: crisis (0/1) + one of six categories for every message, from the text alone | Labels | `data/labels/zindi_labels.csv`, guide in [`data/labels/LABELLING_GUIDE.md`](data/labels/LABELLING_GUIDE.md) |
+| Prepared seed (duplicates merged, 884 messages) | Model input | `data/zindi/zindi_seed.csv` (`make data`) |
+| Synthetic English/Swahili/Sheng check-ins (224) | Pipeline smoke tests; code-mixed tokenizer and drift checks only | `data/demo/demo_seed.csv` (`--demo`) |
+| GoEmotions, AfriSenti-swa, tabularisai Swahili sentiment | Optional stage-1 fine-tuning (`--intermediate`) | downloaded from Hugging Face |
+
+The first-pass labels were suggested by an AI assistant and are being reviewed (see [`AI_USE.md`](AI_USE.md));
+the `reviewed` column records progress.
 
 ## Submission contents
 
@@ -61,7 +75,7 @@ curl -s -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
      -d '{"text":"nimechoka na exams, sijui kama nitapass"}'
 ```
 
-**B. Rebuild everything from scratch (about 10–15 minutes on a laptop CPU)**
+**B. Rebuild everything from scratch on the real data (about 1 hour on a laptop CPU)**
 
 ## Proposal → code map
 
@@ -90,8 +104,9 @@ curl -s -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
 
 ```bash
 make setup          # Python venv (+ mobile deps)
-make demo           # demo data → augment → baseline → AfroXLM-R (2 epochs) → ONNX int8 → evaluate
-make distilbert DEMO=--demo && make evaluate DEMO=--demo   # comparison model + full results table
+make real           # Zindi → prepare → augment → baseline → AfroXLM-R + DistilBERT → ONNX int8 → evaluate,
+                    # fertility, zero-shot, drift; results in artifacts/reports/
+make demo           # the same pipeline on the synthetic set (5 min smoke test)
 make test           # unit + API tests
 make serve          # API on :8000 without Docker (draft library allowed in dev)
 cd mobile && cp .env.example .env && npx expo start      # app; set EXPO_PUBLIC_API_URL in .env
@@ -99,9 +114,10 @@ cd mobile && cp .env.example .env && npx expo start      # app; set EXPO_PUBLIC_
 
 Every script prints a **DEMO DATA** banner when it runs on the synthetic set.
 
-## Running on the real Strathmore data
+## Running on the Strathmore check-ins (when available)
 
-1. Put the consented, de-identified check-ins at `data/raw/strathmore_checkins.csv` (git-ignored).
+1. Put the consented, de-identified check-ins at `data/raw/strathmore_checkins.csv` (git-ignored) and
+   point `data.seed_csv` in `configs/config.yaml` at it.
    Columns: `seed_id, text, category, crisis, language` (+ `category_2, crisis_2` for the double-coded
    sample, which gives Cohen's κ). Use `en | sw | sheng | mixed` for `language`.
 2. `python scripts/augment.py` (add `--back-translate` for MarianMT en↔sw round trips).

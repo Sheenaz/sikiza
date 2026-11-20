@@ -183,6 +183,35 @@ strategies:
       Usingizi na hisia huathiriana. Jaribu kuamka saa moja kila siku, weka simu
       mbali dakika 30 kabla ya kulala, na uandike wasiwasi wa kesho kwenye karatasi.
 
+  # ---------------- substance_use ----------------
+  # Added after the real (Zindi) data showed ~30% of messages are about alcohol or drugs.
+  - id: substance_cut_down
+    category: substance_use
+    when: stop quit reduce drinking alcohol beer pombe addiction habit how to stop
+    approved: false
+    en: >-
+      Wanting to cut down is a strong first step. For the next week, note when and
+      why you drink or smoke: the place, the people, the feeling. Patterns make it
+      easier to plan the hardest moments. Campus counsellors can support you
+      confidentially, with no judgement.
+    sw: >-
+      Kutaka kupunguza ni hatua kubwa ya kwanza. Kwa wiki ijayo, andika lini na kwa
+      nini unakunywa au kuvuta: mahali, watu, na hisia. Ukijua mtindo wako, ni rahisi
+      kupanga nyakati ngumu. Washauri wa chuo wanaweza kukusaidia kwa siri, bila hukumu.
+  - id: substance_peer_pressure
+    category: substance_use
+    when: friends peer pressure bad company bhang weed smoke drugs influence
+    approved: false
+    en: >-
+      Saying no is easier with a plan. Decide your answer before you go out, have
+      a reason ready ("I've got an early class"), and spend time with at least one
+      friend who doesn't use. If it's hard to stop on your own, a counsellor can help
+      you find support.
+    sw: >-
+      Kukataa ni rahisi ukiwa na mpango. Amua jibu lako kabla ya kutoka, kuwa na
+      sababu tayari ("nina darasa asubuhi"), na kaa na angalau rafiki mmoja asiyetumia.
+      Ikiwa ni vigumu kuacha peke yako, mshauri anaweza kukusaidia kupata msaada.
+
   # ---------------- other ----------------
   - id: other_checkin
     category: other
