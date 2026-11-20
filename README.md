@@ -32,7 +32,7 @@ the `reviewed` column records progress.
 | Final report: problem framing, technique justification, results, limitations | [`REPORT.md`](REPORT.md) |
 | Data pipeline (scripted, reproducible) | `triage/data.py`, `triage/augment.py`, `triage/pseudonymise.py`, `scripts/make_demo_data.py`, `scripts/augment.py` |
 | Model training code | `triage/baseline.py`, `triage/transformer.py`, `triage/calibration.py`, `triage/thresholds.py`, `scripts/train_*.py`, `scripts/export_onnx.py` |
-| Serialized artifacts | `artifacts/baseline/` (TF-IDF + LR, in the repo); int8 ONNX bundle in the [v0.1.0 release](https://github.com/Sheenaz/sikiza/releases/tag/v0.1.0) (`make model`, 279 MB, too large for git) |
+| Serialized artifacts | `artifacts/baseline/` (TF-IDF + LR, in the repo); int8 ONNX bundle in the [v0.2.0 release](https://github.com/Sheenaz/sikiza/releases/tag/v0.2.0) (`make model`, 279 MB, too large for git) |
 | Evaluation outputs | `artifacts/reports/` (`eval.md`, `eval.json`, confusion matrices, fertility, drift) |
 | Docker | `serving/Dockerfile`, `docker-compose.yml` |
 | API service | `serving/app.py` (FastAPI) |
@@ -135,31 +135,28 @@ Splits are fixed the first time (`data/processed/splits/splits.json`). The split
 
 The full discussion is in [`REPORT.md`](REPORT.md). In short:
 
-1. **The success criterion needs more crisis examples than a random split gives.** A 95% CI lower bound
-   ≥ 0.95 needs **≥ 72 test crises with zero misses** (exact Clopper–Pearson: 0.025^(1/n) ≥ 0.95).
-   A random 25% test split of about 1,000 messages at about 5% prevalence holds about 12. With 12/12 caught,
-   the lower bound is only 0.74. Options: enrich the test set with more real crisis messages (with
-   ethics approval), use grouped k-fold to pool predictions across folds, or report the CI honestly. The
-   evaluator reports both bootstrap and exact CIs and uses the more conservative one. The percentile
-   bootstrap collapses to [1, 1] when every crisis is caught.
-2. **The cost-derived threshold is very low.** C_fp/(C_fp+C_fn) = 1/101 ≈ 0.0099. A weak model then
-   escalates almost everything. That happens on the demo data, and the report warns about it. Always
-   report the escalation rate next to recall, because recall at a 100% escalation rate means nothing. If
-   counsellor capacity binds, revisit the cost ratio with them rather than raising the threshold silently.
-3. **Tokenizer fertility** (demo text): AfroXLM-R and XLM-R share a tokenizer, at 1.57 tokens per word on
-   code-mixed text versus 1.18 on English. Multilingual DistilBERT gives 1.93, with 23.5% of words split
-   into 3 or more pieces. This supports the proposal's encoder choice. Re-measure on the real data.
-4. **int8 quantisation shifts logits.** The fp32 ONNX export matches PyTorch exactly. Dynamic int8
-   (1.1 GB → 279 MB) moved crisis logits by up to about 1.3 on the demo model. The int8 bundle is
-   therefore **re-calibrated, and its threshold re-derived, on its own calibration outputs**, and that
-   bundle is what gets evaluated and deployed. Keeping the embedding layer in fp32 made the file 856 MB
-   for little gain.
-5. **Latency:** about 5 ms model-only and about 7.5 ms local HTTP round trip on an M1 CPU. The 400 ms
-   budget is network-bound, as the proposal predicted. Measure on a mid-range Android phone with the app.
-6. **The OR-gate matters.** On demo data the keyword valve alone catches 4/6 test crises. Implicit
-   warning signs ("I've written goodbye letters…") are caught only by the classifier.
-7. **Drift:** a TF-IDF embedding can't see words it has never seen, so novelty also counts the unseen-word
-   rate. Injected new slang ("wueh", "mafala") is clustered and surfaced for review.
+1. **The source labels were unfit for crisis detection.** Zindi's "Suicide" tag agrees with text-based crisis
+   labels at only κ = 0.45. Half of its "Suicide" messages are not crises, and 29 real crises were tagged
+   "Depression". Every message was relabelled from its text; crisis labels were human-reviewed (κ = 0.74 between
+   the AI first pass and the review).
+2. **Duplicates leak across the official split.** 13 texts appear in both Zindi's train and test files. Identical
+   texts are merged before the grouped split.
+3. **Results on 221 real test messages (26 crises).** The deployed AfroXLM-R int8 model catches 24/26 crises
+   (exact 95% CI 0.75–0.99) while escalating 38% of messages; the TF-IDF baseline catches 26/26 only by
+   escalating 72%. AfroXLM-R is the best category model (macro-F1 0.66 vs 0.47, McNemar p = 0.013). On threshold-free
+   ranking (ROC-AUC ≈ 0.92–0.93) the models are statistically indistinguishable on this English data.
+4. **The keyword valve alone catches only 8/26 real crises.** Real students phrase crises indirectly ("is life
+   even worth it"), so the classifier half of the OR-gate is essential.
+5. **The success criterion needs more crisis examples than a random split gives.** Proving a 95% lower bound
+   ≥ 0.95 needs **≥ 72 test crises with zero misses** (exact Clopper–Pearson). The real test set has 26.
+   Always report the escalation rate next to recall: recall at a very high escalation rate means little.
+6. **Drift detection must be calibrated on real text.** A fixed 25% unseen-word rule flagged 16% of ordinary
+   held-out messages (typos, run-on words). Calibrated by cross-validation, the no-drift control flags ~2% while a
+   shift to Sheng/Swahili flags ~73% and surfaces the new words.
+7. **Tokenizer fertility** (code-mixed synthetic text): AfroXLM-R/XLM-R 1.57 tokens per word vs multilingual
+   DistilBERT 1.93; on the real English text all three are ~1.24.
+8. **int8 quantisation shifts logits**, so the int8 bundle is re-calibrated and re-thresholded on its own outputs
+   (1.1 GB → 279 MB). Latency is ~5 ms per message on an M1 CPU; the 400 ms budget is network-bound.
 
 ## Docker
 

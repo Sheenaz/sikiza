@@ -1,99 +1,94 @@
 {
-  "demo_data": true,
-  "test_rows": 56,
-  "test_crisis": 6,
+  "demo_data": false,
+  "test_rows": 221,
+  "test_crisis": 26,
   "groups": {
-    "code_mixed": 42,
-    "english_only": 14
+    "english_only": 221
   },
-  "kappa": {
-    "category_kappa": 0.8662807525325615,
-    "category_n": 66,
-    "crisis_kappa": 1.0,
-    "crisis_n": 66
-  },
+  "kappa": null,
   "models": {
-    "baseline-46e01191": {
+    "baseline-f49c2ebd": {
       "manifest": {
         "model_type": "tfidf_logreg",
-        "model_version": "baseline-46e01191",
+        "model_version": "baseline-f49c2ebd",
         "base_model": null,
         "threshold": {
           "threshold": 0.009900990099009901,
           "t_cost": 0.009900990099009901,
-          "t_recall_floor": 0.09489018672207168,
+          "t_recall_floor": 0.027169300394859094,
           "binding": "cost",
           "calib_recall": 1.0,
-          "calib_escalation_rate": 1.0,
-          "calib_positives": 4,
-          "warning": "only 4 crisis examples in calib: threshold is fragile"
+          "calib_escalation_rate": 0.7518796992481203,
+          "calib_positives": 14,
+          "warning": "only 14 crisis examples in calib: threshold is fragile"
         },
         "calibrator": {
-          "t_crisis": 1.7959426957469864,
+          "t_crisis": 1.5455156306077735,
           "b_crisis": 0.0,
-          "t_category": 1.0941614300791762,
+          "t_category": 1.2613139794317296,
           "method": "temperature"
         },
         "lexicon_version": "0.1.0-draft"
       },
       "valve_only": {
-        "n": 56,
-        "positives": 6,
-        "recall": 0.6666666666666666,
+        "n": 221,
+        "positives": 26,
+        "recall": 0.3076923076923077,
         "recall_ci": [
-          0.2,
-          1.0
+          0.13043478260869565,
+          0.5
         ],
         "recall_exact_ci": [
-          0.22277809550354957,
-          0.9567281317071105
+          0.14325999792770355,
+          0.5178964364457415
         ],
-        "precision": 1.0,
-        "false_alarm_rate": 0.0,
-        "escalation_rate": 0.07142857142857142,
-        "tp": 4,
-        "fn": 2,
-        "fp": 0,
-        "tn": 50,
+        "precision": 0.8888888888888888,
+        "false_alarm_rate": 0.005128205128205128,
+        "escalation_rate": 0.04072398190045249,
+        "tp": 8,
+        "fn": 18,
+        "fp": 1,
+        "tn": 194,
         "meets_target_0.95": false,
         "warning": null
       },
       "classifier_only": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
+            "n": 221,
+            "positives": 26,
             "recall": 1.0,
             "recall_ci": [
               1.0,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
+              0.8677253955022459,
               1.0
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
+            "precision": 0.16352201257861634,
+            "false_alarm_rate": 0.6820512820512821,
+            "escalation_rate": 0.7194570135746606,
+            "tp": 26,
             "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "fp": 133,
+            "tn": 62,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.8638453500522466,
+            "macro_f1": 0.4647927077667122,
             "macro_f1_ci": [
-              0.7371591820341821,
-              0.9494868421052631
+              0.38876000156019763,
+              0.5263073228696348
             ],
             "per_class_f1": {
-              "academic_stress": 0.9166666666666666,
-              "financial_strain": 0.9166666666666666,
-              "social_anxiety": 0.7272727272727273,
-              "low_mood": 0.7586206896551724,
-              "other": 1.0
+              "academic_stress": 0.0,
+              "financial_strain": 0.625,
+              "social_anxiety": 0.0,
+              "low_mood": 0.8627450980392157,
+              "substance_use": 0.8872180451127819,
+              "other": 0.41379310344827586
             },
             "confusion_matrix": {
               "labels": [
@@ -101,43 +96,57 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  11,
                   0,
                   0,
-                  1,
+                  0,
+                  5,
+                  0,
                   0
                 ],
                 [
                   0,
-                  11,
-                  0,
-                  2,
-                  0
-                ],
-                [
-                  0,
+                  5,
                   0,
                   4,
-                  0,
+                  1,
                   0
                 ],
                 [
-                  1,
+                  0,
+                  0,
                   0,
                   3,
-                  11,
+                  1,
                   0
                 ],
                 [
                   0,
                   0,
                   0,
+                  110,
+                  5,
+                  6
+                ],
+                [
                   0,
-                  12
+                  0,
+                  0,
+                  5,
+                  59,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  7,
+                  2,
+                  6
                 ]
               ]
             }
@@ -145,39 +154,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
+            "n": 221,
+            "positives": 26,
             "recall": 1.0,
             "recall_ci": [
               1.0,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
+              0.8677253955022459,
               1.0
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
+            "precision": 0.16352201257861634,
+            "false_alarm_rate": 0.6820512820512821,
+            "escalation_rate": 0.7194570135746606,
+            "tp": 26,
             "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "fp": 133,
+            "tn": 62,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.6222222222222222,
+            "macro_f1": 0.4647927077667122,
             "macro_f1_ci": [
-              0.3179444444444445,
-              0.7333333333333333
+              0.38876000156019763,
+              0.5263073228696348
             ],
             "per_class_f1": {
-              "academic_stress": 0.8888888888888888,
-              "financial_strain": 0.8888888888888888,
+              "academic_stress": 0.0,
+              "financial_strain": 0.625,
               "social_anxiety": 0.0,
-              "low_mood": 0.3333333333333333,
-              "other": 1.0
+              "low_mood": 0.8627450980392157,
+              "substance_use": 0.8872180451127819,
+              "other": 0.41379310344827586
             },
             "confusion_matrix": {
               "labels": [
@@ -185,20 +195,23 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
+                  0,
+                  0,
+                  0,
+                  5,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  0,
                   4,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  4,
-                  0,
                   1,
                   0
                 ],
@@ -206,13 +219,7 @@
                   0,
                   0,
                   0,
-                  0,
-                  0
-                ],
-                [
-                  1,
-                  0,
-                  2,
+                  3,
                   1,
                   0
                 ],
@@ -220,92 +227,25 @@
                   0,
                   0,
                   0,
+                  110,
+                  5,
+                  6
+                ],
+                [
                   0,
+                  0,
+                  0,
+                  5,
+                  59,
                   1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.9250241545893718,
-            "macro_f1_ci": [
-              0.7818040782746666,
-              1.0
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.9333333333333333,
-              "financial_strain": 0.9333333333333333,
-              "social_anxiety": 0.8888888888888888,
-              "low_mood": 0.8695652173913043,
-              "other": 1.0
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
-                [
-                  7,
-                  0,
-                  0,
-                  1,
-                  0
                 ],
                 [
+                  0,
+                  1,
                   0,
                   7,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  4,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  1,
-                  10,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  11
+                  2,
+                  6
                 ]
               ]
             }
@@ -315,39 +255,40 @@
       "combined_or_gate": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
+            "n": 221,
+            "positives": 26,
             "recall": 1.0,
             "recall_ci": [
               1.0,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
+              0.8677253955022459,
               1.0
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
+            "precision": 0.16352201257861634,
+            "false_alarm_rate": 0.6820512820512821,
+            "escalation_rate": 0.7194570135746606,
+            "tp": 26,
             "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "fp": 133,
+            "tn": 62,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.8638453500522466,
+            "macro_f1": 0.4647927077667122,
             "macro_f1_ci": [
-              0.7371591820341821,
-              0.9494868421052631
+              0.38876000156019763,
+              0.5263073228696348
             ],
             "per_class_f1": {
-              "academic_stress": 0.9166666666666666,
-              "financial_strain": 0.9166666666666666,
-              "social_anxiety": 0.7272727272727273,
-              "low_mood": 0.7586206896551724,
-              "other": 1.0
+              "academic_stress": 0.0,
+              "financial_strain": 0.625,
+              "social_anxiety": 0.0,
+              "low_mood": 0.8627450980392157,
+              "substance_use": 0.8872180451127819,
+              "other": 0.41379310344827586
             },
             "confusion_matrix": {
               "labels": [
@@ -355,43 +296,57 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  11,
                   0,
                   0,
-                  1,
+                  0,
+                  5,
+                  0,
                   0
                 ],
                 [
                   0,
-                  11,
-                  0,
-                  2,
-                  0
-                ],
-                [
-                  0,
+                  5,
                   0,
                   4,
-                  0,
+                  1,
                   0
                 ],
                 [
-                  1,
+                  0,
+                  0,
                   0,
                   3,
-                  11,
+                  1,
                   0
                 ],
                 [
                   0,
                   0,
                   0,
+                  110,
+                  5,
+                  6
+                ],
+                [
                   0,
-                  12
+                  0,
+                  0,
+                  5,
+                  59,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  7,
+                  2,
+                  6
                 ]
               ]
             }
@@ -399,39 +354,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
+            "n": 221,
+            "positives": 26,
             "recall": 1.0,
             "recall_ci": [
               1.0,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
+              0.8677253955022459,
               1.0
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
+            "precision": 0.16352201257861634,
+            "false_alarm_rate": 0.6820512820512821,
+            "escalation_rate": 0.7194570135746606,
+            "tp": 26,
             "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "fp": 133,
+            "tn": 62,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.6222222222222222,
+            "macro_f1": 0.4647927077667122,
             "macro_f1_ci": [
-              0.3179444444444445,
-              0.7333333333333333
+              0.38876000156019763,
+              0.5263073228696348
             ],
             "per_class_f1": {
-              "academic_stress": 0.8888888888888888,
-              "financial_strain": 0.8888888888888888,
+              "academic_stress": 0.0,
+              "financial_strain": 0.625,
               "social_anxiety": 0.0,
-              "low_mood": 0.3333333333333333,
-              "other": 1.0
+              "low_mood": 0.8627450980392157,
+              "substance_use": 0.8872180451127819,
+              "other": 0.41379310344827586
             },
             "confusion_matrix": {
               "labels": [
@@ -439,20 +395,23 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
+                  0,
+                  0,
+                  0,
+                  5,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  0,
                   4,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  4,
-                  0,
                   1,
                   0
                 ],
@@ -460,13 +419,7 @@
                   0,
                   0,
                   0,
-                  0,
-                  0
-                ],
-                [
-                  1,
-                  0,
-                  2,
+                  3,
                   1,
                   0
                 ],
@@ -474,195 +427,129 @@
                   0,
                   0,
                   0,
+                  110,
+                  5,
+                  6
+                ],
+                [
                   0,
+                  0,
+                  0,
+                  5,
+                  59,
                   1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.9250241545893718,
-            "macro_f1_ci": [
-              0.7818040782746666,
-              1.0
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.9333333333333333,
-              "financial_strain": 0.9333333333333333,
-              "social_anxiety": 0.8888888888888888,
-              "low_mood": 0.8695652173913043,
-              "other": 1.0
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
-                [
-                  7,
-                  0,
-                  0,
-                  1,
-                  0
                 ],
                 [
+                  0,
+                  1,
                   0,
                   7,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  4,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  1,
-                  10,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  11
+                  2,
+                  6
                 ]
               ]
             }
           }
         }
       },
-      "test_ece_crisis": 0.053051918567819406,
+      "test_ece_crisis": 0.04123385884722853,
       "crisis_ranking": {
-        "roc_auc": 0.9366666666666666,
+        "roc_auc": 0.9289940828402368,
         "roc_auc_ci": [
-          0.8483965014577259,
-          1.0
+          0.8757116798084575,
+          0.9685780501549732
         ],
-        "average_precision": 0.6716422466422467,
+        "average_precision": 0.6644673220837021,
         "average_precision_ci": [
-          0.2965049533799536,
-          1.0
+          0.48081540267345585,
+          0.8438925485238898
         ],
-        "prevalence": 0.10714285714285714,
-        "recall_at_top20pct": 0.6666666666666666
+        "prevalence": 0.11764705882352941,
+        "recall_at_top20pct": 0.8076923076923077
       }
     },
-    "afroxlmr-46e01191": {
+    "afroxlmr-f49c2ebd": {
       "manifest": {
         "model_type": "torch",
-        "model_version": "afroxlmr-46e01191",
+        "model_version": "afroxlmr-f49c2ebd",
         "base_model": "Davlan/afro-xlmr-base",
         "threshold": {
           "threshold": 0.009900990099009901,
           "t_cost": 0.009900990099009901,
-          "t_recall_floor": 0.08489527887756979,
+          "t_recall_floor": 0.024545017936569043,
           "binding": "cost",
           "calib_recall": 1.0,
-          "calib_escalation_rate": 1.0,
-          "calib_positives": 4,
-          "warning": "only 4 crisis examples in calib: threshold is fragile"
+          "calib_escalation_rate": 0.5864661654135338,
+          "calib_positives": 14,
+          "warning": "only 14 crisis examples in calib: threshold is fragile"
         },
         "calibrator": {
-          "t_crisis": 1.3236774517153551,
+          "t_crisis": 1.6018467184405472,
           "b_crisis": 0.0,
-          "t_category": 0.3806446694541593,
+          "t_category": 1.1729163862136085,
           "method": "temperature"
         },
         "lexicon_version": "0.1.0-draft"
       },
       "valve_only": {
-        "n": 56,
-        "positives": 6,
-        "recall": 0.6666666666666666,
+        "n": 221,
+        "positives": 26,
+        "recall": 0.3076923076923077,
         "recall_ci": [
-          0.2,
-          1.0
+          0.13043478260869565,
+          0.5
         ],
         "recall_exact_ci": [
-          0.22277809550354957,
-          0.9567281317071105
+          0.14325999792770355,
+          0.5178964364457415
         ],
-        "precision": 1.0,
-        "false_alarm_rate": 0.0,
-        "escalation_rate": 0.07142857142857142,
-        "tp": 4,
-        "fn": 2,
-        "fp": 0,
-        "tn": 50,
+        "precision": 0.8888888888888888,
+        "false_alarm_rate": 0.005128205128205128,
+        "escalation_rate": 0.04072398190045249,
+        "tp": 8,
+        "fn": 18,
+        "fp": 1,
+        "tn": 194,
         "meets_target_0.95": false,
         "warning": null
       },
       "classifier_only": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
-            "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "precision": 0.2066115702479339,
+            "false_alarm_rate": 0.49230769230769234,
+            "escalation_rate": 0.5475113122171946,
+            "tp": 25,
+            "fn": 1,
+            "fp": 96,
+            "tn": 99,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.6689890501655208,
+            "macro_f1": 0.6554798789173789,
             "macro_f1_ci": [
-              0.5244214544513458,
-              0.8047342843326883
+              0.5555921031901508,
+              0.7224717733563872
             ],
             "per_class_f1": {
-              "academic_stress": 0.9090909090909091,
-              "financial_strain": 0.8,
-              "social_anxiety": 0.3333333333333333,
-              "low_mood": 0.7142857142857143,
-              "other": 0.5882352941176471
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
+              "social_anxiety": 0.0,
+              "low_mood": 0.90625,
+              "substance_use": 0.953125,
+              "other": 0.38461538461538464
             },
             "confusion_matrix": {
               "labels": [
@@ -670,42 +557,56 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  10,
+                  4,
+                  0,
+                  0,
                   1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  8,
+                  0,
                   0,
                   1,
                   0
                 ],
                 [
                   0,
-                  10,
+                  0,
                   0,
                   3,
-                  0
-                ],
-                [
                   0,
-                  1,
-                  1,
-                  2,
-                  0
+                  1
                 ],
                 [
                   0,
                   0,
                   0,
-                  15,
+                  116,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  4,
+                  61,
                   0
                 ],
                 [
                   0,
                   0,
-                  1,
-                  6,
+                  0,
+                  11,
+                  0,
                   5
                 ]
               ]
@@ -714,39 +615,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
-            "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "precision": 0.2066115702479339,
+            "false_alarm_rate": 0.49230769230769234,
+            "escalation_rate": 0.5475113122171946,
+            "tp": 25,
+            "fn": 1,
+            "fp": 96,
+            "tn": 99,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.71,
+            "macro_f1": 0.6554798789173789,
             "macro_f1_ci": [
-              0.397979797979798,
-              0.8
+              0.5555921031901508,
+              0.7224717733563872
             ],
             "per_class_f1": {
-              "academic_stress": 1.0,
-              "financial_strain": 0.75,
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
               "social_anxiety": 0.0,
-              "low_mood": 0.8,
-              "other": 1.0
+              "low_mood": 0.90625,
+              "substance_use": 0.953125,
+              "other": 0.38461538461538464
             },
             "confusion_matrix": {
               "labels": [
@@ -754,6 +656,7 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
@@ -761,105 +664,40 @@
                   4,
                   0,
                   0,
+                  1,
                   0,
                   0
                 ],
                 [
+                  1,
+                  8,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
                   0,
                   3,
                   0,
-                  2,
-                  0
+                  1
                 ],
                 [
                   0,
                   0,
                   0,
-                  0,
-                  0
+                  116,
+                  1,
+                  4
                 ],
                 [
                   0,
                   0,
                   0,
                   4,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.6469677871148459,
-            "macro_f1_ci": [
-              0.4790317460317461,
-              0.7900119047619046
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.8571428571428571,
-              "financial_strain": 0.8235294117647058,
-              "social_anxiety": 0.3333333333333333,
-              "low_mood": 0.6875,
-              "other": 0.5333333333333333
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
-                [
-                  6,
-                  1,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  7,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  1,
-                  1,
-                  2,
+                  61,
                   0
                 ],
                 [
@@ -867,14 +705,8 @@
                   0,
                   0,
                   11,
-                  0
-                ],
-                [
                   0,
-                  0,
-                  1,
-                  6,
-                  4
+                  5
                 ]
               ]
             }
@@ -884,39 +716,40 @@
       "combined_or_gate": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
-            "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "precision": 0.2066115702479339,
+            "false_alarm_rate": 0.49230769230769234,
+            "escalation_rate": 0.5475113122171946,
+            "tp": 25,
+            "fn": 1,
+            "fp": 96,
+            "tn": 99,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.6689890501655208,
+            "macro_f1": 0.6554798789173789,
             "macro_f1_ci": [
-              0.5244214544513458,
-              0.8047342843326883
+              0.5555921031901508,
+              0.7224717733563872
             ],
             "per_class_f1": {
-              "academic_stress": 0.9090909090909091,
-              "financial_strain": 0.8,
-              "social_anxiety": 0.3333333333333333,
-              "low_mood": 0.7142857142857143,
-              "other": 0.5882352941176471
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
+              "social_anxiety": 0.0,
+              "low_mood": 0.90625,
+              "substance_use": 0.953125,
+              "other": 0.38461538461538464
             },
             "confusion_matrix": {
               "labels": [
@@ -924,42 +757,56 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  10,
+                  4,
+                  0,
+                  0,
                   1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  8,
+                  0,
                   0,
                   1,
                   0
                 ],
                 [
                   0,
-                  10,
+                  0,
                   0,
                   3,
-                  0
-                ],
-                [
                   0,
-                  1,
-                  1,
-                  2,
-                  0
+                  1
                 ],
                 [
                   0,
                   0,
                   0,
-                  15,
+                  116,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  4,
+                  61,
                   0
                 ],
                 [
                   0,
                   0,
-                  1,
-                  6,
+                  0,
+                  11,
+                  0,
                   5
                 ]
               ]
@@ -968,39 +815,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
-            "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "precision": 0.2066115702479339,
+            "false_alarm_rate": 0.49230769230769234,
+            "escalation_rate": 0.5475113122171946,
+            "tp": 25,
+            "fn": 1,
+            "fp": 96,
+            "tn": 99,
             "meets_target_0.95": false,
             "warning": "escalates more than half of all messages \u2014 recall is not informative"
           },
           "category": {
-            "macro_f1": 0.71,
+            "macro_f1": 0.6554798789173789,
             "macro_f1_ci": [
-              0.397979797979798,
-              0.8
+              0.5555921031901508,
+              0.7224717733563872
             ],
             "per_class_f1": {
-              "academic_stress": 1.0,
-              "financial_strain": 0.75,
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
               "social_anxiety": 0.0,
-              "low_mood": 0.8,
-              "other": 1.0
+              "low_mood": 0.90625,
+              "substance_use": 0.953125,
+              "other": 0.38461538461538464
             },
             "confusion_matrix": {
               "labels": [
@@ -1008,6 +856,7 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
@@ -1015,105 +864,40 @@
                   4,
                   0,
                   0,
+                  1,
                   0,
                   0
                 ],
                 [
+                  1,
+                  8,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
                   0,
                   3,
                   0,
-                  2,
-                  0
+                  1
                 ],
                 [
                   0,
                   0,
                   0,
-                  0,
-                  0
+                  116,
+                  1,
+                  4
                 ],
                 [
                   0,
                   0,
                   0,
                   4,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.6469677871148459,
-            "macro_f1_ci": [
-              0.4790317460317461,
-              0.7900119047619046
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.8571428571428571,
-              "financial_strain": 0.8235294117647058,
-              "social_anxiety": 0.3333333333333333,
-              "low_mood": 0.6875,
-              "other": 0.5333333333333333
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
-                [
-                  6,
-                  1,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  7,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  1,
-                  1,
-                  2,
+                  61,
                   0
                 ],
                 [
@@ -1121,117 +905,112 @@
                   0,
                   0,
                   11,
-                  0
-                ],
-                [
                   0,
-                  0,
-                  1,
-                  6,
-                  4
+                  5
                 ]
               ]
             }
           }
         }
       },
-      "test_ece_crisis": 0.10280841533361283,
+      "test_ece_crisis": 0.03822949451446659,
       "crisis_ranking": {
-        "roc_auc": 0.9566666666666667,
+        "roc_auc": 0.9258382642998028,
         "roc_auc_ci": [
-          0.8901813725490195,
-          1.0
+          0.8623739099065186,
+          0.9705501847290641
         ],
-        "average_precision": 0.7211640211640211,
+        "average_precision": 0.6540568998382583,
         "average_precision_ci": [
-          0.3331845238095239,
-          1.0
+          0.47819760224562957,
+          0.8412519700261168
         ],
-        "prevalence": 0.10714285714285714,
-        "recall_at_top20pct": 1.0
+        "prevalence": 0.11764705882352941,
+        "recall_at_top20pct": 0.7692307692307693
       }
     },
-    "distilbert-46e01191": {
+    "distilbert-f49c2ebd": {
       "manifest": {
         "model_type": "torch",
-        "model_version": "distilbert-46e01191",
+        "model_version": "distilbert-f49c2ebd",
         "base_model": "distilbert/distilbert-base-multilingual-cased",
         "threshold": {
           "threshold": 0.009900990099009901,
           "t_cost": 0.009900990099009901,
-          "t_recall_floor": 0.06322918138103442,
+          "t_recall_floor": 0.01500587469500906,
           "binding": "cost",
           "calib_recall": 1.0,
-          "calib_escalation_rate": 1.0,
-          "calib_positives": 4,
-          "warning": "only 4 crisis examples in calib: threshold is fragile"
+          "calib_escalation_rate": 0.49624060150375937,
+          "calib_positives": 14,
+          "warning": "only 14 crisis examples in calib: threshold is fragile"
         },
         "calibrator": {
-          "t_crisis": 1.7378561447105665,
+          "t_crisis": 1.444132417193059,
           "b_crisis": 0.0,
-          "t_category": 0.5899653819648695,
+          "t_category": 1.2491566963341763,
           "method": "temperature"
         },
         "lexicon_version": "0.1.0-draft"
       },
       "valve_only": {
-        "n": 56,
-        "positives": 6,
-        "recall": 0.6666666666666666,
+        "n": 221,
+        "positives": 26,
+        "recall": 0.3076923076923077,
         "recall_ci": [
-          0.2,
-          1.0
+          0.13043478260869565,
+          0.5
         ],
         "recall_exact_ci": [
-          0.22277809550354957,
-          0.9567281317071105
+          0.14325999792770355,
+          0.5178964364457415
         ],
-        "precision": 1.0,
-        "false_alarm_rate": 0.0,
-        "escalation_rate": 0.07142857142857142,
-        "tp": 4,
-        "fn": 2,
-        "fp": 0,
-        "tn": 50,
+        "precision": 0.8888888888888888,
+        "false_alarm_rate": 0.005128205128205128,
+        "escalation_rate": 0.04072398190045249,
+        "tp": 8,
+        "fn": 18,
+        "fp": 1,
+        "tn": 194,
         "meets_target_0.95": false,
         "warning": null
       },
       "classifier_only": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
-            "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "precision": 0.2358490566037736,
+            "false_alarm_rate": 0.4153846153846154,
+            "escalation_rate": 0.4796380090497738,
+            "tp": 25,
+            "fn": 1,
+            "fp": 81,
+            "tn": 114,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.7571014492753624,
+            "macro_f1": 0.5520793650793651,
             "macro_f1_ci": [
-              0.6140321773091347,
-              0.8672153437502321
+              0.4444506739317828,
+              0.6419009693964697
             ],
             "per_class_f1": {
-              "academic_stress": 0.6666666666666666,
-              "financial_strain": 0.782608695652174,
-              "social_anxiety": 0.6666666666666666,
-              "low_mood": 0.8,
-              "other": 0.8695652173913043
+              "academic_stress": 0.4444444444444444,
+              "financial_strain": 0.75,
+              "social_anxiety": 0.0,
+              "low_mood": 0.872,
+              "substance_use": 0.8888888888888888,
+              "other": 0.35714285714285715
             },
             "confusion_matrix": {
               "labels": [
@@ -1239,43 +1018,57 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  8,
-                  1,
-                  2,
-                  1,
-                  0
-                ],
-                [
-                  2,
-                  9,
-                  0,
-                  2,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  4,
-                  0,
-                  0
-                ],
-                [
                   2,
                   0,
                   0,
-                  12,
+                  2,
+                  0,
                   1
                 ],
                 [
+                  2,
+                  6,
+                  0,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  0,
                   0,
                   0,
                   2,
+                  2,
+                  0
+                ],
+                [
                   0,
-                  10
+                  0,
+                  0,
+                  109,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  5,
+                  60,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  10,
+                  1,
+                  5
                 ]
               ]
             }
@@ -1283,39 +1076,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
-            "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "precision": 0.2358490566037736,
+            "false_alarm_rate": 0.4153846153846154,
+            "escalation_rate": 0.4796380090497738,
+            "tp": 25,
+            "fn": 1,
+            "fp": 81,
+            "tn": 114,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.6888888888888889,
+            "macro_f1": 0.5520793650793651,
             "macro_f1_ci": [
-              0.35878787878787877,
-              0.7715873015873007
+              0.4444506739317828,
+              0.6419009693964697
             ],
             "per_class_f1": {
-              "academic_stress": 0.6666666666666666,
-              "financial_strain": 0.8888888888888888,
+              "academic_stress": 0.4444444444444444,
+              "financial_strain": 0.75,
               "social_anxiety": 0.0,
-              "low_mood": 0.8888888888888888,
-              "other": 1.0
+              "low_mood": 0.872,
+              "substance_use": 0.8888888888888888,
+              "other": 0.35714285714285715
             },
             "confusion_matrix": {
               "labels": [
@@ -1323,127 +1117,57 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
                   2,
                   0,
+                  0,
                   2,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  4,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  4,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
                   0,
                   1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.76,
-            "macro_f1_ci": [
-              0.5893022634341094,
-              0.8831649877899878
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.6666666666666666,
-              "financial_strain": 0.7142857142857143,
-              "social_anxiety": 0.8,
-              "low_mood": 0.7619047619047619,
-              "other": 0.8571428571428571
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
+                ],
                 [
+                  2,
                   6,
-                  1,
                   0,
+                  1,
                   1,
                   0
                 ],
                 [
+                  0,
+                  0,
+                  0,
                   2,
+                  2,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  109,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
                   5,
+                  60,
+                  0
+                ],
+                [
                   0,
+                  0,
+                  0,
+                  10,
                   1,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  4,
-                  0,
-                  0
-                ],
-                [
-                  2,
-                  0,
-                  0,
-                  8,
-                  1
-                ],
-                [
-                  0,
-                  0,
-                  2,
-                  0,
-                  9
+                  5
                 ]
               ]
             }
@@ -1453,39 +1177,40 @@
       "combined_or_gate": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
-            "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "precision": 0.2358490566037736,
+            "false_alarm_rate": 0.4153846153846154,
+            "escalation_rate": 0.4796380090497738,
+            "tp": 25,
+            "fn": 1,
+            "fp": 81,
+            "tn": 114,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.7571014492753624,
+            "macro_f1": 0.5520793650793651,
             "macro_f1_ci": [
-              0.6140321773091347,
-              0.8672153437502321
+              0.4444506739317828,
+              0.6419009693964697
             ],
             "per_class_f1": {
-              "academic_stress": 0.6666666666666666,
-              "financial_strain": 0.782608695652174,
-              "social_anxiety": 0.6666666666666666,
-              "low_mood": 0.8,
-              "other": 0.8695652173913043
+              "academic_stress": 0.4444444444444444,
+              "financial_strain": 0.75,
+              "social_anxiety": 0.0,
+              "low_mood": 0.872,
+              "substance_use": 0.8888888888888888,
+              "other": 0.35714285714285715
             },
             "confusion_matrix": {
               "labels": [
@@ -1493,43 +1218,57 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  8,
-                  1,
-                  2,
-                  1,
-                  0
-                ],
-                [
-                  2,
-                  9,
-                  0,
-                  2,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  4,
-                  0,
-                  0
-                ],
-                [
                   2,
                   0,
                   0,
-                  12,
+                  2,
+                  0,
                   1
                 ],
                 [
+                  2,
+                  6,
+                  0,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  0,
                   0,
                   0,
                   2,
+                  2,
+                  0
+                ],
+                [
                   0,
-                  10
+                  0,
+                  0,
+                  109,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  5,
+                  60,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  10,
+                  1,
+                  5
                 ]
               ]
             }
@@ -1537,39 +1276,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9615384615384616,
             "recall_ci": [
-              1.0,
+              0.8695652173913043,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
-              1.0
+              0.8036303532374444,
+              0.9990267121066522
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
-            "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "precision": 0.2358490566037736,
+            "false_alarm_rate": 0.4153846153846154,
+            "escalation_rate": 0.4796380090497738,
+            "tp": 25,
+            "fn": 1,
+            "fp": 81,
+            "tn": 114,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.6888888888888889,
+            "macro_f1": 0.5520793650793651,
             "macro_f1_ci": [
-              0.35878787878787877,
-              0.7715873015873007
+              0.4444506739317828,
+              0.6419009693964697
             ],
             "per_class_f1": {
-              "academic_stress": 0.6666666666666666,
-              "financial_strain": 0.8888888888888888,
+              "academic_stress": 0.4444444444444444,
+              "financial_strain": 0.75,
               "social_anxiety": 0.0,
-              "low_mood": 0.8888888888888888,
-              "other": 1.0
+              "low_mood": 0.872,
+              "substance_use": 0.8888888888888888,
+              "other": 0.35714285714285715
             },
             "confusion_matrix": {
               "labels": [
@@ -1577,230 +1317,161 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
                   2,
                   0,
+                  0,
                   2,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  4,
-                  0,
-                  1,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  4,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
                   0,
                   1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.76,
-            "macro_f1_ci": [
-              0.5893022634341094,
-              0.8831649877899878
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.6666666666666666,
-              "financial_strain": 0.7142857142857143,
-              "social_anxiety": 0.8,
-              "low_mood": 0.7619047619047619,
-              "other": 0.8571428571428571
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
+                ],
                 [
+                  2,
                   6,
-                  1,
                   0,
+                  1,
                   1,
                   0
                 ],
                 [
+                  0,
+                  0,
+                  0,
                   2,
+                  2,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  109,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
                   5,
+                  60,
+                  0
+                ],
+                [
                   0,
+                  0,
+                  0,
+                  10,
                   1,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  4,
-                  0,
-                  0
-                ],
-                [
-                  2,
-                  0,
-                  0,
-                  8,
-                  1
-                ],
-                [
-                  0,
-                  0,
-                  2,
-                  0,
-                  9
+                  5
                 ]
               ]
             }
           }
         }
       },
-      "test_ece_crisis": 0.09272612929129088,
+      "test_ece_crisis": 0.05115359223668569,
       "crisis_ranking": {
-        "roc_auc": 0.8533333333333333,
+        "roc_auc": 0.9315581854043392,
         "roc_auc_ci": [
-          0.7066078431372549,
-          0.9711538461538461
+          0.8662626344561776,
+          0.9762465851902672
         ],
-        "average_precision": 0.4652356902356902,
+        "average_precision": 0.7216912669938105,
         "average_precision_ci": [
-          0.14761904761904762,
-          0.8319568452380952
+          0.5348679342717557,
+          0.8681646906086407
         ],
-        "prevalence": 0.10714285714285714,
-        "recall_at_top20pct": 0.6666666666666666
+        "prevalence": 0.11764705882352941,
+        "recall_at_top20pct": 0.8461538461538461
       }
     },
-    "afroxlmr-46e01191-onnx-int8": {
+    "afroxlmr-f49c2ebd-onnx-int8": {
       "manifest": {
         "model_type": "onnx",
-        "model_version": "afroxlmr-46e01191-onnx-int8",
+        "model_version": "afroxlmr-f49c2ebd-onnx-int8",
         "base_model": "Davlan/afro-xlmr-base",
         "threshold": {
           "threshold": 0.009900990099009901,
           "t_cost": 0.009900990099009901,
-          "t_recall_floor": 0.06337791883440251,
+          "t_recall_floor": 0.050514163187936126,
           "binding": "cost",
           "calib_recall": 1.0,
-          "calib_escalation_rate": 1.0,
-          "calib_positives": 4,
-          "warning": "only 4 crisis examples in calib: threshold is fragile"
+          "calib_escalation_rate": 0.5112781954887218,
+          "calib_positives": 14,
+          "warning": "only 14 crisis examples in calib: threshold is fragile"
         },
         "calibrator": {
-          "t_crisis": 1.2459570878844728,
+          "t_crisis": 1.3783106380092716,
           "b_crisis": 0.0,
-          "t_category": 0.3092338458666089,
+          "t_category": 1.032655428612635,
           "method": "temperature"
         },
         "lexicon_version": "0.1.0-draft"
       },
       "valve_only": {
-        "n": 56,
-        "positives": 6,
-        "recall": 0.6666666666666666,
+        "n": 221,
+        "positives": 26,
+        "recall": 0.3076923076923077,
         "recall_ci": [
-          0.2,
-          1.0
+          0.13043478260869565,
+          0.5
         ],
         "recall_exact_ci": [
-          0.22277809550354957,
-          0.9567281317071105
+          0.14325999792770355,
+          0.5178964364457415
         ],
-        "precision": 1.0,
-        "false_alarm_rate": 0.0,
-        "escalation_rate": 0.07142857142857142,
-        "tp": 4,
-        "fn": 2,
-        "fp": 0,
-        "tn": 50,
+        "precision": 0.8888888888888888,
+        "false_alarm_rate": 0.005128205128205128,
+        "escalation_rate": 0.04072398190045249,
+        "tp": 8,
+        "fn": 18,
+        "fp": 1,
+        "tn": 194,
         "meets_target_0.95": false,
         "warning": null
       },
       "classifier_only": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9230769230769231,
             "recall_ci": [
-              1.0,
+              0.8,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
-              1.0
+              0.7486970833045691,
+              0.9905446089967489
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
-            "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "precision": 0.2857142857142857,
+            "false_alarm_rate": 0.3076923076923077,
+            "escalation_rate": 0.38009049773755654,
+            "tp": 24,
+            "fn": 2,
+            "fp": 60,
+            "tn": 135,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.6442345413617643,
+            "macro_f1": 0.655837288228653,
             "macro_f1_ci": [
-              0.4564032201885373,
-              0.7669878019149118
+              0.56288782013329,
+              0.7212179963721428
             ],
             "per_class_f1": {
-              "academic_stress": 0.8148148148148148,
-              "financial_strain": 0.47058823529411764,
-              "social_anxiety": 0.5714285714285714,
-              "low_mood": 0.6976744186046512,
-              "other": 0.6666666666666666
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
+              "social_anxiety": 0.0,
+              "low_mood": 0.900398406374502,
+              "substance_use": 0.9457364341085271,
+              "other": 0.4
             },
             "confusion_matrix": {
               "labels": [
@@ -1808,42 +1479,56 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  11,
+                  4,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  8,
                   0,
                   0,
                   1,
                   0
                 ],
                 [
-                  4,
-                  4,
                   0,
-                  5,
-                  0
+                  0,
+                  0,
+                  3,
+                  0,
+                  1
                 ],
                 [
                   0,
                   0,
+                  0,
+                  113,
                   2,
-                  2,
-                  0
+                  6
                 ],
                 [
                   0,
                   0,
                   0,
-                  15,
-                  0
+                  3,
+                  61,
+                  1
                 ],
                 [
                   0,
                   0,
-                  1,
-                  5,
+                  0,
+                  10,
+                  0,
                   6
                 ]
               ]
@@ -1852,39 +1537,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9230769230769231,
             "recall_ci": [
-              1.0,
+              0.8,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
-              1.0
+              0.7486970833045691,
+              0.9905446089967489
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
-            "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "precision": 0.2857142857142857,
+            "false_alarm_rate": 0.3076923076923077,
+            "escalation_rate": 0.38009049773755654,
+            "tp": 24,
+            "fn": 2,
+            "fp": 60,
+            "tn": 135,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.5898989898989899,
+            "macro_f1": 0.655837288228653,
             "macro_f1_ci": [
-              0.27142857142857146,
-              0.72
+              0.56288782013329,
+              0.7212179963721428
             ],
             "per_class_f1": {
-              "academic_stress": 0.8888888888888888,
-              "financial_strain": 0.3333333333333333,
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
               "social_anxiety": 0.0,
-              "low_mood": 0.7272727272727273,
-              "other": 1.0
+              "low_mood": 0.900398406374502,
+              "substance_use": 0.9457364341085271,
+              "other": 0.4
             },
             "confusion_matrix": {
               "labels": [
@@ -1892,6 +1578,7 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
@@ -1899,120 +1586,49 @@
                   4,
                   0,
                   0,
+                  1,
                   0,
                   0
                 ],
                 [
                   1,
+                  8,
+                  0,
+                  0,
                   1,
+                  0
+                ],
+                [
+                  0,
+                  0,
                   0,
                   3,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  4,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
                   0,
                   1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.641432178932179,
-            "macro_f1_ci": [
-              0.44219706375633144,
-              0.7930991956175022
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.7777777777777778,
-              "financial_strain": 0.5454545454545454,
-              "social_anxiety": 0.5714285714285714,
-              "low_mood": 0.6875,
-              "other": 0.625
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
-                [
-                  7,
-                  0,
-                  0,
-                  1,
-                  0
                 ],
                 [
+                  0,
+                  0,
+                  0,
+                  113,
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
                   3,
-                  3,
-                  0,
-                  2,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  2,
-                  2,
-                  0
+                  61,
+                  1
                 ],
                 [
                   0,
                   0,
                   0,
-                  11,
-                  0
-                ],
-                [
+                  10,
                   0,
-                  0,
-                  1,
-                  5,
-                  5
+                  6
                 ]
               ]
             }
@@ -2022,39 +1638,40 @@
       "combined_or_gate": {
         "overall": {
           "crisis": {
-            "n": 56,
-            "positives": 6,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9230769230769231,
             "recall_ci": [
-              1.0,
+              0.8,
               1.0
             ],
             "recall_exact_ci": [
-              0.5407418735600995,
-              1.0
+              0.7486970833045691,
+              0.9905446089967489
             ],
-            "precision": 0.10714285714285714,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 6,
-            "fn": 0,
-            "fp": 50,
-            "tn": 0,
+            "precision": 0.2857142857142857,
+            "false_alarm_rate": 0.3076923076923077,
+            "escalation_rate": 0.38009049773755654,
+            "tp": 24,
+            "fn": 2,
+            "fp": 60,
+            "tn": 135,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.6442345413617643,
+            "macro_f1": 0.655837288228653,
             "macro_f1_ci": [
-              0.4564032201885373,
-              0.7669878019149118
+              0.56288782013329,
+              0.7212179963721428
             ],
             "per_class_f1": {
-              "academic_stress": 0.8148148148148148,
-              "financial_strain": 0.47058823529411764,
-              "social_anxiety": 0.5714285714285714,
-              "low_mood": 0.6976744186046512,
-              "other": 0.6666666666666666
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
+              "social_anxiety": 0.0,
+              "low_mood": 0.900398406374502,
+              "substance_use": 0.9457364341085271,
+              "other": 0.4
             },
             "confusion_matrix": {
               "labels": [
@@ -2062,42 +1679,56 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
                 [
-                  11,
+                  4,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  8,
                   0,
                   0,
                   1,
                   0
                 ],
                 [
-                  4,
-                  4,
                   0,
-                  5,
-                  0
+                  0,
+                  0,
+                  3,
+                  0,
+                  1
                 ],
                 [
                   0,
                   0,
+                  0,
+                  113,
                   2,
-                  2,
-                  0
+                  6
                 ],
                 [
                   0,
                   0,
                   0,
-                  15,
-                  0
+                  3,
+                  61,
+                  1
                 ],
                 [
                   0,
                   0,
-                  1,
-                  5,
+                  0,
+                  10,
+                  0,
                   6
                 ]
               ]
@@ -2106,39 +1737,40 @@
         },
         "english_only": {
           "crisis": {
-            "n": 14,
-            "positives": 2,
-            "recall": 1.0,
+            "n": 221,
+            "positives": 26,
+            "recall": 0.9230769230769231,
             "recall_ci": [
-              1.0,
+              0.8,
               1.0
             ],
             "recall_exact_ci": [
-              0.15811388300839305,
-              1.0
+              0.7486970833045691,
+              0.9905446089967489
             ],
-            "precision": 0.14285714285714285,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 2,
-            "fn": 0,
-            "fp": 12,
-            "tn": 0,
+            "precision": 0.2857142857142857,
+            "false_alarm_rate": 0.3076923076923077,
+            "escalation_rate": 0.38009049773755654,
+            "tp": 24,
+            "fn": 2,
+            "fp": 60,
+            "tn": 135,
             "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
+            "warning": null
           },
           "category": {
-            "macro_f1": 0.5898989898989899,
+            "macro_f1": 0.655837288228653,
             "macro_f1_ci": [
-              0.27142857142857146,
-              0.72
+              0.56288782013329,
+              0.7212179963721428
             ],
             "per_class_f1": {
-              "academic_stress": 0.8888888888888888,
-              "financial_strain": 0.3333333333333333,
+              "academic_stress": 0.8,
+              "financial_strain": 0.8888888888888888,
               "social_anxiety": 0.0,
-              "low_mood": 0.7272727272727273,
-              "other": 1.0
+              "low_mood": 0.900398406374502,
+              "substance_use": 0.9457364341085271,
+              "other": 0.4
             },
             "confusion_matrix": {
               "labels": [
@@ -2146,6 +1778,7 @@
                 "financial_strain",
                 "social_anxiety",
                 "low_mood",
+                "substance_use",
                 "other"
               ],
               "matrix": [
@@ -2153,178 +1786,107 @@
                   4,
                   0,
                   0,
+                  1,
                   0,
                   0
                 ],
                 [
                   1,
+                  8,
+                  0,
+                  0,
                   1,
+                  0
+                ],
+                [
+                  0,
+                  0,
                   0,
                   3,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
-                  4,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  0,
                   0,
                   1
-                ]
-              ]
-            }
-          }
-        },
-        "code_mixed": {
-          "crisis": {
-            "n": 42,
-            "positives": 4,
-            "recall": 1.0,
-            "recall_ci": [
-              1.0,
-              1.0
-            ],
-            "recall_exact_ci": [
-              0.3976353643835142,
-              1.0
-            ],
-            "precision": 0.09523809523809523,
-            "false_alarm_rate": 1.0,
-            "escalation_rate": 1.0,
-            "tp": 4,
-            "fn": 0,
-            "fp": 38,
-            "tn": 0,
-            "meets_target_0.95": false,
-            "warning": "escalates more than half of all messages \u2014 recall is not informative"
-          },
-          "category": {
-            "macro_f1": 0.641432178932179,
-            "macro_f1_ci": [
-              0.44219706375633144,
-              0.7930991956175022
-            ],
-            "per_class_f1": {
-              "academic_stress": 0.7777777777777778,
-              "financial_strain": 0.5454545454545454,
-              "social_anxiety": 0.5714285714285714,
-              "low_mood": 0.6875,
-              "other": 0.625
-            },
-            "confusion_matrix": {
-              "labels": [
-                "academic_stress",
-                "financial_strain",
-                "social_anxiety",
-                "low_mood",
-                "other"
-              ],
-              "matrix": [
-                [
-                  7,
-                  0,
-                  0,
-                  1,
-                  0
                 ],
                 [
+                  0,
+                  0,
+                  0,
+                  113,
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
                   3,
-                  3,
-                  0,
-                  2,
-                  0
-                ],
-                [
-                  0,
-                  0,
-                  2,
-                  2,
-                  0
+                  61,
+                  1
                 ],
                 [
                   0,
                   0,
                   0,
-                  11,
-                  0
-                ],
-                [
+                  10,
                   0,
-                  0,
-                  1,
-                  5,
-                  5
+                  6
                 ]
               ]
             }
           }
         }
       },
-      "test_ece_crisis": 0.1181872300405638,
+      "test_ece_crisis": 0.06495079904368896,
       "crisis_ranking": {
-        "roc_auc": 0.9600000000000001,
+        "roc_auc": 0.9165680473372781,
         "roc_auc_ci": [
-          0.8846153846153846,
-          1.0
+          0.8581525363511915,
+          0.9650329121285821
         ],
-        "average_precision": 0.7972222222222223,
+        "average_precision": 0.6245060608607443,
         "average_precision_ci": [
-          0.43333333333333335,
-          1.0
+          0.448207730735795,
+          0.8195925783958012
         ],
-        "prevalence": 0.10714285714285714,
-        "recall_at_top20pct": 0.8333333333333334
+        "prevalence": 0.11764705882352941,
+        "recall_at_top20pct": 0.8076923076923077
       }
     }
   },
   "mcnemar": {
-    "baseline-46e01191 vs afroxlmr-46e01191": {
+    "baseline-f49c2ebd vs afroxlmr-f49c2ebd": {
       "crisis_decision": {
-        "a_only_correct": 0,
-        "b_only_correct": 0,
-        "p_value": 1.0
+        "a_only_correct": 14,
+        "b_only_correct": 50,
+        "p_value": 7.069487542545679e-06
       },
       "category": {
-        "a_only_correct": 12,
-        "b_only_correct": 4,
-        "p_value": 0.076812744140625
+        "a_only_correct": 7,
+        "b_only_correct": 21,
+        "p_value": 0.012540951371192932
       }
     },
-    "baseline-46e01191 vs distilbert-46e01191": {
+    "baseline-f49c2ebd vs distilbert-f49c2ebd": {
       "crisis_decision": {
-        "a_only_correct": 0,
-        "b_only_correct": 0,
-        "p_value": 1.0
+        "a_only_correct": 6,
+        "b_only_correct": 57,
+        "p_value": 1.6395687108330947e-11
+      },
+      "category": {
+        "a_only_correct": 14,
+        "b_only_correct": 16,
+        "p_value": 0.8555355519056321
+      }
+    },
+    "baseline-f49c2ebd vs afroxlmr-f49c2ebd-onnx-int8": {
+      "crisis_decision": {
+        "a_only_correct": 9,
+        "b_only_correct": 80,
+        "p_value": 2.3063087011549717e-15
       },
       "category": {
         "a_only_correct": 10,
-        "b_only_correct": 4,
-        "p_value": 0.1795654296875
-      }
-    },
-    "baseline-46e01191 vs afroxlmr-46e01191-onnx-int8": {
-      "crisis_decision": {
-        "a_only_correct": 0,
-        "b_only_correct": 0,
-        "p_value": 1.0
-      },
-      "category": {
-        "a_only_correct": 15,
-        "b_only_correct": 4,
-        "p_value": 0.0192108154296875
+        "b_only_correct": 22,
+        "p_value": 0.050102459732443094
       }
     }
   }

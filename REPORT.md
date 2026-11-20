@@ -2,71 +2,82 @@
 
 **DSA 8401 Applied Machine Learning · Capstone report · Lousa Sheenaz Yogo · November 2026**
 
-> **Read this first.** The system is built end to end, but every number in this report comes from a
-> **synthetic demo dataset** (224 template-built check-ins), because the consented Strathmore
-> check-ins were not available by the deadline. The numbers show that the pipeline and the
-> evaluation work; they are **not** evidence of how the models would perform on real students.
-> Section 7 explains what that means for each result.
+> **Summary.** Sikiza decides whether a student's check-in signals a crisis (sent to a human counsellor)
+> and otherwise answers with a counsellor-approved coping strategy for its category. It is built end to end:
+> data pipeline, four models, calibration and a cost-derived threshold, evaluation with honest confidence
+> intervals, a FastAPI service in Docker, and a React Native app. The models are trained and tested on
+> **884 real messages written by students at Kenyan universities** (Zindi BNBR Tech4MentalHealth), relabelled
+> for this task with human-reviewed crisis labels. The real messages are in English; Swahili/Sheng handling is
+> only exercised on synthetic data so far (Section 7).
 
 ---
 
 ## 1. Problem framing
 
-**What is predicted.** For each short student check-in written in English, Swahili, Sheng or a mix:
+**What is predicted.** For each short student message:
 
 1. **Crisis vs non-crisis**: the safety decision. Crisis means signs of suicidal thinking, self-harm or
    immediate danger.
-2. **One of five categories** for non-crisis messages: academic stress, financial strain, social anxiety,
-   low mood, other.
+2. **One of six categories** for the response: academic stress, financial strain, social anxiety, low mood,
+   substance use, other. (*Substance use* was added after the proposal, because about 30% of the real
+   messages are about alcohol or drugs.)
 
-The system then responds. A crisis goes to a human counsellor's escalation queue, and the student
-immediately sees a crisis message with hotline numbers. Any other message gets a coping strategy
-**retrieved** from a counsellor-approved library for its category. Nothing is written freely by a model.
+A crisis goes to a human counsellor's escalation queue, and the student immediately sees a crisis message
+with hotline numbers. Any other message gets a coping strategy **retrieved** from a counsellor-approved
+library for its category. Nothing is written freely by a model.
 
 **Why it matters.** Kenya has fewer than 100 practising psychiatrists for over 50 million people, and a
 student can wait about three weeks for a counselling appointment. Global models misread code-mixed text
-("nime-hang", "kujitoa", "nimeboeka"), so distress is missed exactly when students express it most
-naturally. Sikiza is digital first aid in front of counselling, not a diagnostic device.
+("nime-hang", "kujitoa"), so distress is missed exactly when students express it most naturally. Sikiza is
+digital first aid in front of counselling, not a diagnostic device.
 
 **The costs are asymmetric, and that drives the design.** A missed crisis is catastrophic; a false alarm
-costs a counsellor a few minutes. I set the cost of a false negative to 100 and of a false positive to 1.
-The decision threshold is derived from these costs instead of using 0.5, and the main success
-criterion is **crisis recall ≥ 0.95, with the lower bound of a 95% confidence interval**, not just the point
-estimate.
-
-**Success criteria (from the proposal):** crisis recall ≥ 0.95 with a bootstrap 95% CI; macro-F1 and
-confusion matrix for the categories; results split by English-only vs code-mixed; McNemar's test against
-the baseline; Cohen's κ for label agreement; under 400 ms round trip on a mid-range Android phone.
+costs a counsellor a few minutes. I set the cost of a false negative to 100 and of a false positive to 1. The
+decision threshold is derived from these costs instead of 0.5, and the success criterion is **crisis recall
+≥ 0.95, judged on the lower bound of a 95% confidence interval**, reported together with the escalation rate.
 
 ## 2. Data
 
-| Source | Size | Role | Known issues |
-|---|---|---|---|
-| Strathmore check-ins (consented, de-identified, human-labelled) | ~1,000 planned; **not yet available** | Seed training data and the **only** test data | Small; crisis class rare; single annotator |
-| Synthetic demo seed (`scripts/make_demo_data.py`) | 224 rows, 24 crisis (10.7%); 80 sw / 77 en / 67 sheng | Stand-in for the seed set so every stage could be built and tested | Template-built, so far more regular than real text |
-| Augmentation (`triage/augment.py`) | 2,010 rows from the 134 training seeds | Training volume only | Near-duplicates of seed rows |
-| GoEmotions, AfriSenti-swa, tabularisai Swahili sentiment | ~58k / ~3k / ~48k | Optional stage-1 intermediate fine-tuning (3-way sentiment) | Not mental-health or Sheng; tabularisai is LLM-generated |
-| Sheng lexicon | 33 rules | Safety-valve keywords | My draft; not yet validated by Sheng speakers |
-| Coping library | 14 entries + crisis response | Retrieval corpus | Drafts; `approved: false` until counsellors sign off |
+### 2.1 Sources
 
-**Realistic complications built into the pipeline** (the brief requires them):
+| Source | Size | Role |
+|---|---|---|
+| **Zindi: Basic Needs Basic Rights Kenya – Tech4MentalHealth** (2020): answers by students at several Kenyan universities to "What is on your mind?", originally tagged Depression / Alcohol / Suicide / Drugs | 925 messages (616 tagged + 309 untagged) → **884 distinct** | Seed training data and the **only** test data |
+| Augmentation of the training seeds (Sheng word swaps, SMS-style noise, optional back-translation) | ~8,000 rows | Training volume only |
+| Synthetic English/Swahili/Sheng check-ins | 224 | Code-mixed tokenizer and drift checks; pipeline smoke tests |
+| GoEmotions, AfriSenti-swa, tabularisai Swahili sentiment | ~58k / ~3k / ~48k | Optional stage-1 fine-tuning (not used for the reported models) |
+| Sheng lexicon; coping library | 33 rules; 16 entries + crisis response | Safety valve; retrieval corpus |
 
-- **Class imbalance.** Crisis is about 5–11% of messages. I handle it with a cost-derived threshold, not
-  resampling (Section 3).
-- **Code-mixing and spelling noise.** Sheng, SMS spellings ("nmechoka", "coz") and English–Swahili
-  switching inside one sentence. Normalisation (`triage/text.py`) lower-cases, folds repeated letters and
-  splits on hyphens ("nime-hang"). Augmentation adds Sheng swaps and SMS noise to the training data.
-- **Augmentation leakage.** Every augmented variant keeps its seed's `seed_id`. Splits are **grouped by
-  seed_id** and augmented rows join **train only**, so no variant of a test message is ever trained on.
-  `scripts/evaluate.py` asserts that the test set contains real seed messages only. This matters because
-  the original proposal's F1 of 0.91 was measured with augmented variants on both sides of the split.
-- **Label noise.** A double-coded sample (`category_2`, `crisis_2`) gives Cohen's κ.
-- **Privacy.** Pseudonymisation runs before anything else, both at data load and at serving time. It removes
-  names (from introductions and a gazetteer), phone numbers, emails, URLs, M-Pesa codes, student IDs and
-  social handles.
+The consented Strathmore check-ins in my proposal were not available in time. Zindi is the closest real
+substitute: the same population (Kenyan university students), the same kind of short, unedited text, and it
+contains real crisis disclosures.
 
-**Splits** (fixed once, never re-drawn after seeing test results): train 134 seeds (+ augmentation),
-calibration 34 (4 crisis), test 56 (6 crisis), stratified by crisis and grouped by seed.
+### 2.2 Real-world messiness I had to handle
+
+- **Labels that do not fit the task.** Zindi's tags are survey topics, not risk labels. Comparing them with
+  text-based crisis labels gives Cohen's κ = 0.45: of the 66 messages tagged "Suicide", 34 are not crises
+  ("Should I go back to ex girlfriend?", "How to convince someone against committing suicide"), and 29 crisis messages were tagged something else, mostly
+  "Depression" ("I feel like killing myself…", "Can I kill myself?"). Training on Zindi's tags would have
+  taught the model the wrong thing, so **every message was relabelled from its text alone**
+  (`data/labels/LABELLING_GUIDE.md`).
+- **Labelling process.** An AI assistant produced a first pass from the guide; **I then reviewed every crisis
+  label**, changing 39 (32 crises added, 7 removed) and setting my own rules for suicide-related questions.
+  Agreement between the first pass and my review is κ = 0.74. I saw the suggestions while reviewing, so this is
+  review agreement, not independent inter-annotator reliability; a second independent coder is still needed.
+  Category labels are the first pass. Final data: **91 crisis messages (10.3%)**.
+- **Duplicates and train/test overlap.** 925 rows contain 884 distinct texts, and 13 texts appear in both
+  Zindi's train and test files. Identical texts are merged into one seed (crisis if any copy is a crisis), so
+  the same message can never be on both sides of my split.
+- **Spelling, run-on words and very short messages.** "I feel hopelessFor now I am just fine", "Dissappointed",
+  "Yes". Augmentation originally produced empty variants from one-word messages ("Yes" → ""); variants that
+  delete the message are now rejected.
+- **Class imbalance**: 10% crisis; categories range from 483 low-mood to 16 social-anxiety messages.
+- **Leakage control.** Augmented variants keep their seed's ID; splits are **grouped by seed** and augmented
+  rows join **train only**; the evaluator asserts the test set holds real messages only.
+- **Privacy.** Pseudonymisation runs first (names, phone numbers, emails, M-Pesa codes, student IDs).
+
+**Splits** (fixed once, never re-drawn after seeing results): train 530 messages (51 crisis) + augmentation,
+calibration 133 (14 crisis), test **221 (26 crisis)**.
 
 ## 3. Techniques and why I chose them
 
@@ -83,7 +94,7 @@ Student app ─▶ FastAPI ─▶ pseudonymise ─▶ safety valve ─┐
 | Technique | Why it fits this problem |
 |---|---|
 | **TF-IDF (word + char 2–5-grams) + logistic regression** | A cheap, explainable floor that every other model must beat. Character n-grams cope with Sheng spelling variation without a tokenizer. |
-| **AfroXLM-R (Davlan/afro-xlmr-base) with LoRA**, two heads (crisis, 5 categories), mean pooling | XLM-R further pre-trained on 17 African languages including Swahili. LoRA (r = 16, α = 32) trains about 1% of the weights, which suits a ~1,000-message dataset (full fine-tuning of 270M parameters would overfit) and trains on a laptop CPU. |
+| **AfroXLM-R (Davlan/afro-xlmr-base) with LoRA**, two heads (crisis, 6 categories), mean pooling | XLM-R further pre-trained on 17 African languages including Swahili. LoRA (r = 16, α = 32) trains about 1% of the weights, which suits a ~1,000-message dataset (full fine-tuning of 270M parameters would overfit) and trains on a laptop CPU. |
 | **DistilBERT (multilingual) as comparison** | Smaller and faster; tests whether the African-language pre-training actually matters. |
 | **Tokenizer fertility measured first** | Encoder choice should follow from how badly each tokenizer fragments Sheng, not from reputation. |
 | **Two-stage training (optional stage 1)** | Sentiment pre-training on GoEmotions + AfriSenti + tabularisai teaches affect in English and Swahili before the small Strathmore set. I mapped all three to 3-way sentiment, the only label they share, instead of forcing e.g. GoEmotions "nervousness" onto "social anxiety". |
@@ -92,7 +103,7 @@ Student app ─▶ FastAPI ─▶ pseudonymise ─▶ safety valve ─┐
 | **Safety valve: keyword rules OR classifier** | Either signal escalates. Rules catch explicit phrases with certainty and work offline on the phone; the classifier catches implicit warning signs. An AND-gate at a high threshold would miss crises. |
 | **Retrieval, not generation**, for responses | Advice is grounded, auditable and pre-approved by counsellors. The same input always gives the same answer. |
 | **ONNX export + dynamic int8 quantisation** (per channel), then re-calibration | Serves on cheap CPU VMs and is small enough for weak connections. Quantisation shifts the logits, so the int8 model gets its own calibration and threshold. |
-| **Drift: novelty (nearest-neighbour distance) + unseen-word rate + KMeans clusters** | Sheng changes within months. The monthly report surfaces clusters of new words for the lexicon review. |
+| **Drift: novelty (nearest-neighbour distance) + unseen-word rate + KMeans clusters**, both cut-offs calibrated on held-out training messages | Sheng changes within months. The monthly report surfaces clusters of new words for the lexicon review. |
 | **Evaluation:** bootstrap and exact (Clopper–Pearson) CIs, McNemar's exact test, Cohen's κ, ECE, ROC-AUC / average precision | The success criterion is about the CI lower bound, so honest intervals are essential with few crises. |
 
 ### What I did not use, and why
@@ -124,109 +135,120 @@ Student app ─▶ FastAPI ─▶ pseudonymise ─▶ safety valve ─┐
 - **Subgroups:** English-only vs code-mixed messages.
 - **Paired comparison:** McNemar's exact test on per-message correctness, baseline vs each model.
 
-## 5. Results (synthetic demo data)
+## 5. Results (real data: 221 test messages, 26 crises)
 
-Test set: 56 messages, 6 crisis; 14 English-only, 42 code-mixed. Full output: `artifacts/reports/eval.md`.
+Full output: `artifacts/reports/eval.md` and `eval.json`. All four models were trained on the same 530
+training messages (+ augmentation), calibrated and thresholded on the same 133, and tested once on 221.
 
-### 5.1 Crisis decision
+### 5.1 Crisis decision (the safety metric)
 
-| Model | Gate | Recall | Exact 95% CI | Precision | Escalation rate | Macro-F1 [95% CI] |
-|---|---|---|---|---|---|---|
-| TF-IDF + LR | OR-gate | 1.000 | [0.541, 1.000] | 0.107 | **1.000** | 0.864 [0.737, 0.949] |
-| AfroXLM-R + LoRA (PyTorch) | OR-gate | 1.000 | [0.541, 1.000] | 0.107 | **1.000** | 0.669 [0.524, 0.805] |
-| DistilBERT + LoRA | OR-gate | 1.000 | [0.541, 1.000] | 0.107 | **1.000** | 0.757 [0.614, 0.867] |
-| AfroXLM-R int8 ONNX (deployed) | OR-gate | 1.000 | [0.541, 1.000] | 0.107 | **1.000** | 0.644 [0.456, 0.767] |
-| Keyword valve alone | – | 0.667 (4/6) | [0.223, 0.957] | 1.000 | 0.071 | – |
+| Model | Recall | Exact 95% CI | Precision | Escalation rate | Category macro-F1 [95% CI] |
+|---|---|---|---|---|---|
+| TF-IDF + logistic regression | 1.000 (26/26) | [0.868, 1.000] | 0.164 | **0.719** | 0.465 [0.389, 0.526] |
+| AfroXLM-R + LoRA (PyTorch) | 0.962 (25/26) | [0.804, 0.999] | 0.207 | 0.548 | **0.655** [0.556, 0.722] |
+| DistilBERT + LoRA | 0.962 (25/26) | [0.804, 0.999] | 0.236 | 0.480 | 0.552 [0.444, 0.642] |
+| **AfroXLM-R int8 ONNX (deployed)** | **0.923 (24/26)** | [0.749, 0.991] | **0.286** | **0.380** | **0.656** [0.563, 0.721] |
+| Keyword valve alone | 0.308 (8/26) | [0.143, 0.518] | 0.889 | 0.041 | – |
 
-**Interpretation.** Every model "achieves" recall 1.0 only because it **escalates every message**. With only
-four crisis examples in the calibration split, the threshold fell to the cost value 1/101, and after
-calibration every test message scores above it. That is safe but useless: counsellors would receive all
-traffic. None of the models meets the target, because the exact lower bound is 0.54. Six test crises
-cannot prove 0.95 even if all are caught.
+(Model rows are the deployed OR-gate; on this data it equals the classifier alone, because every crisis the
+valve caught, the classifier also caught.)
+
+**Interpretation.**
+
+- **No model meets the success criterion**, and with 26 test crises none could: even 26/26 gives an exact
+  lower bound of 0.868. The deployed model catches 24 of 26 crises with a lower bound of 0.75.
+- **Recall must be read with the escalation rate.** The baseline's perfect recall comes from escalating 72% of
+  all messages, which no counselling team could absorb. The transformers reach similar recall while escalating
+  far less: the deployed int8 model sends 38% of messages to a counsellor, about half the baseline's load.
+  McNemar's test on per-message crisis decisions favours every transformer over the baseline (p < 0.0001;
+  e.g. int8 correct on 80 messages where the baseline was wrong, the reverse on 9), almost entirely through
+  fewer false alarms.
+- **The cost threshold is still very low** (1/101 ≈ 0.0099, with only 14 calibration crises), so even the best
+  model escalates over a third of messages. At a cost ratio of 100:1 that is the "right" answer, but it should be
+  agreed with counsellors against their real capacity rather than adjusted silently.
+- **The keyword valve alone catches only 8 of 26 real crises** (31%), though with few false alarms. The lexicon
+  was written for Sheng/Swahili and explicit phrases; real students phrase crises in many indirect ways
+  ("is life even worth it", "I feel there was no reason to continue living", "I don't see the need to live in the
+  world"), and a missing space defeats exact matching ("lack of motivationsuicidal ideas"). This is the strongest evidence for the
+  OR-gate design: the classifier is not optional.
 
 ### 5.2 Can the models separate crises at all? (threshold-free)
 
 | Model | ROC-AUC [95% CI] | Average precision [95% CI] | Recall if top 20% escalated | Test ECE |
 |---|---|---|---|---|
-| TF-IDF + LR | 0.937 [0.848, 1.000] | 0.672 [0.297, 1.000] | 0.667 | 0.053 |
-| AfroXLM-R + LoRA | 0.957 [0.890, 1.000] | 0.721 [0.333, 1.000] | **1.000** | 0.103 |
-| DistilBERT + LoRA | 0.853 [0.707, 0.971] | 0.465 [0.148, 0.832] | 0.667 | 0.093 |
-| AfroXLM-R int8 | 0.960 [0.885, 1.000] | 0.797 [0.433, 1.000] | 0.833 | 0.118 |
+| TF-IDF + LR | 0.929 [0.876, 0.969] | 0.664 [0.481, 0.844] | 0.808 | 0.041 |
+| AfroXLM-R + LoRA | 0.926 [0.862, 0.971] | 0.654 [0.478, 0.841] | 0.769 | 0.038 |
+| DistilBERT + LoRA | 0.932 [0.866, 0.976] | 0.722 [0.535, 0.868] | 0.846 | 0.051 |
+| AfroXLM-R int8 | 0.917 [0.858, 0.965] | 0.625 [0.448, 0.820] | 0.808 | 0.065 |
 
-Chance average precision is the prevalence, 0.107.
+Chance average precision = prevalence = 0.118.
 
-**Interpretation.** The scores carry real signal. AfroXLM-R ranks crises well above chance, and escalating
-only its top 20% would have caught all six test crises. So the failure in 5.1 is in **setting the
-threshold from four calibration crises**, not in the model. The fix is more crisis examples in calibration,
-not a different model. AfroXLM-R ranks better than DistilBERT, which matches the tokenizer result in 5.4,
-but the confidence intervals overlap heavily with n = 6.
+**Interpretation.** All four models rank crises well above chance (ROC-AUC ≈ 0.92–0.93), and their intervals
+overlap almost completely: **on English text, the encoders do not rank crises measurably better than TF-IDF.**
+Their advantage in 5.1 comes from producing better-calibrated scores at the low end, so fewer non-crises clear
+the very low threshold. Calibration is good for all (expected calibration error 0.04–0.07), which is what makes
+a cost-derived threshold meaningful.
 
-### 5.3 Categories, subgroups and significance
+### 5.3 Categories
 
-- **Macro-F1:** the baseline is highest (0.86), then DistilBERT (0.76), AfroXLM-R (0.67), int8 (0.64).
-  The synthetic messages are built from templates with fixed key phrases, which favours a bag-of-n-grams model,
-  and the transformers had 2 epochs on 134 seed messages. I don't expect this ordering to survive real data,
-  but I won't claim the reverse without measuring it.
-- **McNemar (category correctness, baseline vs model):** AfroXLM-R p = 0.077 (12 vs 4 discordant), DistilBERT
-  p = 0.18, int8 p = 0.019. Only the int8 difference is significant at 0.05, in the baseline's favour. Crisis
-  decisions are identical (p = 1.0), because every model escalates everything.
-- **English-only vs code-mixed macro-F1:** baseline 0.62 vs 0.93; AfroXLM-R 0.71 vs 0.65; DistilBERT 0.69 vs
-  0.76. With only 14 English-only messages, these differences are within noise.
-- **Cohen's κ:** 0.87 (category) and 1.0 (crisis) on 66 double-coded rows. The second coding is also
-  synthetic, so this only shows the computation works.
+- **AfroXLM-R is the best category model**: macro-F1 0.655 vs 0.465 for the baseline, significant by McNemar's
+  exact test (p = 0.013; AfroXLM-R right and baseline wrong on 21 messages, the reverse on 7). The int8 model
+  keeps this (0.656, p = 0.050).
+- **DistilBERT is not significantly better than the baseline** on categories (0.552, p = 0.86).
+- The rare categories drive macro-F1 down: social anxiety (16 messages in total) and academic stress (21)
+  have very few test examples. The confusion matrices are in `artifacts/reports/confusion_*.png`.
 
-### 5.4 Tokenizer fertility (measured before choosing the encoder)
+### 5.4 English-only vs code-mixed
 
-| Tokenizer | Tokens per word, English | Tokens per word, code-mixed | Words split into ≥ 3 pieces (code-mixed) |
-|---|---|---|---|
-| AfroXLM-R / XLM-R (shared) | 1.18 | **1.57** | 12.5% |
-| Multilingual DistilBERT | 1.26 | **1.93** | 23.5% |
-
-The DistilBERT tokenizer splits Sheng and Swahili words into many more pieces ("chapaa", "kujinyonga"), which
-supports the proposal's choice of an XLM-R-family encoder. This is a property of the tokenizers, so it should
-largely hold on real text, but I'll re-measure it there.
+All 221 real test messages are English, so the comparison the proposal asked for cannot be made on real data.
+The proxy evidence is the tokenizer fertility on code-mixed (synthetic) text: AfroXLM-R/XLM-R use 1.57 tokens
+per word vs 1.93 for multilingual DistilBERT, with 12.5% vs 23.5% of words split into three or more pieces. On
+the real English text all three tokenizers are about equal (≈ 1.24). So on this data the African-language
+pre-training has nothing to show on crisis ranking; where it helps (categories) the effect is modest. Its real
+test is Sheng and Swahili check-ins.
 
 ### 5.5 Quantisation and latency
 
 | | Value |
 |---|---|
 | Model size, fp32 → int8 | 1,110 MB → 279 MB |
-| Max crisis-logit change after int8 | 1.34 (fp32 ONNX export itself matched PyTorch exactly) |
-| Crisis decisions unchanged on calibration set | 100% |
-| Category predictions unchanged | 71% |
-| Model-only CPU time (M1) | ~5.7 ms per message |
-| HTTP round trip, local | ~7.5 ms |
+| Max crisis-logit change after int8 | 2.70 |
+| Crisis decisions unchanged on calibration set | 88% |
+| Category predictions unchanged | 96% |
+| Model-only CPU time (M1) | ~5 ms per message |
 | HTTP round trip through Docker | p50 25 ms, p95 37 ms |
 
-Quantisation shifted the logits enough that reusing the fp32 calibration would have been wrong, so the int8
-bundle is re-calibrated and re-thresholded on its own outputs. The cost shows in category agreement (71%) and
-macro-F1 (0.67 → 0.64), while crisis ranking held. Latency is far inside the 400 ms budget, so the budget is
-network-bound, as the proposal predicted. It still has to be measured on a mid-range Android phone.
+Quantisation moved the crisis logits far more on the real model than on the demo one, which is why the int8
+bundle is re-calibrated and re-thresholded on its own outputs rather than reusing the PyTorch threshold. After
+that, it escalates less (38% vs 55%) at the cost of one more missed crisis (24 vs 25 of 26). That trade-off is
+worth stating to counsellors; an fp32 ONNX export (1.1 GB, also supported) avoids it. Latency is far inside
+the 400 ms budget, so the budget is network-bound, as the proposal predicted.
 
-### 5.6 Safety valve and drift
+### 5.6 Drift monitoring
 
-- The keyword valve alone caught 4 of 6 test crises with **no false alarms** (escalation rate 7%). The two it
-  missed were implicit ("I've written goodbye letters…"), and only the classifier catches those. This is
-  the reason for the OR-gate.
-- **Drift check:** on a simulated month of 162 new messages with injected new slang ("wueh", "mafala"), 12.3%
-  were flagged as novel (vs 5% expected with no drift), the unseen-word rate was 12.8%, and the new terms came
-  out as the top candidates in the novelty clusters, ready for the lexicon review.
+| Scenario | Messages flagged as novel | Alert |
+|---|---|---|
+| Control: held-out real messages (no drift) | 2.3% (designed ≈ 5%) | no |
+| Students switch to Sheng/Swahili (synthetic code-mixed set) | 73% | **yes**, with new-word clusters such as "naogopa", "inanisumbua", "nimehang" |
+
+My first version used a fixed rule (a message is novel if ≥ 25% of its words are unseen). On real, typo-heavy
+student text that flagged 16% of ordinary messages and raised a false alarm. Calibrating the rule by
+cross-validation on the training messages fixed it without losing sensitivity to a real language shift.
 
 ### 5.7 Zero-shot NLI reference
 
-An off-the-shelf multilingual NLI model (mDeBERTa-v3-base, XNLI) with no Strathmore training
-(`scripts/zero_shot.py`):
+An off-the-shelf multilingual NLI model (mDeBERTa-v3-base, XNLI) with no training on this task
+(`scripts/zero_shot.py`), thresholded to reach recall 0.95 on the calibration split:
 
 | | Value |
 |---|---|
-| Crisis ROC-AUC [95% CI] | 0.69 [0.46, 0.89] |
-| Crisis average precision | 0.34 (chance 0.107) |
-| Escalation rate at the threshold reaching recall 0.95 on calibration | 0.82 |
-| Category macro-F1 [95% CI] | 0.55 [0.41, 0.67] |
+| Crisis ROC-AUC [95% CI] | 0.56 [0.42, 0.70], not distinguishable from chance |
+| Crisis recall on test | 0.69 (18/26) at an escalation rate of 76% |
+| Category macro-F1 [95% CI] | 0.29 [0.20, 0.39] |
 
-Without training it ranks crises far worse than any trained model (its ROC-AUC interval reaches chance), and
-to reach the recall target it must escalate 82% of messages. That confirms why I ruled it out as the main
-classifier, and it is the floor the fine-tuned models clearly beat.
+Without task data it is close to useless here, which confirms why I ruled it out as the main classifier.
+Every trained model, including the simple baseline, is far better.
+
 
 ## 6. Deployment
 
@@ -249,52 +271,44 @@ classifier, and it is the floor the fine-tuned models clearly beat.
 
 ## 7. Limitations
 
-1. **No real data yet. This is the main limitation.** All results come from template-built synthetic
-   messages. They show that the pipeline, the evaluation and the deployment work. They say nothing about
-   real-world accuracy, the ranking between models, or the English vs code-mixed gap. The same commands
-   produce the real results once `data/raw/strathmore_checkins.csv` exists (README).
-2. **The recall target needs more crisis examples than a random split gives.** Proving a 95% lower bound
-   ≥ 0.95 requires **at least 72 test crises with zero misses** (exact Clopper–Pearson: 0.025^(1/n) ≥ 0.95).
-   About 1,000 messages at about 5% prevalence gives roughly 12 test crises, so a lower bound near 0.74 at
-   best. Options: enrich the test set with additional consented crisis messages, pool predictions with
-   grouped k-fold cross-validation, or report the honest interval.
-3. **Threshold setting is fragile with few calibration crises** (4 here), as Section 5.1 shows. The
-   evaluator now reports the escalation rate and ranking metrics so this can't hide behind a recall of 1.0.
-   If counsellor capacity is the constraint, the cost ratio should be revisited with them rather than the
-   threshold being raised quietly.
-4. **The stage-1 intermediate fine-tuning is implemented but was not used for the reported models**, to keep
-   CPU training time short (`stage1: null` in the manifests). Its benefit is untested.
-5. **The lexicon and coping library are unvalidated drafts.** Sheng speakers and counsellors must review them.
-6. **Pseudonymisation misses names that are neither introduced nor in the gazetteer.** It is defence in
-   depth, not a guarantee.
-7. **Only the keyword valve runs on the phone.** The proposal's on-device int8 model needs an Expo development
-   build and an XLM-R tokenizer in JavaScript.
-8. **Latency on a real mid-range Android phone over campus Wi-Fi has not been measured.**
+1. **English only on real data.** The Zindi messages are English (Kenyan usage, with typos). The proposal's
+   central claim, that an African-language encoder handles Sheng and Swahili better, is supported only
+   indirectly: by tokenizer fertility and by the drift test on synthetic code-mixed text. It needs real
+   Sheng/Swahili check-ins.
+2. **The recall target cannot be proven with 26 test crises.** A 95% lower bound ≥ 0.95 needs at least 72 test
+   crises with no misses (exact Clopper–Pearson: 0.025^(1/n) ≥ 0.95). With 26/26 caught the lower bound
+   would be 0.87. More crisis examples (or pooled cross-validation) are needed before any claim of 0.95.
+3. **Labels.** The crisis labels are my review of an AI first pass; there is no independent second coder yet,
+   and the category labels were not reviewed. My reviewer rules (Section 2.2) deliberately err towards crisis.
+4. **Zindi is not Strathmore.** The prompt ("What is on your mind?"), the year (2020) and the universities
+   differ from the intended deployment, and some messages describe the past.
+5. **The stage-1 intermediate fine-tuning is implemented but was not used** for the reported models, to keep
+   CPU training time short. Its benefit is untested.
+6. **The lexicon and coping library are unvalidated drafts** and must be reviewed by counsellors and
+   Sheng-speaking students. The API refuses to run in production until the library is approved.
+7. **Only the keyword valve runs on the phone**, and latency on a mid-range Android phone over campus Wi-Fi has
+   not been measured.
 
 ## 8. Real-world relevance and next steps
 
-Sikiza addresses a real gap at Strathmore and other Kenyan campuses. Counselling capacity is scarce, and
-students describe distress in the language they actually use. The design choices matter more than the
-model scores:
+Sikiza addresses a real gap: counselling capacity is scarce, and students describe distress in their own
+words. The design choices matter as much as the scores. The OR-gate and offline valve mean a crisis is not
+missed silently. Retrieval of approved text means no generated advice reaches a student. Cost-based thresholds
+with honest intervals and escalation rates show counsellors the real trade-off. Privacy-preserving logging
+means messages are not kept unnecessarily.
 
-- the OR-gate and offline valve, so a crisis is never missed silently;
-- retrieval of approved text, so no generated advice reaches students;
-- calibrated, cost-based thresholds with honest intervals, so stakeholders can see real performance;
-- privacy built into logging, so student messages aren't kept unnecessarily.
-
-These make it something a counselling department could adopt responsibly. The next steps before any pilot:
-
-1. ethics approval and the consented Strathmore dataset, with enough crisis examples (Limitation 2);
-2. counsellor approval of the library and student-panel review of the lexicon;
-3. retraining with stage 1, then re-evaluation, with the cost ratio agreed with counsellors;
-4. Kenya-hosted deployment with HTTPS, an on-call rota for escalations, and monthly drift reviews.
+Before a pilot: ethics approval and consented Strathmore data including Sheng/Swahili messages with enough crisis
+examples; an independent second coder; counsellor approval of the library and student review of the lexicon;
+the cost ratio agreed with counsellors against their capacity; Kenya-hosted deployment with HTTPS, an on-call
+rota, and monthly drift reviews.
 
 ## Appendix: reproducing this report
 
 ```bash
-make setup && make demo                                    # data → augment → baseline → AfroXLM-R → ONNX → eval
-make distilbert DEMO=--demo && make evaluate DEMO=--demo   # adds DistilBERT; writes artifacts/reports/eval.md
-make fertility DEMO=--demo && make zeroshot DEMO=--demo
+make setup
+make real     # prepare Zindi → augment → baseline → AfroXLM-R + DistilBERT → ONNX int8 → evaluate,
+              # zero-shot, fertility, drift  (about 30 minutes on a laptop CPU)
 ```
 
-AI assistance is disclosed in [`AI_USE.md`](AI_USE.md).
+Outputs: `artifacts/reports/` (`eval.md`, `eval.json`, confusion matrices, `zindi_data.json`, drift and fertility
+reports). AI assistance is disclosed in [`AI_USE.md`](AI_USE.md).

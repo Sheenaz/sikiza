@@ -1,0 +1,71 @@
+{
+  "rows_raw": 925,
+  "rows_labelled_by_zindi": 616,
+  "distinct_texts": 884,
+  "duplicate_rows_merged": 41,
+  "texts_in_both_zindi_train_and_test": 13,
+  "label_conflicts_within_duplicates": 3,
+  "seed_crisis": 91,
+  "seed_crisis_rate": 0.10294117647058823,
+  "seed_categories": {
+    "low_mood": 483,
+    "substance_use": 258,
+    "other": 65,
+    "financial_strain": 41,
+    "academic_stress": 21,
+    "social_anxiety": 16
+  },
+  "reviewed_rows": 884,
+  "ai_first_pass_vs_human_review_crisis": {
+    "kappa": 0.7382132464460135,
+    "ai_0_human_1": 32,
+    "ai_1_human_0": 7,
+    "rows": 925
+  },
+  "zindi_label_vs_text_crisis": {
+    "kappa_zindi_suicide_vs_crisis": 0.44702194357366776,
+    "zindi_suicide_rows": 66,
+    "zindi_suicide_but_not_crisis": 34,
+    "crisis_but_not_zindi_suicide": 29,
+    "crisis_by_zindi_label": {
+      "Alcohol": 3,
+      "Depression": 25,
+      "Drugs": 1,
+      "Suicide": 32
+    }
+  },
+  "zindi_label_x_category": {
+    "Alcohol": {
+      "academic_stress": 0,
+      "financial_strain": 1,
+      "low_mood": 3,
+      "other": 2,
+      "social_anxiety": 2,
+      "substance_use": 132
+    },
+    "Depression": {
+      "academic_stress": 14,
+      "financial_strain": 25,
+      "low_mood": 288,
+      "other": 20,
+      "social_anxiety": 4,
+      "substance_use": 1
+    },
+    "Drugs": {
+      "academic_stress": 0,
+      "financial_strain": 1,
+      "low_mood": 1,
+      "other": 1,
+      "social_anxiety": 0,
+      "substance_use": 55
+    },
+    "Suicide": {
+      "academic_stress": 0,
+      "financial_strain": 0,
+      "low_mood": 44,
+      "other": 19,
+      "social_anxiety": 3,
+      "substance_use": 0
+    }
+  }
+}

@@ -2,14 +2,14 @@
   "afroxlmr": {
     "model": "Davlan/afro-xlmr-base",
     "english_only": {
-      "fertility": 1.1758849557522124,
-      "share_ge3_pieces": 0.004424778761061947,
-      "words": 904
+      "fertility": 1.2374245472837022,
+      "share_ge3_pieces": 0.05217016384018396,
+      "words": 6958
     },
     "code_mixed": {
-      "fertility": 1.566356720202874,
-      "share_ge3_pieces": 0.12510566356720204,
-      "words": 1183
+      "fertility": null,
+      "share_ge3_pieces": null,
+      "words": 0
     },
     "probe_terms": {
       "nimehang": [
@@ -93,14 +93,14 @@
   "xlmr": {
     "model": "FacebookAI/xlm-roberta-base",
     "english_only": {
-      "fertility": 1.1758849557522124,
-      "share_ge3_pieces": 0.004424778761061947,
-      "words": 904
+      "fertility": 1.2374245472837022,
+      "share_ge3_pieces": 0.05217016384018396,
+      "words": 6958
     },
     "code_mixed": {
-      "fertility": 1.566356720202874,
-      "share_ge3_pieces": 0.12510566356720204,
-      "words": 1183
+      "fertility": null,
+      "share_ge3_pieces": null,
+      "words": 0
     },
     "probe_terms": {
       "nimehang": [
@@ -184,14 +184,14 @@
   "distilbert": {
     "model": "distilbert/distilbert-base-multilingual-cased",
     "english_only": {
-      "fertility": 1.2577433628318584,
-      "share_ge3_pieces": 0.04424778761061947,
-      "words": 904
+      "fertility": 1.2328255245760276,
+      "share_ge3_pieces": 0.055475711411325096,
+      "words": 6958
     },
     "code_mixed": {
-      "fertility": 1.9323753169907016,
-      "share_ge3_pieces": 0.23499577345731193,
-      "words": 1183
+      "fertility": null,
+      "share_ge3_pieces": null,
+      "words": 0
     },
     "probe_terms": {
       "nimehang": [

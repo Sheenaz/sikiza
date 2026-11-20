@@ -1,0 +1,39 @@
+{
+  "n_train": 530,
+  "n_new": 221,
+  "novelty_cutoff": 0.5353626085675375,
+  "oov_cutoff": 0.42857142857142855,
+  "novel_share": 0.02262443438914027,
+  "expected_novel_share_if_no_drift": 0.05,
+  "centroid_cosine_shift": 0.020589895981014017,
+  "oov_token_rate": 0.11334393689716384,
+  "top_oov_tokens": [],
+  "clusters": [
+    {
+      "cluster": 0,
+      "size": 1,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 1,
+      "size": 1,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 2,
+      "size": 1,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 3,
+      "size": 1,
+      "candidate_new_terms": []
+    },
+    {
+      "cluster": 4,
+      "size": 1,
+      "candidate_new_terms": []
+    }
+  ],
+  "alert": false
+}
