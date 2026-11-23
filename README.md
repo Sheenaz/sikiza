@@ -183,6 +183,24 @@ Only the files allow-listed in `.dockerignore` are sent to the build: no data, n
 - The image bakes in whatever is in `artifacts/model` at build time. Rebuild after every re-export,
   and check `GET /v1/version` shows the expected model, lexicon and library versions.
 
+## Cloud demo deployment (Hugging Face Spaces)
+
+A public demo of the API runs on a free Hugging Face Docker Space (2 vCPU, 16 GB RAM). Free tiers with
+512 MB of RAM cannot hold the model: the container needs about 1.4 GB.
+
+```bash
+sh scripts/fetch_model.sh        # real-data model v0.2.0 into artifacts/model/
+hf auth login                    # once, with a write token
+sh scripts/deploy_hf_space.sh    # creates/updates <hf-username>/sikiza and uploads the app
+```
+
+- [`deploy/huggingface/Dockerfile`](deploy/huggingface/Dockerfile) is `serving/Dockerfile` adapted to the
+  Spaces requirements (port 7860, non-root uid 1000). Set `COUNSELLOR_API_KEY` as a Space secret.
+- This is a **demo deployment, not the production site**: it is hosted outside Kenya, the coping library is
+  still an unapproved draft (`ALLOW_DRAFT_LIBRARY=1`), and state is ephemeral. Do not send real student
+  data to it. Production stays Kenya-hosted (see below).
+- A free Space sleeps after about 48 hours without traffic; the first request then takes a minute or two.
+
 ## Privacy and governance (DPA 2019)
 
 - Pseudonymisation runs first, at data load and at serving time. Its limitation: names that aren't
