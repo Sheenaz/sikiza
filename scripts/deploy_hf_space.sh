@@ -6,7 +6,8 @@
 # in the Space settings, otherwise the counsellor endpoints stay locked.
 set -eu
 cd "$(dirname "$0")/.."
-SPACE="${1:-$(hf auth whoami | head -1 | sed 's/^user: *//')/sikiza}"
+HF_USER=$(hf auth whoami | head -1 | tr -d '\033' | sed 's/\[[0-9;]*m//g; s/^user: *//; s/ *$//')
+SPACE="${1:-$HF_USER/sikiza}"
 [ -f artifacts/model/model.int8.onnx ] || { echo "run scripts/fetch_model.sh first" >&2; exit 1; }
 
 stage=$(mktemp -d)

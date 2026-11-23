@@ -10,6 +10,11 @@ other message with a **retrieved**, counsellor-approved coping strategy.
 > data. Before any student uses it: human review of the labels, counsellor approval of the library,
 > and student/counsellor review of the Sheng lexicon. See "Before a pilot" below.
 
+> **Live demo API:** https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io/docs
+> (Azure Container Apps, South Africa North). Open `POST /v1/checkin`, click *Try it out* and send
+> `{"text": "I have no money for fees this semester"}`. The app scales to zero when idle, so the first
+> request can take up to a minute. Demo only: please do not send real personal information.
+
 ## Data
 
 | Dataset | Use | Where |
@@ -183,23 +188,27 @@ Only the files allow-listed in `.dockerignore` are sent to the build: no data, n
 - The image bakes in whatever is in `artifacts/model` at build time. Rebuild after every re-export,
   and check `GET /v1/version` shows the expected model, lexicon and library versions.
 
-## Cloud demo deployment (Hugging Face Spaces)
+## Cloud demo deployment (Azure Container Apps)
 
-A public demo of the API runs on a free Hugging Face Docker Space (2 vCPU, 16 GB RAM). Free tiers with
-512 MB of RAM cannot hold the model: the container needs about 1.4 GB.
+The API runs at https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io/docs on
+**Azure Container Apps** (Azure for Students subscription), region **South Africa North**: the closest
+region the subscription allows, since Azure has no Kenyan region.
 
 ```bash
-sh scripts/fetch_model.sh        # real-data model v0.2.0 into artifacts/model/
-hf auth login                    # once, with a write token
-sh scripts/deploy_hf_space.sh    # creates/updates <hf-username>/sikiza and uploads the app
+sh scripts/fetch_model.sh                    # real-data model v0.2.0 into artifacts/model/
+az login
+ACR=<unique-registry-name> sh deploy/azure/deploy.sh   # build amd64 image, push, create/update the app
 ```
 
-- [`deploy/huggingface/Dockerfile`](deploy/huggingface/Dockerfile) is `serving/Dockerfile` adapted to the
-  Spaces requirements (port 7860, non-root uid 1000). Set `COUNSELLOR_API_KEY` as a Space secret.
-- This is a **demo deployment, not the production site**: it is hosted outside Kenya, the coping library is
-  still an unapproved draft (`ALLOW_DRAFT_LIBRARY=1`), and state is ephemeral. Do not send real student
-  data to it. Production stays Kenya-hosted (see below).
-- A free Space sleeps after about 48 hours without traffic; the first request then takes a minute or two.
+- Setup: 1 vCPU, 2 GB RAM, scale to zero when idle (min 0, max 1 replica), HTTPS ingress, image in Azure
+  Container Registry. The container needs about 1.4 GB, which is why the 512 MB free tiers (Render, Koyeb)
+  were ruled out. Hugging Face Docker Spaces were also prepared ([`deploy/huggingface/`](deploy/huggingface/))
+  but now require a paid plan.
+- `COUNSELLOR_API_KEY` is a randomly generated Azure secret, so `dev-key` does not work on the live API.
+- This is a **demo deployment, not the production site**: it is outside Kenya, the coping library is still an
+  unapproved draft (`ALLOW_DRAFT_LIBRARY=1`), and state is ephemeral (lost when the container restarts).
+  Do not send real student data to it. Production needs Kenya-based hosting under DPA 2019 (see below).
+- After scaling to zero, the first request takes up to a minute while the container starts.
 
 ## Privacy and governance (DPA 2019)
 
