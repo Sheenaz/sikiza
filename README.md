@@ -10,10 +10,12 @@ other message with a **retrieved**, counsellor-approved coping strategy.
 > data. Before any student uses it: human review of the labels, counsellor approval of the library,
 > and student/counsellor review of the Sheng lexicon. See "Before a pilot" below.
 
-> **Live demo API:** https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io/docs
-> (Azure Container Apps, South Africa North). Open `POST /v1/checkin`, click *Try it out* and send
-> `{"text": "I have no money for fees this semester"}`. The app scales to zero when idle, so the first
-> request can take up to a minute. Demo only: please do not send real personal information.
+> **Live demo:** https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io
+> (Azure Container Apps, South Africa North). Type how you feel, in English, Swahili or Sheng, and the
+> reply appears in the chat; crisis messages show the hotlines. The API itself is at
+> [`/docs`](https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io/docs). The app scales
+> to zero when idle, so the first request can take up to a minute. Demo only: please do not send real
+> personal information.
 
 ## Data
 
@@ -190,7 +192,8 @@ Only the files allow-listed in `.dockerignore` are sent to the build: no data, n
 
 ## Cloud demo deployment (Azure Container Apps)
 
-The API runs at https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io/docs on
+The chat page (`/`, [`serving/static/index.html`](serving/static/index.html)) and the API (`/docs`) run at
+https://sikiza-api.kindrock-df9bddf5.southafricanorth.azurecontainerapps.io on
 **Azure Container Apps** (Azure for Students subscription), region **South Africa North**: the closest
 region the subscription allows, since Azure has no Kenyan region.
 

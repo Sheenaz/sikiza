@@ -56,3 +56,10 @@ def test_lexicon_endpoint(client):
     c, _ = client
     lex = c.get("/v1/lexicon").json()
     assert lex["version"] and any(r["tier"] == "crisis" for r in lex["rules"])
+
+
+def test_chat_page_is_served(client):
+    c, _ = client
+    r = c.get("/")
+    assert r.status_code == 200 and "text/html" in r.headers["content-type"]
+    assert "/v1/checkin" in r.text and "1199" in r.text    # posts to the API; shows the hotline

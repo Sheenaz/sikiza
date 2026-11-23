@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sikiza</title>
+<meta name="description" content="Sikiza: Sheng-aware distress triage and coping support (DSA 8401 capstone demo)">
+<style>
+  :root {
+    --bg: #f4f6f9; --panel: #ffffff; --ink: #1a1a1a; --muted: #5a6472; --rule: #d9e0e8;
+    --brand: #1f3a5f; --accent: #2e6da4; --me: #2e6da4; --me-ink: #ffffff; --bot: #eef2f7;
+    --crisis-bg: #fff1f0; --crisis-edge: #c0392b; --crisis-ink: #7a1c12; --warn-bg: #fff6e0; --warn-edge: #e0b84f;
+    --tag-bg: #e6eef7; --tag-ink: #1f3a5f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11161d; --panel: #182029; --ink: #e8edf3; --muted: #9aa6b4; --rule: #2a3542;
+      --brand: #9cc3ea; --accent: #5b9bd5; --me: #3a6ea5; --me-ink: #ffffff; --bot: #222c38;
+      --crisis-bg: #3a1d1b; --crisis-edge: #e06656; --crisis-ink: #ffd6d0; --warn-bg: #2e2716; --warn-edge: #b8923a;
+      --tag-bg: #24364a; --tag-ink: #cfe2f6;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 720px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; padding: 0 16px; }
+  header { padding: 20px 0 12px; }
+  h1 { margin: 0; font-size: 1.6rem; color: var(--brand); letter-spacing: -0.01em; }
+  .sub { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
+  .notice { margin: 12px 0 0; padding: 10px 12px; background: var(--warn-bg); border-left: 3px solid var(--warn-edge); border-radius: 6px; font-size: 0.85rem; }
+  .notice a { color: inherit; font-weight: 600; }
+  main { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px 0; }
+  .msg { max-width: 85%; padding: 10px 14px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .me { align-self: flex-end; background: var(--me); color: var(--me-ink); border-bottom-right-radius: 4px; }
+  .bot { align-self: flex-start; background: var(--bot); border-bottom-left-radius: 4px; }
+  .bot.crisis { background: var(--crisis-bg); color: var(--crisis-ink); border-left: 4px solid var(--crisis-edge); }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; background: var(--tag-bg); color: var(--tag-ink); }
+  .hotlines { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .hotlines a { display: inline-block; padding: 6px 12px; border-radius: 8px; background: var(--crisis-edge); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .empty { color: var(--muted); text-align: center; margin: auto 0; font-size: 0.95rem; }
+  .examples { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 12px; }
+  .examples button { font: inherit; font-size: 0.85rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); cursor: pointer; }
+  .examples button:hover { border-color: var(--accent); }
+  form { position: sticky; bottom: 0; background: var(--bg); padding: 12px 0 16px; display: flex; gap: 8px; align-items: flex-end; }
+  textarea { flex: 1; min-width: 0; resize: none; font: inherit; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 12px; background: var(--panel); color: var(--ink); max-height: 160px; }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button.send { font: inherit; font-weight: 600; padding: 10px 18px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; cursor: pointer; }
+  button.send:disabled { opacity: 0.55; cursor: default; }
+  .typing { color: var(--muted); font-style: italic; }
+  footer { color: var(--muted); font-size: 0.78rem; text-align: center; padding-bottom: 12px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Sikiza</h1>
+    <p class="sub">Tell us how you're feeling, in English, Swahili or Sheng.</p>
+    <div class="notice">
+      <strong>Demo only.</strong> This is a student project; no counsellor is actually notified.
+      Please don't enter real names or personal details. If you are in danger, call
+      <a href="tel:1199">Kenya Red Cross 1199</a> or <a href="tel:+254722178177">Befrienders Kenya +254 722 178 177</a>.
+    </div>
+  </header>
+
+  <main id="chat" aria-live="polite">
+    <div class="empty" id="empty">
+      How are you doing today?
+      <div class="examples">
+        <button type="button">I have no money for fees this semester</button>
+        <button type="button">Exams are stressing me out</button>
+        <button type="button">Nimechoka na maisha</button>
+        <button type="button">I can't stop drinking on weekends</button>
+      </div>
+    </div>
+  </main>
+
+  <form id="form">
+    <label for="text" style="position:absolute;left:-9999px">Your message</label>
+    <textarea id="text" rows="2" maxlength="2000" placeholder="Type how you're feeling…" required></textarea>
+    <button class="send" id="send" type="submit">Send</button>
+  </form>
+
+  <footer>
+    DSA 8401 capstone · <a href="/docs">API docs</a> · <a href="https://github.com/Sheenaz/sikiza">Source on GitHub</a>
+  </footer>
+</div>
+
+<script>
+  const chat = document.getElementById("chat");
+  const form = document.getElementById("form");
+  const box = document.getElementById("text");
+  const send = document.getElementById("send");
+  const LABELS = {
+    academic_stress: "Academic stress", financial_strain: "Financial strain", social_anxiety: "Social anxiety",
+    low_mood: "Low mood", substance_use: "Substance use", other: "Other"
+  };
+
+  function bubble(cls, text) {
+    document.getElementById("empty")?.remove();
+    const d = document.createElement("div");
+    d.className = "msg " + cls;
+    d.textContent = text;
+    chat.appendChild(d);
+    d.scrollIntoView({ behavior: "smooth", block: "end" });
+    return d;
+  }
+
+  function render(d, r) {
+    d.classList.remove("typing");
+    d.textContent = r.response_text;
+    if (r.crisis) d.classList.add("crisis");
+    if (r.hotlines && r.hotlines.length) {
+      const h = document.createElement("div");
+      h.className = "hotlines";
+      for (const l of r.hotlines) {
+        const a = document.createElement("a");
+        a.href = "tel:" + l.number;
+        a.textContent = "Call " + l.name;
+        h.appendChild(a);
+      }
+      d.appendChild(h);
+    }
+    const m = document.createElement("div");
+    m.className = "meta";
+    const tags = r.crisis ? ["Crisis: sent to a counsellor"] : ["Topic: " + (LABELS[r.category] || r.category)];
+    for (const t of tags) {
+      const s = document.createElement("span");
+      s.className = "tag";
+      s.textContent = t;
+      m.appendChild(s);
+    }
+    d.appendChild(m);
+  }
+
+  async function submit(text) {
+    text = text.trim();
+    if (!text) return;
+    bubble("me", text);
+    box.value = "";
+    send.disabled = true;
+    const reply = bubble("bot typing", "Listening…");
+    try {
+      const res = await fetch("/v1/checkin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text })
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      render(reply, await res.json());
+    } catch (e) {
+      reply.classList.remove("typing");
+      reply.textContent = "Sorry, I couldn't reach the service. Please try again in a minute. " +
+        "If you are in danger, call Kenya Red Cross on 1199.";
+    } finally {
+      send.disabled = false;
+      box.focus();
+      reply.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  }
+
+  form.addEventListener("submit", e => { e.preventDefault(); submit(box.value); });
+  box.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); }
+  });
+  document.querySelectorAll(".examples button").forEach(b => b.addEventListener("click", () => submit(b.textContent)));
+</script>
+</body>
+</html>

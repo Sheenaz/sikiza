@@ -27,6 +27,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, Header, HTTPException
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -114,6 +115,15 @@ def _require_counsellor(key: str | None) -> None:
     expected = os.environ.get("COUNSELLOR_API_KEY")
     if not expected or not key or not hmac.compare_digest(key, expected):
         raise HTTPException(401, "counsellor key required")
+
+
+_INDEX = Path(__file__).resolve().parent / "static" / "index.html"
+
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def index():
+    """Student-facing chat page (demo): posts to /v1/checkin and shows the reply."""
+    return HTMLResponse(_INDEX.read_text(encoding="utf-8"))
 
 
 @app.post("/v1/checkin")
