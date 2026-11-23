@@ -7,7 +7,7 @@
 set -eu
 cd "$(dirname "$0")/../.."
 RG=${RG:-sikiza-rg}; LOC=${LOC:-southafricanorth}; ACR=${ACR:?set ACR to a globally unique registry name}
-APP=${APP:-sikiza-api}; ENVNAME=${ENVNAME:-sikiza-env}; TAG=${TAG:-0.2.0}
+APP=${APP:-sikiza-api}; ENVNAME=${ENVNAME:-sikiza-env}; TAG=${TAG:-0.3.0}
 IMG="$ACR.azurecr.io/sikiza:$TAG"
 
 [ -f artifacts/model/model.int8.onnx ] || { echo "run scripts/fetch_model.sh first" >&2; exit 1; }
@@ -28,7 +28,7 @@ else
   az containerapp create -g "$RG" -n "$APP" --environment "$ENVNAME" --image "$IMG" \
     --registry-server "$ACR.azurecr.io" --registry-username "$ACR" \
     --registry-password "$(az acr credential show -n "$ACR" --query 'passwords[0].value' -o tsv)" \
-    --target-port 7860 --ingress external --cpu 1 --memory 2Gi --min-replicas 0 --max-replicas 1 \
+    --target-port 7860 --ingress external --cpu 2 --memory 4Gi --min-replicas 0 --max-replicas 1 \
     --secrets counsellor-key="$KEY" --env-vars COUNSELLOR_API_KEY=secretref:counsellor-key -o none
   echo "Counsellor key (store it safely; it is not shown again): $KEY"
 fi

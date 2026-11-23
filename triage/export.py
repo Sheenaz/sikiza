@@ -28,7 +28,7 @@ class _ExportWrapper(torch.nn.Module):
 
 
 def export_onnx(torch_dir: str | Path, out_dir: str | Path, calib_df=None, opset: int = 17,
-                safety_cfg: dict | None = None) -> dict:
+                safety_cfg: dict | None = None, quantization: str = "int8") -> dict:
     """calib_df (text, crisis, category): used to RE-CALIBRATE the int8 model and re-derive
     its threshold, because int8 shifts logits (measured up to ~2 logits on a weak model) and
     the deployed artefact is the int8 one. Parity vs torch is reported on the same rows."""
@@ -55,16 +55,21 @@ def export_onnx(torch_dir: str | Path, out_dir: str | Path, calib_df=None, opset
                           dynamic_shapes={"input_ids": {0: batch, 1: seq},
                                           "attention_mask": {0: batch, 1: seq}}, **kw)
 
-    from onnxruntime.quantization import QuantType, quantize_dynamic
-    from onnxruntime.quantization.shape_inference import quant_pre_process
-
     int8 = out_dir / "model.int8.onnx"
-    pre = out_dir / "model.pre.onnx"
-    quant_pre_process(str(fp32), str(pre))
-    # per-channel int8 everywhere (incl. the 250k-token embedding: keeps the file ~280 MB
-    # for phones). MatMul-only quantisation was tested: 3x larger for little accuracy gain.
-    quantize_dynamic(str(pre), str(int8), weight_type=QuantType.QInt8, per_channel=True)
-    pre.unlink()
+    if int8.exists():
+        int8.unlink()
+    if quantization == "int8":
+        from onnxruntime.quantization import QuantType, quantize_dynamic
+        from onnxruntime.quantization.shape_inference import quant_pre_process
+
+        pre = out_dir / "model.pre.onnx"
+        quant_pre_process(str(fp32), str(pre))
+        # per-channel int8 everywhere (incl. the 250k-token embedding: keeps the file ~280 MB
+        # for phones). MatMul-only quantisation was tested: 3x larger for little accuracy gain.
+        quantize_dynamic(str(pre), str(int8), weight_type=QuantType.QInt8, per_channel=True)
+        pre.unlink()
+    # quantization "none": serve model.onnx (fp32). int8 shifted the small crisis probabilities 2-3x,
+    # which flips decisions near a ~1% threshold (e.g. escalating "I am feeling happy today").
 
     # tokenizer.json for the torch-free runtime
     scorer.tok.save_pretrained(out_dir / "_tok")
@@ -75,10 +80,13 @@ def export_onnx(torch_dir: str | Path, out_dir: str | Path, calib_df=None, opset
             shutil.copy(torch_dir / extra, out_dir / extra)
 
     man = read_manifest(torch_dir)
-    man.update(model_type="onnx", source_torch_bundle=Path(torch_dir).name, quantization="dynamic_int8_per_channel",
-               model_version=f"{man.get('model_version', 'unknown')}-onnx-int8",
+    q8 = quantization == "int8"
+    man.update(model_type="onnx", source_torch_bundle=Path(torch_dir).name,
+               quantization="dynamic_int8_per_channel" if q8 else "none_fp32",
+               model_version=f"{man.get('model_version', 'unknown')}-onnx-{'int8' if q8 else 'fp32'}",
                max_length=scorer.max_length, pad_id=scorer.tok.pad_token_id, pad_token=scorer.tok.pad_token,
-               size_mb={"fp32": round(fp32.stat().st_size / 1e6, 1), "int8": round(int8.stat().st_size / 1e6, 1)})
+               size_mb={"fp32": round(fp32.stat().st_size / 1e6, 1),
+                        **({"int8": round(int8.stat().st_size / 1e6, 1)} if q8 else {})})
     man.pop("created_at", None)
 
     if parity_texts:
@@ -92,10 +100,13 @@ def export_onnx(torch_dir: str | Path, out_dir: str | Path, calib_df=None, opset
         zo, ko = onnx.logits(parity_texts)
         # re-calibrate + re-threshold on the int8 model's own calib outputs
         y = calib_df["crisis"].to_numpy()
-        cal_o = Calibrator.fit(zo, y, ko, [CAT2ID[c] for c in calib_df["category"]])
-        s = safety_cfg or {"cost_false_negative": 100.0, "cost_false_positive": 1.0, "target_recall": 0.95}
-        thr = choose_threshold(cal_o.crisis_proba(zo), y, s["cost_false_negative"], s["cost_false_positive"],
-                               s["target_recall"])
+        if q8:
+            cal_o = Calibrator.fit(zo, y, ko, [CAT2ID[c] for c in calib_df["category"]])
+            s = safety_cfg or {"cost_false_negative": 100.0, "cost_false_positive": 1.0, "target_recall": 0.95}
+            thr = choose_threshold(cal_o.crisis_proba(zo), y, s["cost_false_negative"], s["cost_false_positive"],
+                                   s["target_recall"])
+        else:  # fp32 logits match torch (diff ~1e-5): keep the trained calibration and threshold
+            cal_o, thr = cal_t, man["threshold"]
         man["torch_calibrator"], man["torch_threshold"] = man["calibrator"], man["threshold"]
         man["calibrator"], man["threshold"] = cal_o.to_dict(), thr
         pt, po = cal_t.crisis_proba(zt), cal_o.crisis_proba(zo)
@@ -109,8 +120,9 @@ def export_onnx(torch_dir: str | Path, out_dir: str | Path, calib_df=None, opset
         t0 = time.perf_counter()
         for t in parity_texts[:50]:
             onnx.logits([t])
-        parity["cpu_ms_per_message_int8"] = (time.perf_counter() - t0) * 1000 / min(50, len(parity_texts))
+        parity["cpu_ms_per_message"] = (time.perf_counter() - t0) * 1000 / min(50, len(parity_texts))
         man["parity"] = parity
-    fp32.unlink()  # ship int8 only
+    if q8:
+        fp32.unlink()  # ship int8 only
     write_manifest(out_dir, **man)
     return man

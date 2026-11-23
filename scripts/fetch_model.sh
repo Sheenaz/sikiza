@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
-# Download the trained serving bundle (AfroXLM-R + LoRA, ONNX int8, 279 MB; v0.2.0 = trained on real Zindi data) from the GitHub
+# Download the trained serving bundle (AfroXLM-R + LoRA, fp32 ONNX, ~1 GB; v0.3.0 = real Zindi data + positive
+# check-ins; v0.2.0 = the earlier int8 model, 279 MB) from the GitHub
 # release into artifacts/model/. It is too large for a git repository (GitHub's limit is 100 MB).
 # To produce it yourself instead: make demo  (or the real-data steps in README.md).
 set -eu
-VERSION="${1:-v0.2.0}"
+VERSION="${1:-v0.3.0}"
 URL="https://github.com/Sheenaz/sikiza/releases/download/${VERSION}/sikiza-model-${VERSION}.tar.gz"
 case "$VERSION" in
+  v0.3.0) SHA256="2f9bea5e0f76c75b67254ccc136029a239fed563d8fe011e74895254d0c69721" ;;  # + positive check-ins, fp32
   v0.2.0) SHA256="70dd4a32f45bdf503b9ad9ea2610060ffde49ba4f9a292bbf8b1649e5672535f" ;;  # real Zindi data
   v0.1.0) SHA256="f87a3ecd2469e27fca4b78c590d89a052bb7efa2fcf5a408a7f0b9ba0f329518" ;;  # synthetic demo data
   *) SHA256="" ;;

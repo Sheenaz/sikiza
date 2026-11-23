@@ -23,18 +23,18 @@
       "warning": "escalates more than half of all messages \u2014 recall is not informative"
     },
     "category": {
-      "macro_f1": 0.2896612522224817,
+      "macro_f1": 0.2441139324244368,
       "macro_f1_ci": [
-        0.1969072547579725,
-        0.3912287582823823
+        0.15028242485679566,
+        0.34138119806371237
       ],
       "per_class_f1": {
         "academic_stress": 0.2857142857142857,
         "financial_strain": 0.18181818181818182,
         "social_anxiety": 0.11764705882352941,
         "low_mood": 0.7415730337078652,
-        "substance_use": 0.411214953271028,
-        "other": 0.0
+        "substance_use": 0.0,
+        "other": 0.13793103448275862
       },
       "confusion_matrix": {
         "labels": [
@@ -59,40 +59,40 @@
             1,
             1,
             5,
-            2,
-            0
+            0,
+            2
           ],
           [
             0,
             0,
             2,
             1,
-            1,
-            0
+            0,
+            1
           ],
           [
             0,
             0,
             9,
             99,
-            13,
-            0
+            0,
+            13
           ],
           [
             0,
             0,
             15,
             28,
-            22,
-            0
+            0,
+            22
           ],
           [
             0,
             0,
             3,
             9,
-            4,
-            0
+            0,
+            4
           ]
         ]
       }
@@ -122,18 +122,18 @@
       "warning": "escalates more than half of all messages \u2014 recall is not informative"
     },
     "category": {
-      "macro_f1": 0.2896612522224817,
+      "macro_f1": 0.2441139324244368,
       "macro_f1_ci": [
-        0.1969072547579725,
-        0.3912287582823823
+        0.15028242485679566,
+        0.34138119806371237
       ],
       "per_class_f1": {
         "academic_stress": 0.2857142857142857,
         "financial_strain": 0.18181818181818182,
         "social_anxiety": 0.11764705882352941,
         "low_mood": 0.7415730337078652,
-        "substance_use": 0.411214953271028,
-        "other": 0.0
+        "substance_use": 0.0,
+        "other": 0.13793103448275862
       },
       "confusion_matrix": {
         "labels": [
@@ -158,40 +158,40 @@
             1,
             1,
             5,
-            2,
-            0
+            0,
+            2
           ],
           [
             0,
             0,
             2,
             1,
-            1,
-            0
+            0,
+            1
           ],
           [
             0,
             0,
             9,
             99,
-            13,
-            0
+            0,
+            13
           ],
           [
             0,
             0,
             15,
             28,
-            22,
-            0
+            0,
+            22
           ],
           [
             0,
             0,
             3,
             9,
-            4,
-            0
+            0,
+            4
           ]
         ]
       }

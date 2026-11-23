@@ -6,7 +6,7 @@ This file records how AI assistance was used in this repository, per the course 
 ## Tool
 
 **Claude Code** (Anthropic, model Claude Opus 5.5), used as a coding agent inside VS Code on my
-laptop, 19–20 November 2026. It could read and write files in the project folder and run
+laptop, 19–23 November 2026. It could read and write files in the project folder and run
 commands (Python, npm, Docker, git) after I approved them.
 
 ## What I did
@@ -23,6 +23,10 @@ commands (Python, npm, Docker, git) after I approved them.
 - Installed and set up the tooling (Docker Desktop, GitHub).
 - Obtained the real dataset (Zindi BNBR Kenya Tech4MentalHealth) and decided to use it in place of
   the Strathmore check-ins, which were not available in time.
+- Created the Azure for Students account for the cloud demo and signed in to it.
+- Tested the deployed chat page myself and found that it treated ordinary happy messages ("I am feeling happy
+  today, it is a very sunny day!") as crises. I decided to fix this by retraining with positive data rather
+  than with a keyword rule.
 
 ## What the AI tool did
 
@@ -39,6 +43,9 @@ Working from my proposal, Claude Code wrote **most of the code and documentation
 | Labelling guide, the decision to add a sixth category (`substance_use`), Zindi preparation script | yes, proposed and written by the AI; I accepted them |
 | **Starter Sheng lexicon** (`data/lexicon/sheng_lexicon.yaml`) and name list | yes, a draft, not validated by Sheng speakers |
 | **Coping-library text** (`data/library/coping_library.yaml`) | yes, drafted; every entry is marked `approved: false` until counsellors approve it |
+| **Positive/neutral check-ins** (`data/extra/`): the GoEmotions selection and filters in `scripts/prepare_positive.py`, and the 51 everyday Kenyan check-ins in English, Swahili and Sheng (`kenyan_checkins_written.csv`) | yes: the written check-ins are AI-drafted, not written by students |
+| Diagnosis of the happy-message problem, the retraining experiments (Section 5.8 of the report), the `positive` category and its safeguard, and the switch from int8 to fp32 serving | yes, proposed and run by the AI after I reported the problem; I approved the retraining |
+| Chat page (`serving/static/index.html`) and the Azure Container Apps deployment (`deploy/azure/`) | yes |
 | `README.md` and `REPORT.md` (drafted from my proposal and the measured results) | yes |
 
 It also ran the training, evaluation, ONNX export, latency benchmarks and the Docker build.
@@ -63,13 +70,19 @@ One input dataset (tabularisai/swahili-sentiment-dataset) is itself LLM-generate
 - **Deployment.** I installed Docker Desktop on my laptop and moved it into Applications, ran the
   setup commands in my terminal, and had the AI check that the API container started, passed its health
   check and answered requests on `localhost:8000`.
+- **The live app.** I used the deployed chat page the way a student would, and that is how the happy-message
+  problem was found; the test set could not have shown it, because it has no ordinary messages. After the fix
+  I checked that happy messages get a normal reply and crisis messages are still escalated.
 - **Decisions.** I chose the project's direction at each step: the proposal, using real data instead of
-  synthetic data, adding the `substance_use` category, the name Sikiza, and submitting through GitHub.
+  synthetic data, adding the `substance_use` category, the name Sikiza, submitting through GitHub, hosting the
+  demo on Azure, and fixing the happy-message problem by retraining.
 
 ## Limits I'm aware of
 
 - The crisis labels are mine after review, but no second person has labelled the data independently, so
   there is no inter-annotator κ yet. The category labels are the AI's first pass. `make real` reproduces
   every number from the committed labels.
+- The positive/neutral check-ins are partly English Reddit comments (GoEmotions) and partly AI-drafted
+  Kenyan check-ins; real ordinary check-ins from students are still needed.
 - The lexicon and coping library are AI drafts and must be reviewed by counsellors and Sheng-speaking students
   before any use with students.

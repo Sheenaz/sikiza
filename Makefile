@@ -16,8 +16,10 @@ docker:                    ## build and run the API container (needs artifacts/m
 data:                      ## real data: Zindi CSVs + labels -> data/zindi/zindi_seed.csv
 	$(PY) scripts/prepare_zindi.py
 
-real:                      ## full pipeline on the real Zindi data (~1 h on a laptop CPU)
-	$(MAKE) data augment baseline
+real:                      ## full pipeline on the real Zindi data (~30-60 min on a laptop CPU)
+	$(MAKE) data augment
+	$(PY) scripts/prepare_positive.py
+	$(MAKE) baseline
 	$(PY) scripts/train_transformer.py --model afroxlmr --epochs 3
 	$(PY) scripts/train_transformer.py --model distilbert --epochs 3
 	$(PY) scripts/export_onnx.py --src artifacts/afroxlmr_torch --out artifacts/model

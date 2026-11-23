@@ -13,7 +13,7 @@ from dataclasses import asdict, dataclass, field
 import numpy as np
 
 from .calibration import Calibrator
-from .config import CATEGORIES
+from .config import CATEGORIES, load_config
 from .pseudonymise import pseudonymise
 from .retrieval import CopingLibrary
 from .safety_valve import SafetyValve
@@ -55,6 +55,25 @@ class TriageResult:
         return asdict(self)
 
 
+def pick_category(probs, distress_hit: bool = False, min_positive: float | None = None) -> int:
+    """argmax category, but `positive` ("that's good to hear") only when it is safe to say so.
+
+    A sad message misread as positive would get a cheerful reply, so `positive` needs a confident model
+    (p >= retrieval.positive_min_prob) and no distress word from the lexicon; otherwise the next most
+    likely category is used.
+    """
+    probs = np.asarray(probs, float)
+    i = int(np.argmax(probs))
+    pos = CATEGORIES.index("positive") if "positive" in CATEGORIES else -1
+    if i == pos and pos < len(probs):
+        floor = load_config()["retrieval"].get("positive_min_prob", 0.6) if min_positive is None else min_positive
+        if distress_hit or probs[i] < floor:
+            rest = probs.copy()
+            rest[pos] = -np.inf
+            i = int(np.argmax(rest))
+    return i
+
+
 def decide(valve_hit: bool, p_crisis: float | None, threshold: float) -> tuple[bool, list[str]]:
     src = []
     if valve_hit:
@@ -93,8 +112,8 @@ class TriagePipeline:
             z, k = self.scorer.logits([clean])
             p_crisis = float(self.cal.crisis_proba(z)[0])
             probs = self.cal.category_proba(k)[0]
-            cat = CATEGORIES[int(np.argmax(probs))]
-            p_cat = float(probs.max())
+            ci = pick_category(probs, bool(valve.distress_rules))
+            cat, p_cat = CATEGORIES[ci], float(probs[ci])
         except Exception:  # noqa: BLE001 — fail safe, never fail silent
             degraded = True
         crisis, src = decide(valve.crisis_hit, p_crisis, self.threshold)
@@ -121,7 +140,10 @@ def batch_decisions(scorer, cal: Calibrator, threshold: float, valve: SafetyValv
     texts = [pseudonymise(t) for t in texts]
     z, k = scorer.logits(texts)
     p = cal.crisis_proba(z)
-    cat = [CATEGORIES[i] for i in np.argmax(cal.category_proba(k), axis=1)]
-    v = np.array([valve.check(t).crisis_hit for t in texts], int)
+    checks = [valve.check(t) for t in texts]
+    floor = load_config()["retrieval"].get("positive_min_prob", 0.6)
+    cat = [CATEGORIES[pick_category(pr, bool(c.distress_rules), floor)]
+           for pr, c in zip(cal.category_proba(k), checks)]
+    v = np.array([c.crisis_hit for c in checks], int)
     clf = (p >= threshold).astype(int)
     return {"p_crisis": p, "valve": v, "classifier": clf, "combined": np.maximum(v, clf), "category": cat}

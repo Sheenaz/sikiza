@@ -45,6 +45,7 @@ def main():
     tr, ca = frames["train"], frames["calib"]
     print("train:", class_summary(tr))
 
+    T.torch.manual_seed(cfg["project"]["seed"])   # reproducible LoRA/head initialisation
     model, tok = T.build(cand["name"])
     stage1 = None
     if args.intermediate:

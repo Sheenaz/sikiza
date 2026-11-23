@@ -11,8 +11,9 @@ sys.path.insert(0, str(ROOT))
 import pandas as pd  # noqa: E402
 
 from triage.config import load_config, resolve  # noqa: E402
-from triage.data import assemble, load_seed, load_splits, make_splits, save_splits  # noqa: E402
-from triage.text import tokens  # noqa: E402
+from triage.data import assemble, load_seed, load_splits, make_splits, save_splits, validate  # noqa: E402
+from triage.pseudonymise import pseudonymise  # noqa: E402
+from triage.text import language_group, tokens  # noqa: E402
 
 DEMO_BANNER = ("\n" + "!" * 78 + "\n!! DEMO DATA: synthetic template rows. Every number below is meaningless.\n"
                "!! Put real data in data/raw/strathmore_checkins.csv and re-run without --demo.\n" + "!" * 78 + "\n")
@@ -43,6 +44,24 @@ def load_frames(demo: bool, use_augmented: bool = True):
     if use_augmented and aug_path.exists():
         aug = pd.read_csv(aug_path)
     frames = assemble(seed, splits, aug)
+    # Positive/neutral non-crisis rows (never test): only when training (use_augmented) on real data.
+    extra_cfg = cfg["data"].get("extra_train_csv")
+    if use_augmented and not is_demo and extra_cfg and resolve(extra_cfg).exists():
+        extra = validate(pd.read_csv(resolve(extra_cfg)), "extra_train")
+        extra["text"] = extra["text"].map(pseudonymise)
+        extra["group"] = [language_group(t, lang) for t, lang in zip(extra["text"], extra["language"])]
+        extra["is_augmented"] = False
+        assert not set(extra["seed_id"]) & set(seed["seed_id"])
+        # a fixed 20% slice (by id hash) joins CALIBRATION: real check-in traffic includes ordinary and
+        # happy messages, so the crisis threshold should be tuned with some in view. Test stays Zindi-only.
+        to_calib = extra["seed_id"].map(lambda s: int(s[2:], 16) % 5 == 0)
+        reps = int(cfg["data"].get("extra_train_repeat", 1))
+        cols = frames["train"].columns.intersection(extra.columns)
+        frames["train"] = pd.concat([frames["train"]] + [extra.loc[~to_calib, cols]] * reps, ignore_index=True)
+        frames["calib"] = pd.concat([frames["calib"], extra.loc[to_calib, frames["calib"].columns.intersection(cols)]],
+                                    ignore_index=True)
+        print(f"+ positive/neutral rows from {extra_cfg}: {int((~to_calib).sum())} train (x{reps}), "
+              f"{int(to_calib.sum())} calib")
     return frames, seed, is_demo
 
 

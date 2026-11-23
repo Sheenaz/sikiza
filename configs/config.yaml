@@ -7,7 +7,8 @@ project:
 
 labels:
   # substance_use added after the proposal: ~30% of the real Zindi messages are about alcohol/drugs.
-  categories: [academic_stress, financial_strain, social_anxiety, low_mood, substance_use, other]
+  # positive added with the train-only positive check-ins: they need their own class, or they blur `other`.
+  categories: [academic_stress, financial_strain, social_anxiety, low_mood, substance_use, other, positive]
 
 data:
   # Real student messages: Zindi BNBR Kenya Tech4MentalHealth, relabelled (scripts/prepare_zindi.py).
@@ -16,6 +17,10 @@ data:
   # Synthetic demo rows — for pipeline smoke tests ONLY, never for reported results.
   demo_csv: data/demo/demo_seed.csv
   augmented_csv: data/processed/augmented.csv
+  # Positive/neutral check-ins for training (80%) and calibration (20%), never test (GoEmotions + written Kenyan check-ins; scripts/prepare_positive.py).
+  # The Zindi survey has no ordinary or happy messages, so without these the model escalates them.
+  extra_train_csv: data/extra/positive_neutral.csv
+  extra_train_repeat: 3   # ~11% of training rows; real messages appear ~16x each through augmentation
   splits_dir: data/processed/splits
   # Grouped split of REAL seed rows (fractions of seed_ids). Test = real messages only.
   split: {train: 0.60, calib: 0.15, test: 0.25}
@@ -29,7 +34,8 @@ safety:
 
 retrieval:
   library: data/library/coping_library.yaml
-  allow_draft_entries: false   # serving refuses unapproved strategies unless this is true (dev only)
+  allow_draft_entries: false
+  positive_min_prob: 0.6       # `positive` reply only when the model is this sure and no distress word is present   # serving refuses unapproved strategies unless this is true (dev only)
 
 baseline:
   max_features: 20000

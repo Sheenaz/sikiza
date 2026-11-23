@@ -45,7 +45,7 @@ def main():
         cats = []
         for t in texts:
             r = clf(t, list(CAT_HYP.values()))
-            cats.append(CATEGORIES[list(CAT_HYP.values()).index(r["labels"][0])])
+            cats.append(list(CAT_HYP)[list(CAT_HYP.values()).index(r["labels"][0])])
         return crisis, cats
 
     pc, _ = score(frames["calib"])

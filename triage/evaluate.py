@@ -98,8 +98,9 @@ def crisis_ranking(y, p, n_boot: int = 2000, ci: float = 0.95) -> dict:
 
 
 def category_metrics(y_true: list[str], y_pred: list[str], n_boot: int = 2000, ci: float = 0.95) -> dict:
-    labels = CATEGORIES
     yt, yp = np.asarray(y_true), np.asarray(y_pred)
+    # classes present in the test labels: a class with no test rows (e.g. `positive`) would add a 0 F1
+    labels = [c for c in CATEGORIES if c in set(yt)]
 
     def mf1(a, b):
         return f1_score(a, b, labels=labels, average="macro", zero_division=0)

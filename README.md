@@ -22,8 +22,9 @@ other message with a **retrieved**, counsellor-approved coping strategy.
 | Dataset | Use | Where |
 |---|---|---|
 | **Zindi: Basic Needs Basic Rights Kenya – Tech4MentalHealth** (2020). 925 statements and questions written by students at Kenyan universities, originally tagged Depression / Alcohol / Suicide / Drugs. Redistributed here under the dataset's terms; credit to Zindi and BNBR Kenya. | Real seed, training **and** test data | `data/zindi/Train.csv`, `Test.csv` (original files) |
-| Sikiza labels: crisis (0/1) + one of six categories for every message, from the text alone | Labels | `data/labels/zindi_labels.csv`, guide in [`data/labels/LABELLING_GUIDE.md`](data/labels/LABELLING_GUIDE.md) |
+| Sikiza labels: crisis (0/1) + one of six categories for every message, from the text alone (a seventh, `positive`, is used only for the positive check-ins) | Labels | `data/labels/zindi_labels.csv`, guide in [`data/labels/LABELLING_GUIDE.md`](data/labels/LABELLING_GUIDE.md) |
 | Prepared seed (duplicates merged, 884 messages) | Model input | `data/zindi/zindi_seed.csv` (`make data`) |
+| Positive/neutral check-ins (351): 300 [GoEmotions](https://github.com/google-research/google-research/tree/master/goemotions) comments with a single positive emotion (Demszky et al., 2020, Apache 2.0), filtered by `scripts/prepare_positive.py`, + 51 everyday Kenyan student check-ins in English, Swahili and Sheng written for this project | **Training (80%) and calibration (20%) only, never test**: teaches the model what an ordinary or happy message looks like (REPORT §5.8) | `data/extra/positive_neutral.csv`, `data/extra/kenyan_checkins_written.csv` |
 | Synthetic English/Swahili/Sheng check-ins (224) | Pipeline smoke tests; code-mixed tokenizer and drift checks only | `data/demo/demo_seed.csv` (`--demo`) |
 | GoEmotions, AfriSenti-swa, tabularisai Swahili sentiment | Optional stage-1 fine-tuning (`--intermediate`) | downloaded from Hugging Face |
 
@@ -39,7 +40,7 @@ the `reviewed` column records progress.
 | Final report: problem framing, technique justification, results, limitations | [`REPORT.md`](REPORT.md) |
 | Data pipeline (scripted, reproducible) | `triage/data.py`, `triage/augment.py`, `triage/pseudonymise.py`, `scripts/make_demo_data.py`, `scripts/augment.py` |
 | Model training code | `triage/baseline.py`, `triage/transformer.py`, `triage/calibration.py`, `triage/thresholds.py`, `scripts/train_*.py`, `scripts/export_onnx.py` |
-| Serialized artifacts | `artifacts/baseline/` (TF-IDF + LR, in the repo); int8 ONNX bundle in the [v0.2.0 release](https://github.com/Sheenaz/sikiza/releases/tag/v0.2.0) (`make model`, 279 MB, too large for git) |
+| Serialized artifacts | `artifacts/baseline/` (TF-IDF + LR, in the repo); fp32 ONNX bundle in the [v0.3.0 release](https://github.com/Sheenaz/sikiza/releases/tag/v0.3.0) (`make model`, 1 GB download, too large for git) |
 | Evaluation outputs | `artifacts/reports/` (`eval.md`, `eval.json`, confusion matrices, fertility, drift) |
 | Docker | `serving/Dockerfile`, `docker-compose.yml` |
 | API service | `serving/app.py` (FastAPI) |
@@ -53,7 +54,7 @@ flowchart LR
     App["Student app<br/>React Native (Expo)"] -->|HTTPS POST /v1/checkin| API["FastAPI<br/>(Docker, Kenya-hosted)"]
     API --> P["Pseudonymise<br/>names, phones, IDs, M-Pesa codes"]
     P --> V["Safety valve<br/>Sheng/Swahili/English keyword rules"]
-    P --> C["Classifier<br/>AfroXLM-R + LoRA, ONNX int8<br/>temperature-calibrated"]
+    P --> C["Classifier<br/>AfroXLM-R + LoRA, ONNX fp32<br/>temperature-calibrated"]
     V -->|any hit| G{"OR gate"}
     C -->|"p(crisis) ≥ cost-derived threshold"| G
     G -->|crisis| E["Escalation queue<br/>(counsellor API) + crisis response with hotlines"]
@@ -66,7 +67,7 @@ flowchart LR
 
 Training side: seed check-ins → pseudonymise → grouped split by `seed_id` (train / calib / test) →
 augment train only → baseline and LoRA fine-tuning → temperature scaling and threshold on calib →
-ONNX int8 export, re-calibrated → evaluation on real (non-augmented) test messages only.
+ONNX export (fp32) → evaluation on real (non-augmented) test messages only.
 
 ## Reproduce
 
@@ -76,7 +77,7 @@ Requirements: Python 3.11, Docker; Node 20+ only for the mobile app.
 
 ```bash
 git clone https://github.com/Sheenaz/sikiza.git && cd sikiza
-make model                      # download the int8 ONNX bundle from the release (SHA-256 checked)
+make model                      # download the ONNX model bundle from the release (SHA-256 checked)
 docker compose up --build       # API on http://localhost:8000, interactive docs at /docs
 curl -s -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
      -d '{"text":"nimechoka na exams, sijui kama nitapass"}'
@@ -102,7 +103,7 @@ curl -s -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
 | Cost-derived threshold (not 0.5) | `triage/thresholds.py` |
 | Retrieval from approved library, never generated | `triage/retrieval.py`, `data/library/coping_library.yaml` |
 | Recall ≥ 0.95 with bootstrap CI, macro-F1, confusion matrix, EN vs code-mixed, McNemar, Cohen's κ | `triage/evaluate.py`, `scripts/evaluate.py` |
-| ONNX int8 | `triage/export.py`, `scripts/export_onnx.py` |
+| ONNX export (fp32; int8 optional) | `triage/export.py`, `scripts/export_onnx.py` |
 | FastAPI + Docker, versions logged, never the raw message | `serving/app.py`, `serving/Dockerfile`, `triage/audit.py` |
 | Human handles every crisis | escalation queue + counsellor endpoints in `serving/app.py` |
 | Offline safety valve in the app | `mobile/src/safetyValve.ts` (parity-checked against Python) |
@@ -111,7 +112,7 @@ curl -s -X POST localhost:8000/v1/checkin -H 'content-type: application/json' \
 
 ```bash
 make setup          # Python venv (+ mobile deps)
-make real           # Zindi → prepare → augment → baseline → AfroXLM-R + DistilBERT → ONNX int8 → evaluate,
+make real           # Zindi + positive check-ins → augment → baseline → AfroXLM-R + DistilBERT → ONNX → evaluate,
                     # fertility, zero-shot, drift; results in artifacts/reports/
 make demo           # the same pipeline on the synthetic set (5 min smoke test)
 make test           # unit + API tests
@@ -148,10 +149,10 @@ The full discussion is in [`REPORT.md`](REPORT.md). In short:
    the AI first pass and the review).
 2. **Duplicates leak across the official split.** 13 texts appear in both Zindi's train and test files. Identical
    texts are merged before the grouped split.
-3. **Results on 221 real test messages (26 crises).** The deployed AfroXLM-R int8 model catches 24/26 crises
-   (exact 95% CI 0.75–0.99) while escalating 38% of messages; the TF-IDF baseline catches 26/26 only by
-   escalating 72%. AfroXLM-R is the best category model (macro-F1 0.66 vs 0.47, McNemar p = 0.013). On threshold-free
-   ranking (ROC-AUC ≈ 0.92–0.93) the models are statistically indistinguishable on this English data.
+3. **Results on 221 real test messages (26 crises).** The deployed AfroXLM-R model catches 24/26 crises
+   (exact 95% CI 0.75–0.99) while escalating 34% of messages; the TF-IDF baseline catches 26/26 only by
+   escalating 60%. AfroXLM-R is the best category model (macro-F1 0.64 vs 0.46, McNemar p = 0.058). On
+   threshold-free ranking (ROC-AUC ≈ 0.90–0.93) the models are statistically indistinguishable on this English data.
 4. **The keyword valve alone catches only 8/26 real crises.** Real students phrase crises indirectly ("is life
    even worth it"), so the classifier half of the OR-gate is essential.
 5. **The success criterion needs more crisis examples than a random split gives.** Proving a 95% lower bound
@@ -162,8 +163,13 @@ The full discussion is in [`REPORT.md`](REPORT.md). In short:
    shift to Sheng/Swahili flags ~73% and surfaces the new words.
 7. **Tokenizer fertility** (code-mixed synthetic text): AfroXLM-R/XLM-R 1.57 tokens per word vs multilingual
    DistilBERT 1.93; on the real English text all three are ~1.24.
-8. **int8 quantisation shifts logits**, so the int8 bundle is re-calibrated and re-thresholded on its own outputs
-   (1.1 GB → 279 MB). Latency is ~5 ms per message on an M1 CPU; the 400 ms budget is network-bound.
+8. **The model escalated happy messages** ("I am feeling happy today") once deployed: the Zindi survey contains no
+   ordinary messages, so they were out of distribution. Adding 351 positive/neutral check-ins (training and
+   calibration only), a `positive` category with a confidence safeguard, and a fixed training seed fixed it
+   without losing crisis recall. Found by using the live app, not by the test set (REPORT §5.8).
+9. **int8 quantisation broke the 1% threshold.** It shifted small crisis probabilities 2–3× (48% escalation vs
+   34%, and happy messages escalated again), so the deployed model is fp32 ONNX (1.1 GB, ~10 ms per message on a
+   CPU); the 400 ms budget is network-bound.
 
 ## Docker
 
@@ -181,12 +187,13 @@ docker buildx build --platform linux/amd64 -f serving/Dockerfile -t sikiza:0.1.0
 
 Only the files allow-listed in `.dockerignore` are sent to the build: no data, no venv, no torch checkpoint.
 
-- Image: about 450 MB compressed (python:3.11-slim + onnxruntime + int8 model, no torch). It runs as non-root
+- Image: python:3.11-slim + onnxruntime + the fp32 model (about 1.1 GB), no torch. It runs as non-root
   uid 10001, the model is read-only, and it has a built-in health check.
 - State (prediction log + escalation SQLite) lives on the `/app/state` volume. Back it up and set its
   retention according to the ethics approval.
-- Memory: about 1.4 GB with 2 uvicorn workers (each loads the model). Use `--workers 1` on small VMs.
-- Measured on an M1 through Docker Desktop: p50 25 ms and p95 37 ms HTTP round trip.
+- Memory: about 2.9 GB with 2 uvicorn workers (each loads the fp32 model). Use `--workers 1` on small VMs.
+- Measured on an M1 through Docker Desktop: p50 55 ms and p95 106 ms HTTP round trip (fp32 model; the earlier
+  int8 model: 25 / 37 ms).
 - The image bakes in whatever is in `artifacts/model` at build time. Rebuild after every re-export,
   and check `GET /v1/version` shows the expected model, lexicon and library versions.
 
@@ -203,9 +210,9 @@ az login
 ACR=<unique-registry-name> sh deploy/azure/deploy.sh   # build amd64 image, push, create/update the app
 ```
 
-- Setup: 1 vCPU, 2 GB RAM, scale to zero when idle (min 0, max 1 replica), HTTPS ingress, image in Azure
-  Container Registry. The container needs about 1.4 GB, which is why the 512 MB free tiers (Render, Koyeb)
-  were ruled out. Hugging Face Docker Spaces were also prepared ([`deploy/huggingface/`](deploy/huggingface/))
+- Setup: 2 vCPU, 4 GB RAM, scale to zero when idle (min 0, max 1 replica), HTTPS ingress, image in Azure
+  Container Registry. The container needs about 2.9 GB with the fp32 model (1.4 GB with the earlier int8 one),
+  which is why the 512 MB free tiers (Render, Koyeb) were ruled out. Hugging Face Docker Spaces were also prepared ([`deploy/huggingface/`](deploy/huggingface/))
   but now require a paid plan.
 - `COUNSELLOR_API_KEY` is a randomly generated Azure secret, so `dev-key` does not work on the live API.
 - This is a **demo deployment, not the production site**: it is outside Kenya, the coping library is still an
@@ -237,7 +244,7 @@ ACR=<unique-registry-name> sh deploy/azure/deploy.sh   # build amd64 image, push
 
 ## Known gaps / next steps
 
-- **Only the keyword valve runs on the phone, not the int8 model.** Running the model on-device needs
+- **Only the keyword valve runs on the phone, not the model.** Running the model on-device needs
   `onnxruntime-react-native` plus an XLM-R tokenizer in JS and an Expo development build (not Expo Go).
   The offline path covers the safety-critical part (keywords → crisis response + hotlines), and offline
   crisis check-ins are queued and sent when the phone reconnects.

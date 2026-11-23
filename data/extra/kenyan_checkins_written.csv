@@ -1,0 +1,52 @@
+text,language,category
+"I am feeling happy today, the sun is out",en,positive
+"Today was a good day, classes went well",en,positive
+Feeling grateful for my friends this week,en,positive
+Had a nice lunch with my roommates today,en,positive
+"I'm doing fine, just checking in",en,other
+"Nothing much, the week has been okay",en,other
+I'm excited about the weekend trip with my class,en,positive
+"My HELB came through, what a relief",en,positive
+I'm feeling calm and rested after a good sleep,en,positive
+"Church on Sunday was uplifting, I feel at peace",en,positive
+I scored a goal in the inter-class match today!,en,positive
+"Just a normal day, lectures then the library",en,other
+I'm happy my parents visited campus today,en,positive
+I feel motivated to study this semester,en,positive
+"I'm good, thanks for asking",en,other
+Things are going well with my project group,en,positive
+"I got an internship offer, I'm so excited!",en,positive
+"My presentation went great, the lecturer liked it",en,positive
+I went for a run this morning and feel energised,en,positive
+I made a new friend in my class today,en,positive
+"Niko poa leo, siku imeenda vizuri",sw,positive
+Nimefurahi sana leo,sw,positive
+"Leo ni siku nzuri, jua linawaka",sw,positive
+"Niko sawa, nataka tu kusema hujambo",sw,other
+Nimefurahia wikendi na familia yangu,sw,positive
+Masomo yanaenda vizuri wiki hii,sw,positive
+Najisikia vizuri na mwenye amani leo,sw,positive
+Nimepata marafiki wapya chuoni,sw,positive
+"Asante, niko mzima kabisa",sw,other
+Nimelala vizuri na niko na nguvu leo,sw,positive
+Mambo ni poa sana leo,sw,positive
+Leo niko poa sana,sw,positive
+Nimefurahi kwa sababu wazazi wangu walinitembelea,sw,positive
+"Niko fiti msee, siku iko poa",sheng,positive
+"Niko sawa tu, nachill na mabeshte",sheng,other
+"Leo ni shwari, hakuna stress",sheng,positive
+"Nimefurahi sana, tumewin match",sheng,positive
+"Form ni poa, tunaenda outing weekend",sheng,positive
+"Niko rada, kila kitu iko fiti",sheng,positive
+"Siku imeenda poa, lecture ilikuwa bomba",sheng,positive
+"Nimeget internship, niko happy sana",sheng,positive
+"Vibe ni poa leo, sun iko juu",sheng,positive
+"Nimepata fees yote, niko relieved",sheng,positive
+"Niko poa, just checking in",sheng,other
+Leo niko na mood poa sana,sheng,positive
+Tumefanya presentation ikaenda smooth,sheng,positive
+"I'm fiti today, feeling good",mixed,positive
+"Feeling poa today, the weather is so nice",mixed,positive
+"Today was shwari, no stress at all",mixed,positive
+"I'm grateful, mambo yanaenda vizuri",mixed,positive
+Had a bomba day with my friends,mixed,positive

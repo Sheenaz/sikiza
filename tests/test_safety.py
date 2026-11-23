@@ -151,3 +151,18 @@ def test_crisis_ranking_separates_perfect_and_random_scores():
     flat = crisis_ranking(y, np.full(len(y), 0.3), n_boot=200)
     assert flat["roc_auc"] == 0.5
     assert crisis_ranking(np.zeros(10), np.zeros(10))["roc_auc"] is None
+
+
+def test_positive_category_needs_confidence_and_no_distress():
+    from triage.config import CATEGORIES
+    from triage.pipeline import pick_category
+    if "positive" not in CATEGORIES:
+        return
+    pos, low = CATEGORIES.index("positive"), CATEGORIES.index("low_mood")
+    probs = np.full(len(CATEGORIES), 0.01)
+    probs[pos], probs[low] = 0.9, 0.05
+    assert pick_category(probs, min_positive=0.6) == pos
+    assert pick_category(probs, distress_hit=True, min_positive=0.6) == low   # distress word -> never cheerful
+    probs[pos] = 0.5
+    assert pick_category(probs, min_positive=0.6) == low                      # not confident -> next best
+    assert pick_category(probs[:6], min_positive=0.6) == low                  # old 6-class bundles still work

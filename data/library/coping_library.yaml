@@ -224,6 +224,19 @@ strategies:
     sw: >-
       Asante kwa kuripoti. Kutambua unavyojihisi ni ujuzi. Kitu kikianza kukulemea,
       unaweza kurudi hapa wakati wowote au kupanga kuonana na mshauri.
+  # ---------------- positive (good news / doing well) ----------------
+  - id: positive_share
+    category: positive
+    when: happy good great glad excited grateful thankful proud relieved passed sunny nice fun poa fiti shwari furaha nimefurahi vizuri bomba
+    approved: false
+    en: >-
+      That's really good to hear, thank you for sharing it. Take a moment to notice
+      what made today feel good, so you can come back to it on harder days. You can
+      check in here any time.
+    sw: >-
+      Inafurahisha kusikia hivyo, asante kwa kushiriki. Chukua muda kutambua
+      kilichofanya leo iwe nzuri, ili uweze kukirudia siku ngumu. Unaweza kurudi hapa
+      wakati wowote.
   - id: other_relationship
     category: other
     when: relationship breakup boyfriend girlfriend dem family conflict roommate
